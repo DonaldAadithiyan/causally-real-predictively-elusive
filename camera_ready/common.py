@@ -313,3 +313,30 @@ def md_table(df, fmt="{:.3f}"):
                 cells.append(str(v))
         out.append("| " + " | ".join(cells) + " |")
     return "\n".join(out) + "\n"
+
+
+# ------------------------------------------------------------------ enrichment with uncertainty
+def enrichment_stats(selected, ftab, pool, n_boot=N_BOOT, seed=BOOT_SEED):
+    """validation.difficulty_specificity.enrichment + (added) a bootstrap CI and a one-sided
+    hypergeometric p. CI: resample the selected features' B-membership and the pool's
+    B-membership independently (2000x), ratio of fractions, percentile 95%."""
+    from validation.difficulty_specificity import enrichment
+    e = enrichment(np.asarray(selected, int), ftab, np.asarray(pool, int))
+    B = set(ftab["cells"]["B"])
+    selb = np.array([int(j) in B for j in selected if int(j) in set(int(p) for p in pool)], float)
+    poolb = np.array([int(j) in B for j in pool], float)
+    rng = np.random.default_rng(seed)
+    num = selb[rng.integers(0, len(selb), (n_boot, len(selb)))].mean(1)
+    den = poolb[rng.integers(0, len(poolb), (n_boot, len(poolb)))].mean(1)
+    ratio = num / np.where(den > 0, den, np.nan)
+    lo, hi = ci(ratio)
+    k, n, K, N = int(selb.sum()), len(selb), int(poolb.sum()), len(poolb)
+    p = float(stats.hypergeom.sf(k - 1, N, K, n))
+    return dict(enrichment=float(e.get("enrichment_ratio", np.nan)), enr_lo=lo, enr_hi=hi,
+                enr_p_hypergeom=p, n_sel_B=k, n_sel=n, pool_B=K, pool_n=N,
+                enr_ci_excludes_1=bool(lo > 1))
+
+
+def jaccard(a, b):
+    a, b = set(int(x) for x in a), set(int(x) for x in b)
+    return len(a & b) / len(a | b) if (a | b) else np.nan
