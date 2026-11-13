@@ -1,0 +1,78 @@
+{
+  "thresholds": [
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "headline_threshold": 0.25,
+  "pairwise": {
+    "run0_vs_run1": {
+      "n_mvdf_query": 12,
+      "n_pool": 120,
+      "mutual_nn_rate_no_threshold": 0.5833333333333334,
+      "median_mvdf_matched_distance": 0.23393742267173184,
+      "by_threshold": {
+        "thr_0.1": {
+          "mvdf_match_rate": 0.0,
+          "pool_base_rate": 0.1,
+          "signature_shuffle_rate": 0.0
+        },
+        "thr_0.25": {
+          "mvdf_match_rate": 0.3333333333333333,
+          "pool_base_rate": 0.2833333333333333,
+          "signature_shuffle_rate": 0.3333333333333334
+        },
+        "thr_0.5": {
+          "mvdf_match_rate": 0.3333333333333333,
+          "pool_base_rate": 0.2916666666666667,
+          "signature_shuffle_rate": 0.3333333333333334
+        },
+        "thr_1": {
+          "mvdf_match_rate": 0.5,
+          "pool_base_rate": 0.30833333333333335,
+          "signature_shuffle_rate": 0.5
+        }
+      }
+    },
+    "run0_vs_run2": {
+      "n_mvdf_query": 12,
+      "n_pool": 120,
+      "mutual_nn_rate_no_threshold": 0.5,
+      "median_mvdf_matched_distance": 0.43874403540734985,
+      "by_threshold": {
+        "thr_0.1": {
+          "mvdf_match_rate": 0.08333333333333333,
+          "pool_base_rate": 0.25833333333333336,
+          "signature_shuffle_rate": 0.08333333333333336
+        },
+        "thr_0.25": {
+          "mvdf_match_rate": 0.08333333333333333,
+          "pool_base_rate": 0.31666666666666665,
+          "signature_shuffle_rate": 0.08333333333333336
+        },
+        "thr_0.5": {
+          "mvdf_match_rate": 0.3333333333333333,
+          "pool_base_rate": 0.36666666666666664,
+          "signature_shuffle_rate": 0.3333333333333334
+        },
+        "thr_1": {
+          "mvdf_match_rate": 0.4166666666666667,
+          "pool_base_rate": 0.375,
+          "signature_shuffle_rate": 0.4166666666666666
+        }
+      }
+    }
+  },
+  "sae_seeds": [
+    10,
+    20,
+    30
+  ],
+  "fvus": [
+    0.006609213072806597,
+    0.00668641272932291,
+    0.0066876788623631
+  ],
+  "forecaster_val_mse": 0.2263214994469909
+}

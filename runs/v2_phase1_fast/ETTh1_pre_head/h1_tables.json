@@ -1,0 +1,102 @@
+{
+  "H1_deltaPred_vs_corr": {
+    "n": 40,
+    "spearman_rho": 0.13470919324577862,
+    "top_set_jaccard": 0.17647058823529413,
+    "interpretation": "LOW rho -> interventional and observational rankings differ (H1b)"
+  },
+  "H1b_deltaPred_vs_Cj": {
+    "n": 40,
+    "spearman_rho": 0.22157598499061917,
+    "top_set_jaccard": 0.1111111111111111,
+    "interpretation": "LOW rho -> interventional and observational rankings differ (H1b)"
+  },
+  "H1c": {
+    "feature_type_table": {
+      "cells": {
+        "A": [
+          236,
+          239,
+          500,
+          838,
+          1321,
+          1478,
+          1685
+        ],
+        "B": [
+          457,
+          999,
+          1195,
+          1236,
+          1524,
+          1722,
+          1791
+        ],
+        "C": [
+          219,
+          302,
+          310,
+          450,
+          793,
+          1126,
+          1243,
+          1565,
+          1660,
+          1682,
+          1851,
+          1898,
+          1904
+        ],
+        "D": [
+          144,
+          171,
+          191,
+          627,
+          744,
+          854,
+          1030,
+          1178,
+          1327,
+          1483,
+          1555,
+          1963,
+          2046
+        ]
+      },
+      "counts": {
+        "A": 7,
+        "B": 7,
+        "C": 13,
+        "D": 13
+      },
+      "fractions": {
+        "A": 0.175,
+        "B": 0.175,
+        "C": 0.325,
+        "D": 0.325
+      },
+      "median_abs_P": 5.32607947076945e-05,
+      "median_abs_U": 0.000670109476361929,
+      "n": 40,
+      "interpretation": "type-B mass (low |P_j|, high |U_j|) = uncertainty-specific features; MVDF_v2 should be enriched for these vs correlated_set / MVDF_v1 (H1c)"
+    },
+    "enrichment_MVDF_v2": {
+      "selected_type_B_fraction": 0.16666666666666666,
+      "pool_type_B_fraction": 0.175,
+      "enrichment_ratio": 0.9523809523755101,
+      "n_selected_in_pool": 12
+    },
+    "enrichment_MVDF_v1": {
+      "selected_type_B_fraction": 0.3333333333333333,
+      "pool_type_B_fraction": 0.175,
+      "enrichment_ratio": 1.9047619047510203,
+      "n_selected_in_pool": 12
+    },
+    "enrichment_correlated": {
+      "selected_type_B_fraction": 0.08333333333333333,
+      "pool_type_B_fraction": 0.175,
+      "enrichment_ratio": 0.47619047618775506,
+      "n_selected_in_pool": 12
+    }
+  }
+}

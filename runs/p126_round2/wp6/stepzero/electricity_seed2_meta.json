@@ -1,0 +1,28 @@
+{
+  "dataset": "electricity",
+  "seed": 2,
+  "embargo": 192,
+  "n_fit": 1167,
+  "n_cal": 508,
+  "n_test_ID": 275,
+  "n_test_shift": 2237,
+  "best_nonrep": "gbm_union",
+  "inner_selection_spearman": {
+    "last_obs": 0.07722249972249973,
+    "ema": -0.3390875790875791,
+    "roll_q90": -0.26490910082317787,
+    "in_std": -0.04857420357420357,
+    "in_diff_std": -0.028537573537573534,
+    "in_range": -0.022172677421577733,
+    "in_allch_std": 0.39524059274059276,
+    "fc_rough": 0.10805028305028304,
+    "fc_range": 0.2837212787212787,
+    "knn": -0.007814962814962816,
+    "gbm_union": 0.49576008478556766
+  },
+  "gbm_union_hparams": [
+    3,
+    100
+  ],
+  "q_base": 0.9740566144079107
+}

@@ -1,0 +1,168 @@
+{
+  "config": {
+    "alpha": 0.1,
+    "calibration": {
+      "burn_in": 0,
+      "clip_mult": 20.0,
+      "gamma_global": 0.03,
+      "gamma_perbin": 0.05
+    },
+    "dataset": {
+      "horizon": 96,
+      "lookback": 96,
+      "max_channels": 48,
+      "name": "ETTh2",
+      "target_var": -1
+    },
+    "device": "cuda",
+    "forecaster": {
+      "batch_size": 32,
+      "d_ff": 512,
+      "d_model": 256,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "lr_decay": 0.8,
+      "max_epochs": 20,
+      "n_heads": 8,
+      "n_layers": 3,
+      "patience": 5,
+      "warmup_epochs": 3
+    },
+    "run_name": "mve_ETTh2_seed0",
+    "sae": {
+      "batch_size": 512,
+      "expansion": 8,
+      "k": 64,
+      "lr": 0.0001,
+      "resample_cap": 64,
+      "resample_every": 2000,
+      "resample_until_frac": 0.5,
+      "steps": 20000
+    },
+    "seed": 0,
+    "shift": {
+      "require_ks_check": true
+    },
+    "validation": {
+      "ablation_batch_cap": 2048,
+      "feature_budget_k": 12,
+      "min_active_frac": 0.02,
+      "n_bins": 3,
+      "rq1_sample_size": 400
+    }
+  },
+  "started": "2026-09-03T09:33:32",
+  "data_fingerprint": "2fc425f7e4e3c584",
+  "shapes": {
+    "train": [
+      8449,
+      96,
+      7
+    ],
+    "val": [
+      2689,
+      96,
+      7
+    ],
+    "test": [
+      5709,
+      96,
+      7
+    ]
+  },
+  "shift_check": {
+    "n_tail": 1180,
+    "ks_stat": 0.373992172787194,
+    "ks_pvalue": 7.049132923190659e-135,
+    "tail_mean": 35.22182839761865,
+    "cal_mean": 29.18662552429036,
+    "tail_std": 5.957806582964535,
+    "cal_std": 11.556391102877347,
+    "is_shift": true,
+    "window": {
+      "description": "Final 20% of the ETTh2 test split.",
+      "rationale": "Final 20% of the test split: the block furthest in calendar time from the train+val calibration window, so autocorrelation-driven similarity to calibration is weakest and a seasonal/regime difference is most likely. Pre-registered before results were seen; KS-checked at run time. Same construction and reasoning as ETTh1.",
+      "tail_frac": 0.2
+    }
+  },
+  "shift_n_windows": 1084,
+  "forecaster_val_mse": 0.22906707181235414,
+  "forecaster_train_s": 14.5,
+  "forecaster_test_mae_target": 0.37741005420684814,
+  "hidden_difficulty_signal": {
+    "max_abs_corr_hiddenPC_vs_score": 0.14421820373630653,
+    "score_dispersion": 0.2728671133518219,
+    "note": "max |corr| >> 0.1 means difficulty is linearly readable pre-head; near 0.1 predicts weak H2/H3 (spec outcome B regime, aleatoric-dominated)."
+  },
+  "sae_reconstruction": {
+    "mse_raw": 0.003530798712745309,
+    "fvu_raw": 0.003558146909374058,
+    "fvu_standardized": 0.004705952480435371,
+    "l0": 64.0
+  },
+  "sae_reconstruction_cal": {
+    "mse_raw": 0.016037221997976303,
+    "fvu_raw": 0.016157741383100156,
+    "fvu_standardized": 0.02190529555082321,
+    "l0": 64.0
+  },
+  "n_eligible_features": 892,
+  "ablation_s": 14.9,
+  "ablation_n_features": 400,
+  "ablation_n_windows": 2048,
+  "ablation_positive_rate": 0.4625,
+  "ablation_max_over_median": 143.2330743308499,
+  "feature_sets": {
+    "SAE_correlated": [
+      1646,
+      1778,
+      54,
+      1932,
+      593,
+      1,
+      1208,
+      1310,
+      601,
+      627,
+      778,
+      39
+    ],
+    "MVDF": [
+      1038,
+      1,
+      1567,
+      593,
+      1013,
+      153,
+      1528,
+      634,
+      1269,
+      523,
+      737,
+      1506
+    ],
+    "SAE_random": [
+      334,
+      475,
+      686,
+      712,
+      829,
+      1036,
+      1386,
+      1445,
+      1661,
+      1696,
+      1770,
+      1930
+    ],
+    "overlap_corr_mvdf": 2
+  },
+  "H3_delta_shift_correlated_minus_mvdf": {
+    "d_coverage": 0.004437384100588249,
+    "d_worst_step_coverage": 0.0006072498980376206,
+    "d_width": 0.01662719408126989,
+    "d_winkler": 0.016840549099719215,
+    "d_mace": 0.00525721834649872
+  },
+  "finished": "2026-09-03T09:35:32"
+}

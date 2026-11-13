@@ -1,0 +1,13 @@
+[electricity_seed0] forecaster 1142s val_mse 0.0679
+[electricity_seed0] SAE+selection 913s fvu 0.0153
+{'tag': 'electricity_seed0', 'val_mse': 0.06789239004353412, 'n_channels': 47, 'fingerprint': {'dataset': 'electricity', 'rows': 35000, 'channels': 47, 'train_rows': 24500, 'val_rows': 3500, 'test_rows': 7000, 'edge_hash': 'cc6af3b5973c14af'}, 'device': 'mps', 'n_windows': {'train': 24309, 'val': 3309, 'test': 6809}, 'sae_fvu': 0.015273211523890495, 'mvdf': [199, 1817, 221, 180, 373, 1935, 1053, 981, 1628, 1115, 713, 1117], 'correlated': [591, 1561, 864, 1256, 670, 1763, 1953, 1115, 1415, 2000, 1211, 417], 'enrichment_typeB': 3.846153846118343, 'n_gate1': 111}
+[traffic_seed0] forecaster 707s val_mse 0.2742
+[traffic_seed0] SAE+selection 436s fvu 0.0036
+{'tag': 'traffic_seed0', 'val_mse': 0.27416729961362335, 'n_channels': 48, 'fingerprint': {'dataset': 'traffic', 'rows': 17544, 'channels': 48, 'train_rows': 12280, 'val_rows': 1755, 'test_rows': 3509, 'edge_hash': 'a93d2ec2b5815355'}, 'device': 'mps', 'n_windows': {'train': 12089, 'val': 1564, 'test': 3318}, 'sae_fvu': 0.0036170610692352057, 'mvdf': [1100, 1286, 1997, 200, 2030, 1636, 1659, 1837, 1780, 1334, 222, 1961], 'correlated': [837, 1247, 62, 1284, 1997, 96, 1035, 1088, 443, 1780, 963, 1444], 'enrichment_typeB': 2.307692307671006, 'n_gate1': 104}
+[electricity_seed1] forecaster 1486s val_mse 0.0679
+[electricity_seed1] SAE+selection 434s fvu 0.0160
+{'tag': 'electricity_seed1', 'val_mse': 0.06790735926811214, 'n_channels': 47, 'fingerprint': {'dataset': 'electricity', 'rows': 35000, 'channels': 47, 'train_rows': 24500, 'val_rows': 3500, 'test_rows': 7000, 'edge_hash': 'cc6af3b5973c14af'}, 'device': 'mps', 'n_windows': {'train': 24309, 'val': 3309, 'test': 6809}, 'sae_fvu': 0.015974275767803192, 'mvdf': [828, 1231, 1744, 124, 417, 1647, 1394, 1646, 1650, 282, 78, 1750], 'correlated': [1149, 913, 715, 1247, 947, 1262, 1562, 1137, 1345, 877, 1197, 1594], 'enrichment_typeB': 4.166666666625, 'n_gate1': 117}
+[traffic_seed1] forecaster 558s val_mse 0.2745
+[traffic_seed1] SAE+selection 324s fvu 0.0037
+{'tag': 'traffic_seed1', 'val_mse': 0.27453012261396786, 'n_channels': 48, 'fingerprint': {'dataset': 'traffic', 'rows': 17544, 'channels': 48, 'train_rows': 12280, 'val_rows': 1755, 'test_rows': 3509, 'edge_hash': 'a93d2ec2b5815355'}, 'device': 'mps', 'n_windows': {'train': 12089, 'val': 1564, 'test': 3318}, 'sae_fvu': 0.0037177985068410635, 'mvdf': [1367, 873, 1486, 1352, 156, 1647, 444, 1989, 911, 576, 1697, 870], 'correlated': [1525, 1367, 1678, 444, 1038, 478, 1518, 1616, 931, 1761, 2013, 427], 'enrichment_typeB': 3.3333333332999993, 'n_gate1': 104}
+killed chainA after traffic:1

@@ -1,0 +1,189 @@
+<repo>/experiments/phase1_synthetic_control.py:82: RankWarning: Polyfit may be poorly conditioned
+  cs = float(np.polyfit(pred, s_te, 1)[0])
+<repo>/experiments/phase1_synthetic_control.py:82: RankWarning: Polyfit may be poorly conditioned
+  cs = float(np.polyfit(pred, s_te, 1)[0])
+============================================================================== 
+ ETTh1  seed 0
+ ==============================================================================
+[ETTh1 s0] windows: train 8449 val 2689 test 5709  fp c6d1709fd0693b1a
+[itr] epoch 01  val_mse=0.72236  lr=1.00e-04  (4.3s)
+[itr] epoch 02  val_mse=0.71338  lr=1.00e-04  (4.5s)
+[itr] epoch 03  val_mse=0.72370  lr=8.00e-05  (4.4s)
+[itr] epoch 04  val_mse=0.72003  lr=6.40e-05  (4.6s)
+[itr] epoch 05  val_mse=0.72708  lr=5.12e-05  (4.5s)
+[itr] epoch 06  val_mse=0.73381  lr=4.10e-05  (4.6s)
+[itr] epoch 07  val_mse=0.73733  lr=3.28e-05  (4.5s)
+[itr] early stop at epoch 7
+[sae] step 2000  mse=0.03717  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02330  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01755  dead=0  (resample off)
+[sae] step 8000  mse=0.01448  dead=0  (resample off)
+[sae] step 10000  mse=0.01271  dead=0  (resample off)
+[sae] final  FVU=0.0118  l0=64.0  dead=0
+[ETTh1 s0] SAE FVU 0.0118
+[dose] 1/120 feat 8  P_j=+0.0000  U_j=+0.0008  n_active=47
+[dose] 13/120 feat 162  P_j=+0.0000  U_j=+0.0011  n_active=38
+[dose] 25/120 feat 334  P_j=-0.0000  U_j=+0.0000  n_active=59
+[dose] 37/120 feat 483  P_j=+0.0001  U_j=-0.0004  n_active=361
+[dose] 49/120 feat 779  P_j=+0.0000  U_j=+0.0002  n_active=42
+[dose] 61/120 feat 992  P_j=+0.0001  U_j=+0.0006  n_active=59
+[dose] 73/120 feat 1245  P_j=+0.0002  U_j=-0.0011  n_active=59
+[dose] 85/120 feat 1473  P_j=+0.0000  U_j=+0.0009  n_active=41
+[dose] 97/120 feat 1641  P_j=+0.0001  U_j=+0.0000  n_active=45
+[dose] 109/120 feat 1805  P_j=+0.0000  U_j=+0.0011  n_active=42
+[ETTh1 s0] marginal best R2 -0.6355  cond best R2 -0.6952  R_j-vs-predR2 rho -0.098
+============================================================================== 
+ ETTh1  seed 1
+ ==============================================================================
+[ETTh1 s1] windows: train 8449 val 2689 test 5709  fp c6d1709fd0693b1a
+[itr] epoch 01  val_mse=0.72261  lr=1.00e-04  (5.9s)
+[itr] epoch 02  val_mse=0.71188  lr=1.00e-04  (6.8s)
+[itr] epoch 03  val_mse=0.71695  lr=8.00e-05  (6.6s)
+[itr] epoch 04  val_mse=0.72797  lr=6.40e-05  (6.2s)
+[itr] epoch 05  val_mse=0.72562  lr=5.12e-05  (6.0s)
+[itr] epoch 06  val_mse=0.73605  lr=4.10e-05  (6.0s)
+[itr] epoch 07  val_mse=0.73515  lr=3.28e-05  (6.0s)
+[itr] early stop at epoch 7
+[sae] step 2000  mse=0.03760  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02331  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01775  dead=0  (resample off)
+[sae] step 8000  mse=0.01458  dead=0  (resample off)
+[sae] step 10000  mse=0.01293  dead=0  (resample off)
+[sae] final  FVU=0.0118  l0=64.0  dead=0
+[ETTh1 s1] SAE FVU 0.0118
+[dose] 1/120 feat 12  P_j=+0.0001  U_j=+0.0012  n_active=73
+[dose] 13/120 feat 284  P_j=+0.0000  U_j=+0.0007  n_active=44
+[dose] 25/120 feat 604  P_j=+0.0000  U_j=-0.0001  n_active=57
+[dose] 37/120 feat 734  P_j=-0.0000  U_j=-0.0003  n_active=43
+[dose] 49/120 feat 881  P_j=+0.0001  U_j=+0.0008  n_active=43
+[dose] 61/120 feat 1081  P_j=+0.0002  U_j=+0.0020  n_active=62
+[dose] 73/120 feat 1246  P_j=+0.0000  U_j=+0.0004  n_active=39
+[dose] 85/120 feat 1477  P_j=+0.0000  U_j=+0.0002  n_active=95
+[dose] 97/120 feat 1706  P_j=+0.0001  U_j=+0.0002  n_active=167
+[dose] 109/120 feat 1858  P_j=+0.0001  U_j=+0.0002  n_active=261
+[ETTh1 s1] marginal best R2 -0.7184  cond best R2 -0.5223  R_j-vs-predR2 rho -0.101
+============================================================================== 
+ ETTh1  seed 2
+ ==============================================================================
+[ETTh1 s2] windows: train 8449 val 2689 test 5709  fp c6d1709fd0693b1a
+[itr] epoch 01  val_mse=0.72355  lr=1.00e-04  (6.4s)
+[itr] epoch 02  val_mse=0.71144  lr=1.00e-04  (6.4s)
+[itr] epoch 03  val_mse=0.70882  lr=8.00e-05  (6.4s)
+[itr] epoch 04  val_mse=0.72057  lr=6.40e-05  (6.4s)
+[itr] epoch 05  val_mse=0.72994  lr=5.12e-05  (6.4s)
+[itr] epoch 06  val_mse=0.72706  lr=4.10e-05  (6.2s)
+[itr] epoch 07  val_mse=0.74353  lr=3.28e-05  (6.1s)
+[itr] epoch 08  val_mse=0.73473  lr=2.62e-05  (6.3s)
+[itr] early stop at epoch 8
+[sae] step 2000  mse=0.03955  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02420  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01839  dead=0  (resample off)
+[sae] step 8000  mse=0.01478  dead=0  (resample off)
+[sae] step 10000  mse=0.01308  dead=0  (resample off)
+[sae] final  FVU=0.0119  l0=64.0  dead=0
+[ETTh1 s2] SAE FVU 0.0119
+[dose] 1/120 feat 7  P_j=-0.0001  U_j=-0.0002  n_active=55
+[dose] 13/120 feat 222  P_j=-0.0001  U_j=+0.0005  n_active=45
+[dose] 25/120 feat 340  P_j=+0.0000  U_j=-0.0003  n_active=71
+[dose] 37/120 feat 597  P_j=-0.0000  U_j=-0.0004  n_active=153
+[dose] 49/120 feat 877  P_j=+0.0000  U_j=+0.0003  n_active=81
+[dose] 61/120 feat 1085  P_j=+0.0001  U_j=-0.0019  n_active=66
+[dose] 73/120 feat 1235  P_j=+0.0000  U_j=-0.0007  n_active=52
+[dose] 85/120 feat 1427  P_j=+0.0000  U_j=-0.0002  n_active=44
+[dose] 97/120 feat 1649  P_j=+0.0000  U_j=+0.0005  n_active=40
+[dose] 109/120 feat 1889  P_j=+0.0000  U_j=-0.0006  n_active=47
+[ETTh1 s2] marginal best R2 -0.5806  cond best R2 -0.4754  R_j-vs-predR2 rho +0.019
+============================================================================== 
+ ETTh2  seed 0
+ ==============================================================================
+[ETTh2 s0] windows: train 8449 val 2689 test 5709  fp c022db5521d23684
+[itr] epoch 01  val_mse=0.22632  lr=1.00e-04  (6.6s)
+[itr] epoch 02  val_mse=0.23725  lr=1.00e-04  (6.6s)
+[itr] epoch 03  val_mse=0.24016  lr=8.00e-05  (6.6s)
+[itr] epoch 04  val_mse=0.25922  lr=6.40e-05  (6.6s)
+[itr] epoch 05  val_mse=0.27012  lr=5.12e-05  (6.7s)
+[itr] epoch 06  val_mse=0.25802  lr=4.10e-05  (6.6s)
+[itr] early stop at epoch 6
+[sae] step 2000  mse=0.02324  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01469  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01093  dead=0  (resample off)
+[sae] step 8000  mse=0.00858  dead=0  (resample off)
+[sae] step 10000  mse=0.00760  dead=0  (resample off)
+[sae] final  FVU=0.0067  l0=64.0  dead=0
+[ETTh2 s0] SAE FVU 0.0067
+[dose] 1/120 feat 33  P_j=-0.0003  U_j=-0.0052  n_active=459
+[dose] 13/120 feat 215  P_j=+0.0001  U_j=+0.0009  n_active=42
+[dose] 25/120 feat 461  P_j=+0.0001  U_j=-0.0002  n_active=129
+[dose] 37/120 feat 656  P_j=+0.0001  U_j=-0.0003  n_active=73
+[dose] 49/120 feat 870  P_j=+0.0004  U_j=+0.0033  n_active=99
+[dose] 61/120 feat 1128  P_j=-0.0001  U_j=+0.0002  n_active=93
+[dose] 73/120 feat 1302  P_j=+0.0002  U_j=-0.0024  n_active=49
+[dose] 85/120 feat 1594  P_j=+0.0011  U_j=+0.0018  n_active=49
+[dose] 97/120 feat 1791  P_j=+0.0001  U_j=-0.0000  n_active=71
+[dose] 109/120 feat 1921  P_j=+0.0000  U_j=+0.0004  n_active=52
+[ETTh2 s0] marginal best R2 -0.9248  cond best R2 -0.8043  R_j-vs-predR2 rho +0.019
+============================================================================== 
+ ETTh2  seed 1
+ ==============================================================================
+[ETTh2 s1] windows: train 8449 val 2689 test 5709  fp c022db5521d23684
+[itr] epoch 01  val_mse=0.22071  lr=1.00e-04  (6.9s)
+[itr] epoch 02  val_mse=0.22425  lr=1.00e-04  (7.4s)
+[itr] epoch 03  val_mse=0.23799  lr=8.00e-05  (7.3s)
+[itr] epoch 04  val_mse=0.25156  lr=6.40e-05  (6.8s)
+[itr] epoch 05  val_mse=0.25326  lr=5.12e-05  (6.9s)
+[itr] epoch 06  val_mse=0.26311  lr=4.10e-05  (6.7s)
+[itr] early stop at epoch 6
+[sae] step 2000  mse=0.02109  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01246  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00908  dead=0  (resample off)
+[sae] step 8000  mse=0.00761  dead=0  (resample off)
+[sae] step 10000  mse=0.00641  dead=0  (resample off)
+[sae] final  FVU=0.0057  l0=64.0  dead=0
+[ETTh2 s1] SAE FVU 0.0057
+[dose] 1/120 feat 16  P_j=+0.0001  U_j=-0.0020  n_active=49
+[dose] 13/120 feat 204  P_j=-0.0000  U_j=-0.0004  n_active=60
+[dose] 25/120 feat 480  P_j=-0.0052  U_j=-0.0581  n_active=705
+[dose] 37/120 feat 669  P_j=-0.0000  U_j=+0.0007  n_active=45
+[dose] 49/120 feat 880  P_j=+0.0002  U_j=+0.0006  n_active=67
+[dose] 61/120 feat 1069  P_j=+0.0002  U_j=+0.0010  n_active=99
+[dose] 73/120 feat 1273  P_j=-0.0000  U_j=+0.0010  n_active=44
+[dose] 85/120 feat 1465  P_j=-0.0001  U_j=-0.0002  n_active=102
+[dose] 97/120 feat 1708  P_j=-0.0004  U_j=-0.0001  n_active=104<repo>/experiments/phase1_synthetic_control.py:82: RankWarning: Polyfit may be poorly conditioned
+  cs = float(np.polyfit(pred, s_te, 1)[0])
+<repo>/experiments/phase1_synthetic_control.py:82: RankWarning: Polyfit may be poorly conditioned
+  cs = float(np.polyfit(pred, s_te, 1)[0])
+
+[dose] 109/120 feat 1865  P_j=+0.0001  U_j=+0.0009  n_active=55
+[ETTh2 s1] marginal best R2 -0.9230  cond best R2 -0.8937  R_j-vs-predR2 rho -0.023
+============================================================================== 
+ ETTh2  seed 2
+ ==============================================================================
+[ETTh2 s2] windows: train 8449 val 2689 test 5709  fp c022db5521d23684
+[itr] epoch 01  val_mse=0.22379  lr=1.00e-04  (6.0s)
+[itr] epoch 02  val_mse=0.23066  lr=1.00e-04  (6.4s)
+[itr] epoch 03  val_mse=0.24446  lr=8.00e-05  (6.9s)
+[itr] epoch 04  val_mse=0.24667  lr=6.40e-05  (6.9s)
+[itr] epoch 05  val_mse=0.25163  lr=5.12e-05  (6.6s)
+[itr] epoch 06  val_mse=0.25870  lr=4.10e-05  (6.5s)
+[itr] early stop at epoch 6
+[sae] step 2000  mse=0.02042  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01233  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00896  dead=0  (resample off)
+[sae] step 8000  mse=0.00732  dead=0  (resample off)
+[sae] step 10000  mse=0.00614  dead=0  (resample off)
+[sae] final  FVU=0.0055  l0=64.0  dead=0
+[ETTh2 s2] SAE FVU 0.0055
+[dose] 1/120 feat 1  P_j=-0.0000  U_j=-0.0009  n_active=114
+[dose] 13/120 feat 245  P_j=+0.0002  U_j=+0.0024  n_active=133
+[dose] 25/120 feat 430  P_j=+0.0001  U_j=+0.0002  n_active=77
+[dose] 37/120 feat 614  P_j=+0.0000  U_j=-0.0003  n_active=144
+[dose] 49/120 feat 730  P_j=+0.0001  U_j=+0.0015  n_active=61
+[dose] 61/120 feat 967  P_j=+0.0001  U_j=+0.0003  n_active=164
+[dose] 73/120 feat 1109  P_j=+0.0000  U_j=+0.0002  n_active=53
+[dose] 85/120 feat 1242  P_j=-0.0000  U_j=-0.0002  n_active=59
+[dose] 97/120 feat 1554  P_j=-0.0003  U_j=-0.0014  n_active=93
+[dose] 109/120 feat 1801  P_j=+0.0000  U_j=+0.0007  n_active=67
+[ETTh2 s2] marginal best R2 -0.8964  cond best R2 -0.8767  R_j-vs-predR2 rho +0.133
+wrote runs/phase3_real/PHASE3_RESULT.md
+
+Phase 3 real done in 1725s -> runs/phase3_real

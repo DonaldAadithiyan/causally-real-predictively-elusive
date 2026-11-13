@@ -1,0 +1,51 @@
+# V2 Phase 0 — layer sweep (spec §4.5, §11). PRE-REGISTERED. Do not edit after seeing results.
+#
+# Probe set: the 7 taps in ITransformer.TAP_NAMES, mapping the spec's
+#   {early, mid, late, pre_head, attn_out, ffn_out, residual_stream}
+# onto this 3-layer iTransformer:
+#   embed | layer1 | layer2 | layer3_attn | layer3_ffn | pre_head | head_input
+#
+# GO CRITERION (spec §4.5): a tap "clears" if its cheap first-pass signal
+#   (max |corr(activation PC, S_t)|) exceeds `go_threshold` on >= `go_min_datasets`
+#   of the swept datasets. Run 5's pre-head baseline was 0.09-0.22 (max ~0.22 on
+#   weather). We require a MEANINGFUL margin above that ceiling, not just above the
+#   floor: go_threshold = 0.30.
+#
+# NO-GO HANDLING (spec §4.5, §11 Phase 0): if no tap clears, that is a reportable
+#   finding (spec §7 row 4 — "difficulty not recoverable at any depth"). Phase 1
+#   then proceeds at `pre_head` as a documented fallback and the null sweep is
+#   reported. select_winning_layers returns NO_GO, never best-of-a-bad-set.
+
+run_name: v2_phase0
+seed: 0
+device: cpu                     # notebook overrides to cuda
+
+datasets: [ETTh1, ETTh2, ETTm1, ETTm2, traffic, electricity, weather, solar]
+
+dataset_defaults:               # from configs/mve_etth1.yaml, unchanged
+  lookback: 96
+  horizon: 96
+  target_var: -1
+  max_channels: 48
+
+forecaster:
+  d_model: 256
+  n_layers: 3
+  n_heads: 8
+  d_ff: 512
+  dropout: 0.1
+  lr: 0.0001
+  batch_size: 32
+  max_epochs: 20
+  patience: 5
+  lr_decay: 0.8
+  warmup_epochs: 3
+
+go_criterion:
+  metric: max_abs_corr_pc       # max |corr| over the top-20 PCs of the tap activation
+  go_threshold: 0.30            # meaningful margin above Run 5's 0.09-0.22 pre-head ceiling
+  go_min_datasets: 2            # must clear on at least 2 datasets
+
+# Phase 1 will run the full P_j/U_j/R_j suite only at the cleared taps (spec §4.5,
+# §11 Phase 0->1). If NO_GO: Phase 1 runs at pre_head, sweep null goes in the paper.
+phase1_max_taps: 3              # cap the dose-response sweep breadth (spec §17 compute)

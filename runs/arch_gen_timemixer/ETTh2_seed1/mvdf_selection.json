@@ -1,0 +1,72 @@
+{
+  "MVDF_v2": [
+    1057,
+    379,
+    1655,
+    2000,
+    50,
+    1743,
+    1692,
+    18,
+    1166,
+    347,
+    1021,
+    198
+  ],
+  "correlated": [
+    438,
+    220,
+    308,
+    675,
+    1370,
+    1057,
+    1655,
+    465,
+    1144,
+    76,
+    1452,
+    1990
+  ],
+  "MVDF_v1": [
+    1818,
+    1057,
+    1285,
+    220,
+    2037,
+    154,
+    1546,
+    702,
+    1762,
+    226,
+    1655,
+    50
+  ],
+  "n_gate1": 113,
+  "enrichment_v2": {
+    "selected_type_B_fraction": 0.3333333333333333,
+    "pool_type_B_fraction": 0.13333333333333333,
+    "enrichment_ratio": 2.4999999999812497,
+    "n_selected_in_pool": 12
+  },
+  "enrichment_v1": {
+    "selected_type_B_fraction": 0.08333333333333333,
+    "pool_type_B_fraction": 0.13333333333333333,
+    "enrichment_ratio": 0.6249999999953124,
+    "n_selected_in_pool": 12
+  },
+  "enrichment_corr": {
+    "selected_type_B_fraction": 0.16666666666666666,
+    "pool_type_B_fraction": 0.13333333333333333,
+    "enrichment_ratio": 1.2499999999906248,
+    "n_selected_in_pool": 12
+  },
+  "feature_type_counts": {
+    "A": 16,
+    "B": 16,
+    "C": 44,
+    "D": 44
+  },
+  "forecaster_val_mse": 0.21518752982998568,
+  "sae_fvu": 0.0008139690035022795,
+  "data_fingerprint": "c022db5521d23684"
+}

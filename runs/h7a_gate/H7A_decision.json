@@ -1,0 +1,95 @@
+{
+  "gate_env": "E_eval_ID",
+  "D_t_definition": "A_t (frac of 24-feat cell-B active) >= p90 of A_t on E_select",
+  "rule": "CI on R_Q excludes 1 (R_Q>1 direction) on E_eval_ID, BOTH datasets, ALL seeds",
+  "per_dataset_GATING": {
+    "ETTh1": {
+      "n_seeds": 3,
+      "seeds_exclude_1_above": [
+        false,
+        false,
+        false
+      ],
+      "all_seeds_pass": false,
+      "R_Q_by_seed": [
+        1.0283,
+        0.9124,
+        1.0588
+      ],
+      "activation_rate_by_seed": [
+        0.17294,
+        0.27976,
+        0.12055
+      ],
+      "n1_by_seed": [
+        340,
+        550,
+        237
+      ]
+    },
+    "ETTh2": {
+      "n_seeds": 3,
+      "seeds_exclude_1_above": [
+        false,
+        true,
+        false
+      ],
+      "all_seeds_pass": false,
+      "R_Q_by_seed": [
+        0.9707,
+        1.0448,
+        1.0035
+      ],
+      "activation_rate_by_seed": [
+        0.10936,
+        0.31841,
+        0.11445
+      ],
+      "n1_by_seed": [
+        215,
+        626,
+        225
+      ]
+    }
+  },
+  "E_eval_shift_SECONDARY_nongating": {
+    "ETTh1": {
+      "R_Q_by_seed": [
+        0.9369,
+        1.024,
+        0.9781
+      ],
+      "seeds_exclude_1_above": [
+        false,
+        false,
+        false
+      ],
+      "all_seeds_separate": false,
+      "n1_by_seed": [
+        363,
+        486,
+        199
+      ]
+    },
+    "ETTh2": {
+      "R_Q_by_seed": [
+        1.0403,
+        1.0632,
+        0.9849
+      ],
+      "seeds_exclude_1_above": [
+        false,
+        true,
+        false
+      ],
+      "all_seeds_separate": false,
+      "n1_by_seed": [
+        170,
+        601,
+        281
+      ]
+    }
+  },
+  "PROCEED_TO_MGCP1": false,
+  "note": "STOP \u2014 H7-A negative on E_eval_ID. H1c stands (sharpened): interventionally validated uncertainty-specific features exist, but high co-activation of the cell-B set does not induce a sufficiently separated empirical tail-error regime for binary conformal conditioning."
+}

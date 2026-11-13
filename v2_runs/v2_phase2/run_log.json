@@ -1,0 +1,159 @@
+{
+  "config": {
+    "dataset_defaults": {
+      "horizon": 96,
+      "lookback": 96,
+      "max_channels": 48,
+      "target_var": -1
+    },
+    "datasets": [
+      "ETTh1",
+      "ETTh2",
+      "ETTm1",
+      "ETTm2",
+      "traffic",
+      "electricity",
+      "weather",
+      "solar"
+    ],
+    "device": "cuda",
+    "fallback_tap": "pre_head",
+    "forecaster": {
+      "batch_size": 32,
+      "d_ff": 512,
+      "d_model": 256,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "lr_decay": 0.8,
+      "max_epochs": 20,
+      "n_heads": 8,
+      "n_layers": 3,
+      "patience": 5,
+      "warmup_epochs": 3
+    },
+    "phase2": {
+      "conditions": [
+        "random",
+        "correlated",
+        "intervention_only",
+        "MVDF_v1",
+        "MVDF_v2"
+      ],
+      "feature_budget_k": 12,
+      "n_bins": 5,
+      "n_shift_subenvs": 2
+    },
+    "run_name": "v2_phase2",
+    "sae": {
+      "batch_size": 512,
+      "expansion": 8,
+      "k": 64,
+      "lr": 0.0001,
+      "resample_cap": 64,
+      "resample_every": 2000,
+      "resample_until_frac": 0.5,
+      "steps": 20000
+    },
+    "seed": 0
+  },
+  "started": "2026-09-03T11:39:23",
+  "per_run": {
+    "ETTh1_pre_head": {
+      "seconds": 77.5,
+      "I_by_condition": {
+        "random": 1.3333332849076767,
+        "correlated": 1.3863284414969452,
+        "intervention_only": 1.0768292885810926,
+        "MVDF_v1": 1.0768292885810926,
+        "MVDF_v2": 1.3333332780703595
+      },
+      "MVDFv2_beats_correlated_on_I": true,
+      "MVDFv2_beats_MVDFv1_on_I": false
+    },
+    "ETTh2_pre_head": {
+      "seconds": 77.4,
+      "I_by_condition": {
+        "random": 1.3333332550184653,
+        "correlated": 0.8069785337967295,
+        "intervention_only": 1.1722520983042601,
+        "MVDF_v1": 1.1722520983042601,
+        "MVDF_v2": 1.1646668054918912
+      },
+      "MVDFv2_beats_correlated_on_I": false,
+      "MVDFv2_beats_MVDFv1_on_I": true
+    },
+    "ETTm1_pre_head": {
+      "seconds": 79.5,
+      "I_by_condition": {
+        "random": 0.5953311654568901,
+        "correlated": 0.3491884669704892,
+        "intervention_only": 0.7242908422968916,
+        "MVDF_v1": 0.7242908422968916,
+        "MVDF_v2": 0.9340232279377486
+      },
+      "MVDFv2_beats_correlated_on_I": false,
+      "MVDFv2_beats_MVDFv1_on_I": false
+    },
+    "ETTm2_pre_head": {
+      "seconds": 79.3,
+      "I_by_condition": {
+        "random": 1.539803579126957,
+        "correlated": 1.0976971436524647,
+        "intervention_only": 0.7523786543328855,
+        "MVDF_v1": 0.7523786543328855,
+        "MVDF_v2": 1.5326436988291283
+      },
+      "MVDFv2_beats_correlated_on_I": false,
+      "MVDFv2_beats_MVDFv1_on_I": false
+    },
+    "traffic_pre_head": {
+      "seconds": 78.4,
+      "I_by_condition": {
+        "random": 1.3568375752138309,
+        "correlated": 0.7851437351575873,
+        "intervention_only": 1.5162451799593182,
+        "MVDF_v1": 1.5162451799593182,
+        "MVDF_v2": 1.5752088439128007
+      },
+      "MVDFv2_beats_correlated_on_I": false,
+      "MVDFv2_beats_MVDFv1_on_I": false
+    },
+    "electricity_pre_head": {
+      "seconds": 80.0,
+      "I_by_condition": {
+        "random": 1.33333300153949,
+        "correlated": 0.6702427259755135,
+        "intervention_only": 1.5022869034898925,
+        "MVDF_v1": 1.5022869034898925,
+        "MVDF_v2": 1.3331395655520766
+      },
+      "MVDFv2_beats_correlated_on_I": false,
+      "MVDFv2_beats_MVDFv1_on_I": true
+    },
+    "weather_pre_head": {
+      "seconds": 85.1,
+      "I_by_condition": {
+        "random": 0.47840098392878466,
+        "correlated": 1.0455177754108609,
+        "intervention_only": 0.41775849991674346,
+        "MVDF_v1": 0.41775849991674346,
+        "MVDF_v2": 1.3333332609811201
+      },
+      "MVDFv2_beats_correlated_on_I": false,
+      "MVDFv2_beats_MVDFv1_on_I": false
+    },
+    "solar_pre_head": {
+      "seconds": 80.6,
+      "I_by_condition": {
+        "random": 0.5918199037056605,
+        "correlated": 0.057924467151389235,
+        "intervention_only": 1.1339611642675436,
+        "MVDF_v1": 1.1339611642675436,
+        "MVDF_v2": 0.33275965814472924
+      },
+      "MVDFv2_beats_correlated_on_I": false,
+      "MVDFv2_beats_MVDFv1_on_I": true
+    }
+  },
+  "finished": "2026-09-03T12:04:08"
+}

@@ -1,0 +1,31 @@
+# V2 Phase 3 (H6 slice) — g_MVDF vs g_dense vs g_dense+MVDF. PRE-REGISTERED.
+# The single sharpest downstream test (spec §4.8, H6): at matched coverage, does the
+# mechanistically-validated feature subspace give narrower conformal intervals than
+# FFDCI's raw dense feature vector? NOT the full baseline suite.
+
+run_name: v2_phase3_h6
+device: cpu
+alpha: 0.10
+
+datasets: [ETTh1, ETTh2, electricity]     # ETTh1 = the one apparent H3 exception; ETTh2 + electricity = decisive-margin datasets
+seeds: [0, 1, 2]
+strict_fingerprint: true
+
+dataset_defaults: {lookback: 96, horizon: 96, target_var: -1, max_channels: 48}
+
+forecaster: {d_model: 256, n_layers: 3, n_heads: 8, d_ff: 512, dropout: 0.1,
+             lr: 0.0001, batch_size: 32, max_epochs: 20, patience: 5, lr_decay: 0.8, warmup_epochs: 3}
+
+sae: {expansion: 8, k: 64, steps: 20000, batch_size: 512, lr: 0.0001,
+      resample_every: 2000, resample_until_frac: 0.5, resample_cap: 64}
+
+calibration: {gamma_global: 0.03}
+
+fallback_tap: pre_head
+
+# PRE-REGISTERED H6 decision (spec §14 primary endpoint (2)):
+#   POSITIVE if g_mvdf OR g_dense+mvdf mean width is significantly lower (paired
+#   bootstrap CI excludes 0) than g_dense at matched coverage, ID AND shift, on
+#   >= 2 of the 3 datasets.
+#   Given Phase 2 (H3 fails), the expected outcome is NULL — g_mvdf width ~ g_dense
+#   width — which closes H6 and completes the negative-result paper.

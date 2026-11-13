@@ -1,0 +1,73 @@
+============================================================================== 
+ ETTh1  seed 0
+ ==============================================================================
+[itr] epoch 01  val_mse=0.72236  lr=1.00e-04  (4.5s)
+[itr] epoch 02  val_mse=0.71338  lr=1.00e-04  (5.0s)
+[itr] epoch 03  val_mse=0.72370  lr=8.00e-05  (4.9s)
+[itr] epoch 04  val_mse=0.72003  lr=6.40e-05  (4.8s)
+[itr] epoch 05  val_mse=0.72708  lr=5.12e-05  (4.9s)
+[itr] epoch 06  val_mse=0.73381  lr=4.10e-05  (4.9s)
+[itr] epoch 07  val_mse=0.73733  lr=3.28e-05  (4.9s)
+[itr] early stop at epoch 7
+[ETTh1 s0] naive ID w 1.776 (cov 0.901) | oracle ID w 1.334 (cov 0.903) | gap +0.443 ratio +0.249
+============================================================================== 
+ ETTh1  seed 1
+ ==============================================================================
+[itr] epoch 01  val_mse=0.72261  lr=1.00e-04  (5.2s)
+[itr] epoch 02  val_mse=0.71188  lr=1.00e-04  (5.2s)
+[itr] epoch 03  val_mse=0.71695  lr=8.00e-05  (5.2s)
+[itr] epoch 04  val_mse=0.72797  lr=6.40e-05  (5.3s)
+[itr] epoch 05  val_mse=0.72562  lr=5.12e-05  (5.3s)
+[itr] epoch 06  val_mse=0.73605  lr=4.10e-05  (5.5s)
+[itr] epoch 07  val_mse=0.73515  lr=3.28e-05  (5.5s)
+[itr] early stop at epoch 7
+[ETTh1 s1] naive ID w 1.720 (cov 0.901) | oracle ID w 1.313 (cov 0.903) | gap +0.406 ratio +0.236
+============================================================================== 
+ ETTh1  seed 2
+ ==============================================================================
+[itr] epoch 01  val_mse=0.72355  lr=1.00e-04  (5.8s)
+[itr] epoch 02  val_mse=0.71144  lr=1.00e-04  (6.0s)
+[itr] epoch 03  val_mse=0.70882  lr=8.00e-05  (6.0s)
+[itr] epoch 04  val_mse=0.72057  lr=6.40e-05  (6.2s)
+[itr] epoch 05  val_mse=0.72994  lr=5.12e-05  (6.3s)
+[itr] epoch 06  val_mse=0.72706  lr=4.10e-05  (6.3s)
+[itr] epoch 07  val_mse=0.74353  lr=3.28e-05  (6.4s)
+[itr] epoch 08  val_mse=0.73473  lr=2.62e-05  (6.4s)
+[itr] early stop at epoch 8
+[ETTh1 s2] naive ID w 1.742 (cov 0.901) | oracle ID w 1.305 (cov 0.903) | gap +0.437 ratio +0.251
+============================================================================== 
+ ETTh2  seed 0
+ ==============================================================================
+[itr] epoch 01  val_mse=0.22632  lr=1.00e-04  (6.4s)
+[itr] epoch 02  val_mse=0.23725  lr=1.00e-04  (6.5s)
+[itr] epoch 03  val_mse=0.24016  lr=8.00e-05  (6.5s)
+[itr] epoch 04  val_mse=0.25922  lr=6.40e-05  (6.7s)
+[itr] epoch 05  val_mse=0.27012  lr=5.12e-05  (6.6s)
+[itr] epoch 06  val_mse=0.25802  lr=4.10e-05  (6.7s)
+[itr] early stop at epoch 6
+[ETTh2 s0] naive ID w 3.374 (cov 0.901) | oracle ID w 2.360 (cov 0.903) | gap +1.014 ratio +0.300
+============================================================================== 
+ ETTh2  seed 1
+ ==============================================================================
+[itr] epoch 01  val_mse=0.22071  lr=1.00e-04  (6.8s)
+[itr] epoch 02  val_mse=0.22425  lr=1.00e-04  (6.7s)
+[itr] epoch 03  val_mse=0.23799  lr=8.00e-05  (6.6s)
+[itr] epoch 04  val_mse=0.25156  lr=6.40e-05  (6.7s)
+[itr] epoch 05  val_mse=0.25326  lr=5.12e-05  (6.6s)
+[itr] epoch 06  val_mse=0.26311  lr=4.10e-05  (6.6s)
+[itr] early stop at epoch 6
+[ETTh2 s1] naive ID w 3.403 (cov 0.901) | oracle ID w 2.402 (cov 0.903) | gap +1.001 ratio +0.294
+============================================================================== 
+ ETTh2  seed 2
+ ==============================================================================
+[itr] epoch 01  val_mse=0.22379  lr=1.00e-04  (6.8s)
+[itr] epoch 02  val_mse=0.23066  lr=1.00e-04  (6.6s)
+[itr] epoch 03  val_mse=0.24446  lr=8.00e-05  (6.6s)
+[itr] epoch 04  val_mse=0.24667  lr=6.40e-05  (6.6s)
+[itr] epoch 05  val_mse=0.25163  lr=5.12e-05  (6.6s)
+[itr] epoch 06  val_mse=0.25870  lr=4.10e-05  (7.0s)
+[itr] early stop at epoch 6
+[ETTh2 s2] naive ID w 3.369 (cov 0.901) | oracle ID w 2.419 (cov 0.903) | gap +0.950 ratio +0.282
+wrote runs/phase4_oracle/PHASE4_RESULT.md
+
+Phase 4 oracle done in 245s -> runs/phase4_oracle

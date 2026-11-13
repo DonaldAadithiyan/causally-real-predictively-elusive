@@ -1,0 +1,10 @@
+{
+  "val_mse": 0.22070910049863535,
+  "saved_val_mse": 0.2207091004986353,
+  "fvu": 0.0056616091169416904,
+  "saved_fvu": 0.0056616091169416,
+  "fingerprint": "c022db5521d23684",
+  "saved_fingerprint": "c022db5521d23684",
+  "val_mse_match": true,
+  "fvu_match": true
+}

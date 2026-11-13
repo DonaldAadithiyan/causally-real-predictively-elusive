@@ -1,0 +1,28 @@
+{
+  "dataset": "traffic",
+  "seed": 0,
+  "embargo": 192,
+  "n_fit": 584,
+  "n_cal": 159,
+  "n_test_ID": 42,
+  "n_test_shift": 1074,
+  "best_nonrep": "fc_range",
+  "inner_selection_spearman": {
+    "last_obs": 0.047609509134932865,
+    "ema": 0.541831388950033,
+    "roll_q90": -0.1622728227261574,
+    "in_std": -0.6140442593491056,
+    "in_diff_std": -0.2639005062733876,
+    "in_range": -0.13665887533708654,
+    "in_allch_std": -0.5639489324235087,
+    "fc_rough": 0.4054303323794849,
+    "fc_range": 0.737591899625798,
+    "knn": 0.5445725662782258,
+    "gbm_union": 0.716437064095816
+  },
+  "gbm_union_hparams": [
+    3,
+    300
+  ],
+  "q_base": 3.3685205949050006
+}

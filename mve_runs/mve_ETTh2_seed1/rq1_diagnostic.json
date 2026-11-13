@@ -1,0 +1,82 @@
+{
+  "n": 400,
+  "spearman_rho": 0.08966681041756511,
+  "kendall_tau": 0.05902255639097745,
+  "pearson": 0.22851580603406813,
+  "top_frac": 0.25,
+  "top_set_jaccard": 0.17647058823529413,
+  "interpretation": "LOW rank agreement -> correlation and ablation are different criteria; H2/H3 have something to test",
+  "h1_spurious_case_studies": [
+    {
+      "feature": 1880,
+      "abs_corr": 0.08054742600796236,
+      "abs_delta": 5.922621494391933e-05,
+      "corr_rank": 27,
+      "abl_rank": 384
+    },
+    {
+      "feature": 423,
+      "abs_corr": 0.09949886788335854,
+      "abs_delta": 0.00012046098709106445,
+      "corr_rank": 9,
+      "abl_rank": 360
+    },
+    {
+      "feature": 263,
+      "abs_corr": 0.06718296728161081,
+      "abs_delta": 5.212922769715078e-05,
+      "corr_rank": 45,
+      "abl_rank": 385
+    },
+    {
+      "feature": 1885,
+      "abs_corr": 0.07484130494637405,
+      "abs_delta": 8.750252891331911e-05,
+      "corr_rank": 37,
+      "abl_rank": 373
+    },
+    {
+      "feature": 37,
+      "abs_corr": 0.08888998791447195,
+      "abs_delta": 0.00015860062558203936,
+      "corr_rank": 15,
+      "abl_rank": 345
+    },
+    {
+      "feature": 406,
+      "abs_corr": 0.05671759690918885,
+      "abs_delta": 3.1412296266353223e-06,
+      "corr_rank": 71,
+      "abl_rank": 399
+    },
+    {
+      "feature": 1211,
+      "abs_corr": 0.10157470512462591,
+      "abs_delta": 0.00025397349963895977,
+      "corr_rank": 7,
+      "abl_rank": 303
+    },
+    {
+      "feature": 1540,
+      "abs_corr": 0.049503881669338494,
+      "abs_delta": 3.322391421534121e-05,
+      "corr_rank": 96,
+      "abl_rank": 392
+    },
+    {
+      "feature": 771,
+      "abs_corr": 0.047642135624244256,
+      "abs_delta": 4.899372288491577e-05,
+      "corr_rank": 99,
+      "abl_rank": 387
+    },
+    {
+      "feature": 419,
+      "abs_corr": 0.052849919134720424,
+      "abs_delta": 9.101791511056945e-05,
+      "corr_rank": 83,
+      "abl_rank": 370
+    }
+  ],
+  "h1_validated_case_studies": []
+}

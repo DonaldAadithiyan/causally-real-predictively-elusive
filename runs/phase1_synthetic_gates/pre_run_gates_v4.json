@@ -1,0 +1,118 @@
+{
+  "config_dgp": {
+    "a_0": 0.1,
+    "a_1": 0.95,
+    "sigma_easy": 0.3,
+    "sigma_hard": 1.5,
+    "markov_p_stay_0": 0.995,
+    "mean_dwell_steps": 200.0,
+    "n_timesteps": 160000
+  },
+  "gate_A_detectability": {
+    "mean_cv_acc": 0.8837,
+    "per_seed_acc": [
+      0.8779,
+      0.8838,
+      0.8892
+    ],
+    "mean_baseline": 0.5226,
+    "mean_gain_over_baseline": 0.3611,
+    "threshold": 0.75,
+    "PASS": true
+  },
+  "gate_B_episode_counts": {
+    "per_seed": [
+      {
+        "seed": 0,
+        "E_train": [
+          247,
+          248
+        ],
+        "E_select": [
+          42,
+          42
+        ],
+        "E_eval_ID": [
+          41,
+          42
+        ],
+        "E_eval_shift": [
+          43,
+          44
+        ]
+      },
+      {
+        "seed": 1,
+        "E_train": [
+          240,
+          240
+        ],
+        "E_select": [
+          36,
+          36
+        ],
+        "E_eval_ID": [
+          44,
+          43
+        ],
+        "E_eval_shift": [
+          43,
+          43
+        ]
+      },
+      {
+        "seed": 2,
+        "E_train": [
+          235,
+          236
+        ],
+        "E_select": [
+          40,
+          40
+        ],
+        "E_eval_ID": [
+          36,
+          35
+        ],
+        "E_eval_shift": [
+          47,
+          47
+        ]
+      }
+    ],
+    "worst_case_episodes_per_regime": {
+      "E_train": [
+        235,
+        236
+      ],
+      "E_select": [
+        36,
+        36
+      ],
+      "E_eval_ID": [
+        36,
+        35
+      ],
+      "E_eval_shift": [
+        43,
+        43
+      ]
+    },
+    "min_episodes_any_split_any_regime": 35,
+    "threshold": 30,
+    "PASS": true
+  },
+  "gate_C_incentive_separation": {
+    "H": 24,
+    "incentive_relative_gain": 0.1807,
+    "oracle_S_rank_auc": 0.9597,
+    "oracle_S_median_ratio_hard_over_easy": 3.0542,
+    "thresholds": {
+      "incentive": 0.02,
+      "auc": 0.6
+    },
+    "PASS": true
+  },
+  "ALL_PASS": true,
+  "next_step": "run blind mu_z grid: python -m experiments.phase1_muz_gate"
+}

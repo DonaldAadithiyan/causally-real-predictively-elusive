@@ -1,0 +1,51 @@
+{
+  "marginal": {
+    "linear": {
+      "r2": 0.3762602419780665,
+      "rank_corr": 0.674457664604926,
+      "calib_slope": 0.9549620167974401
+    },
+    "isotonic": {
+      "r2": -0.04381944712311858,
+      "rank_corr": 0.0,
+      "calib_slope": NaN
+    },
+    "gbm": {
+      "r2": 0.429911724877283,
+      "rank_corr": 0.6722204522153922,
+      "calib_slope": 0.9664033134555087
+    },
+    "mlp": {
+      "r2": 0.42894452847222797,
+      "rank_corr": 0.6714850314538255,
+      "calib_slope": 0.9010395329106209
+    }
+  },
+  "marginal_best_r2": 0.429911724877283,
+  "activation_conditioned": {
+    "linear": {
+      "r2": 0.4138338623224195,
+      "rank_corr": 0.6389295909651036,
+      "calib_slope": 0.95042136433907
+    },
+    "isotonic": {
+      "r2": -0.05667433450849635,
+      "rank_corr": 0.0,
+      "calib_slope": NaN
+    },
+    "gbm": {
+      "r2": 0.47901586328874524,
+      "rank_corr": 0.6396255622982336,
+      "calib_slope": 0.9570770146885301
+    },
+    "mlp": {
+      "r2": 0.4722325379753518,
+      "rank_corr": 0.6336394978081287,
+      "calib_slope": 0.9160870933791659
+    }
+  },
+  "activation_conditioned_best_r2": 0.47901586328874524,
+  "n_active_windows_eval": 5144,
+  "n_eval": 6400,
+  "mvdf_activation_rate": 0.79325
+}

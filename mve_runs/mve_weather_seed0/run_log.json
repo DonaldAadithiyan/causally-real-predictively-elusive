@@ -1,0 +1,168 @@
+{
+  "config": {
+    "alpha": 0.1,
+    "calibration": {
+      "burn_in": 0,
+      "clip_mult": 20.0,
+      "gamma_global": 0.03,
+      "gamma_perbin": 0.05
+    },
+    "dataset": {
+      "horizon": 96,
+      "lookback": 96,
+      "max_channels": 48,
+      "name": "weather",
+      "target_var": -1
+    },
+    "device": "cuda",
+    "forecaster": {
+      "batch_size": 32,
+      "d_ff": 512,
+      "d_model": 256,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "lr_decay": 0.8,
+      "max_epochs": 20,
+      "n_heads": 8,
+      "n_layers": 3,
+      "patience": 5,
+      "warmup_epochs": 3
+    },
+    "run_name": "mve_weather_seed0",
+    "sae": {
+      "batch_size": 512,
+      "expansion": 8,
+      "k": 64,
+      "lr": 0.0001,
+      "resample_cap": 64,
+      "resample_every": 2000,
+      "resample_until_frac": 0.5,
+      "steps": 20000
+    },
+    "seed": 0,
+    "shift": {
+      "require_ks_check": true
+    },
+    "validation": {
+      "ablation_batch_cap": 2048,
+      "feature_budget_k": 12,
+      "min_active_frac": 0.02,
+      "n_bins": 3,
+      "rq1_sample_size": 400
+    }
+  },
+  "started": "2026-09-03T08:55:24",
+  "data_fingerprint": "2e2db6ba5fba28e8",
+  "shapes": {
+    "train": [
+      122533,
+      96,
+      20
+    ],
+    "val": [
+      17341,
+      96,
+      20
+    ],
+    "test": [
+      34874,
+      96,
+      20
+    ]
+  },
+  "shift_check": {
+    "n_tail": 7013,
+    "ks_stat": 0.19577573419026667,
+    "ks_pvalue": 9.211506504955985e-225,
+    "tail_mean": 23.779984547483245,
+    "cal_mean": 19.850476443675404,
+    "tail_std": 8.190084060482725,
+    "cal_std": 8.208674853017811,
+    "is_shift": true,
+    "window": {
+      "description": "Final 20% of the weather test split.",
+      "rationale": "Final 20% of the test split: the block furthest in calendar time from the train+val calibration window, so autocorrelation-driven similarity to calibration is weakest and a seasonal/regime difference is most likely. Pre-registered before results were seen; KS-checked at run time. Jena/Beutenberg meteorology has a strong seasonal component.",
+      "tail_frac": 0.2
+    }
+  },
+  "shift_n_windows": 6917,
+  "forecaster_val_mse": 0.4589745870621502,
+  "forecaster_train_s": 347.4,
+  "forecaster_test_mae_target": 0.35427236557006836,
+  "hidden_difficulty_signal": {
+    "max_abs_corr_hiddenPC_vs_score": 0.16838408202895014,
+    "score_dispersion": 0.36161157488822937,
+    "note": "max |corr| >> 0.1 means difficulty is linearly readable pre-head; near 0.1 predicts weak H2/H3 (spec outcome B regime, aleatoric-dominated)."
+  },
+  "sae_reconstruction": {
+    "mse_raw": 0.011802822351455688,
+    "fvu_raw": 0.016171477762639153,
+    "fvu_standardized": 0.03352562338113785,
+    "l0": 64.0
+  },
+  "sae_reconstruction_cal": {
+    "mse_raw": 0.013863488100469112,
+    "fvu_raw": 0.018950670675527238,
+    "fvu_standardized": 0.03982047736644745,
+    "l0": 64.0
+  },
+  "n_eligible_features": 942,
+  "ablation_s": 28.7,
+  "ablation_n_features": 400,
+  "ablation_n_windows": 2048,
+  "ablation_positive_rate": 0.535,
+  "ablation_max_over_median": 340.7362945208695,
+  "feature_sets": {
+    "SAE_correlated": [
+      600,
+      932,
+      327,
+      937,
+      1677,
+      781,
+      1454,
+      1450,
+      1371,
+      1790,
+      737,
+      361
+    ],
+    "MVDF": [
+      1628,
+      937,
+      361,
+      1789,
+      1408,
+      1927,
+      573,
+      1965,
+      458,
+      748,
+      600,
+      1246
+    ],
+    "SAE_random": [
+      227,
+      401,
+      671,
+      691,
+      702,
+      718,
+      728,
+      1465,
+      1655,
+      1687,
+      1866,
+      1898
+    ],
+    "overlap_corr_mvdf": 3
+  },
+  "H3_delta_shift_correlated_minus_mvdf": {
+    "d_coverage": -0.0004050393805398178,
+    "d_worst_step_coverage": 0.00034409588805417446,
+    "d_width": 0.003987791881763236,
+    "d_winkler": 0.004003037649909835,
+    "d_mace": 0.0006711088485484573
+  },
+  "finished": "2026-09-03T09:03:33"
+}

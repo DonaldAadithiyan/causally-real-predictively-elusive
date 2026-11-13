@@ -1,0 +1,49 @@
+[fingerprint] ETTh1: OK (17420 rows, 7 ch, hash e683635e42804659)
+[ETTh1 s0] naive_matched   ID cov 0.830 w 1.871  SHIFT cov 0.894 w 1.937
+[ETTh1 s0] cqr             ID cov 0.713 w 1.825  SHIFT cov 0.879 w 1.728
+[ETTh1 s0] pid_conformal   ID cov 0.845 w 1.865  SHIFT cov 0.896 w 1.876
+[fingerprint] ETTh1: OK (17420 rows, 7 ch, hash e683635e42804659)
+[ETTh1 s1] naive_matched   ID cov 0.832 w 1.903  SHIFT cov 0.894 w 1.888
+[ETTh1 s1] cqr             ID cov 0.774 w 1.857  SHIFT cov 0.905 w 1.761
+[ETTh1 s1] pid_conformal   ID cov 0.848 w 1.892  SHIFT cov 0.896 w 1.822
+[fingerprint] ETTh1: OK (17420 rows, 7 ch, hash e683635e42804659)
+[ETTh1 s2] naive_matched   ID cov 0.827 w 1.820  SHIFT cov 0.893 w 1.873
+[ETTh1 s2] cqr             ID cov 0.721 w 1.816  SHIFT cov 0.889 w 1.722
+[ETTh1 s2] pid_conformal   ID cov 0.843 w 1.811  SHIFT cov 0.895 w 1.817
+[fingerprint] ETTh2: OK (17420 rows, 7 ch, hash 2e9659fd45147208)
+[ETTh2 s0] naive_matched   ID cov 0.845 w 3.604  SHIFT cov 0.898 w 2.936
+[ETTh2 s0] cqr             ID cov 0.878 w 3.789  SHIFT cov 0.988 w 3.637
+[ETTh2 s0] pid_conformal   ID cov 0.822 w 3.614  SHIFT cov 0.897 w 2.980
+[fingerprint] ETTh2: OK (17420 rows, 7 ch, hash 2e9659fd45147208)
+[ETTh2 s1] naive_matched   ID cov 0.840 w 3.663  SHIFT cov 0.898 w 2.933
+[ETTh2 s1] cqr             ID cov 0.858 w 4.168  SHIFT cov 0.985 w 4.017
+[ETTh2 s1] pid_conformal   ID cov 0.812 w 3.655  SHIFT cov 0.898 w 2.999
+[fingerprint] ETTh2: OK (17420 rows, 7 ch, hash 2e9659fd45147208)
+[ETTh2 s2] naive_matched   ID cov 0.843 w 3.681  SHIFT cov 0.898 w 2.897
+[ETTh2 s2] cqr             ID cov 0.860 w 3.906  SHIFT cov 0.982 w 3.763
+[ETTh2 s2] pid_conformal   ID cov 0.812 w 3.657  SHIFT cov 0.898 w 2.939
+Traceback (most recent call last):
+  File "<repo>/data/datasets.py", line 258, in download
+    df = LOADERS[name]()
+         ^^^^^^^^^^^^^^^
+  File "<repo>/data/datasets.py", line 153, in _load_electricity
+    raise FileNotFoundError("electricity: no electricity.csv or LD2011_2014.*")
+FileNotFoundError: electricity: no electricity.csv or LD2011_2014.*
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "<repo>/experiments/baseline_comparison.py", line 228, in <module>
+    main()
+  File "<repo>/experiments/baseline_comparison.py", line 107, in main
+    sd = get_splits(ds, max_channels=dd["max_channels"])
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/data/datasets.py", line 314, in get_splits
+    df = load_dataframe(name, path)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/data/datasets.py", line 281, in load_dataframe
+    path = path or download(name)
+                   ^^^^^^^^^^^^^^
+  File "<repo>/data/datasets.py", line 264, in download
+    raise KeyError(
+KeyError: 'electricity: adapter found no source (electricity: no electricity.csv or LD2011_2014.*) and no HTTP URL. Attach a dataset containing one of the expected files.'

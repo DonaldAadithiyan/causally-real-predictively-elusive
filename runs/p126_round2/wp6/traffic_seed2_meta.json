@@ -1,0 +1,51 @@
+{
+  "tag": "traffic_seed2",
+  "val_mse": 0.27477265661939637,
+  "n_channels": 48,
+  "fingerprint": {
+    "dataset": "traffic",
+    "rows": 17544,
+    "channels": 48,
+    "train_rows": 12280,
+    "val_rows": 1755,
+    "test_rows": 3509,
+    "edge_hash": "a93d2ec2b5815355"
+  },
+  "device": "mps",
+  "n_windows": {
+    "train": 12089,
+    "val": 1564,
+    "test": 3318
+  },
+  "sae_fvu": 0.003668303368613124,
+  "mvdf": [
+    1489,
+    1650,
+    1246,
+    599,
+    2045,
+    31,
+    160,
+    1160,
+    399,
+    504,
+    396,
+    857
+  ],
+  "correlated": [
+    594,
+    1655,
+    356,
+    334,
+    1475,
+    82,
+    861,
+    719,
+    1166,
+    587,
+    1428,
+    1963
+  ],
+  "enrichment_typeB": 4.166666666625,
+  "n_gate1": 106
+}

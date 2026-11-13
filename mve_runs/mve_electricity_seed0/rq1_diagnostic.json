@@ -1,0 +1,82 @@
+{
+  "n": 400,
+  "spearman_rho": 0.1597050606566291,
+  "kendall_tau": 0.10709273182957395,
+  "pearson": 0.4282312234314032,
+  "top_frac": 0.25,
+  "top_set_jaccard": 0.25,
+  "interpretation": "LOW rank agreement -> correlation and ablation are different criteria; H2/H3 have something to test",
+  "h1_spurious_case_studies": [
+    {
+      "feature": 646,
+      "abs_corr": 0.10062866964117625,
+      "abs_delta": 0.0002376342163188383,
+      "corr_rank": 13,
+      "abl_rank": 360
+    },
+    {
+      "feature": 483,
+      "abs_corr": 0.062053769365685324,
+      "abs_delta": 6.17099940427579e-05,
+      "corr_rank": 50,
+      "abl_rank": 387
+    },
+    {
+      "feature": 469,
+      "abs_corr": 0.05783937378247271,
+      "abs_delta": 5.888014129595831e-06,
+      "corr_rank": 61,
+      "abl_rank": 397
+    },
+    {
+      "feature": 898,
+      "abs_corr": 0.0848531562819568,
+      "abs_delta": 0.00024503222084604204,
+      "corr_rank": 22,
+      "abl_rank": 357
+    },
+    {
+      "feature": 1824,
+      "abs_corr": 0.11220267109861276,
+      "abs_delta": 0.0004243086732458323,
+      "corr_rank": 10,
+      "abl_rank": 326
+    },
+    {
+      "feature": 1632,
+      "abs_corr": 0.050577860118455345,
+      "abs_delta": 1.842564051912632e-05,
+      "corr_rank": 82,
+      "abl_rank": 394
+    },
+    {
+      "feature": 68,
+      "abs_corr": 0.05046700888334289,
+      "abs_delta": 6.513842527056113e-05,
+      "corr_rank": 83,
+      "abl_rank": 386
+    },
+    {
+      "feature": 139,
+      "abs_corr": 0.06843444967007348,
+      "abs_delta": 0.0003657798224594444,
+      "corr_rank": 41,
+      "abl_rank": 337
+    },
+    {
+      "feature": 1516,
+      "abs_corr": 0.044654295486944696,
+      "abs_delta": 3.975025174440816e-05,
+      "corr_rank": 99,
+      "abl_rank": 393
+    },
+    {
+      "feature": 1889,
+      "abs_corr": 0.0637125408574097,
+      "abs_delta": 0.0003721975372172892,
+      "corr_rank": 47,
+      "abl_rank": 335
+    }
+  ],
+  "h1_validated_case_studies": []
+}

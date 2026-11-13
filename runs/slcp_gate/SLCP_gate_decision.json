@@ -1,0 +1,186 @@
+{
+  "k_nn": 50,
+  "ratio_threshold": 0.8,
+  "n_sample": 800,
+  "rule": "base: >=1 of {mvdf,correlated,random_k} has ratio<0.80 AND CI-excl-1 vs BOTH dense and pca_k on ALL cells. Then control A (temporal) / control B (rand-gauss-dense) gate the interpretation \u2014 see verdict.",
+  "per_sae_space": {
+    "mvdf": {
+      "cells_passing_both": 2,
+      "n_cells": 6,
+      "all_cells_pass": false,
+      "ratio_vs_dense_by_cell": [
+        0.9862,
+        0.5616,
+        0.6623,
+        1.0805,
+        0.8145,
+        1.239
+      ],
+      "ratio_vs_pca_by_cell": [
+        0.9612,
+        0.5729,
+        0.657,
+        1.0998,
+        0.8373,
+        1.3487
+      ]
+    },
+    "correlated": {
+      "cells_passing_both": 4,
+      "n_cells": 6,
+      "all_cells_pass": false,
+      "ratio_vs_dense_by_cell": [
+        0.6871,
+        0.7645,
+        0.6218,
+        1.1718,
+        0.7256,
+        1.3563
+      ],
+      "ratio_vs_pca_by_cell": [
+        0.6697,
+        0.78,
+        0.6169,
+        1.1928,
+        0.746,
+        1.4764
+      ]
+    },
+    "random_k": {
+      "cells_passing_both": 3,
+      "n_cells": 6,
+      "all_cells_pass": false,
+      "ratio_vs_dense_by_cell": [
+        0.9685,
+        0.5678,
+        0.7145,
+        0.7094,
+        0.8601,
+        0.933
+      ],
+      "ratio_vs_pca_by_cell": [
+        0.9439,
+        0.5793,
+        0.7089,
+        0.7221,
+        0.8843,
+        1.0156
+      ]
+    }
+  },
+  "control_A_temporal_adjacency": {
+    "cells_passing_both": 6,
+    "n_cells": 6,
+    "all_cells_pass": true,
+    "ratio_vs_dense_by_cell": [
+      0.3593,
+      0.3482,
+      0.3556,
+      0.3758,
+      0.3898,
+      0.3423
+    ],
+    "ratio_vs_pca_by_cell": [
+      0.3501,
+      0.3553,
+      0.3528,
+      0.3826,
+      0.4007,
+      0.3726
+    ]
+  },
+  "control_B_rand_gauss_dense": {
+    "cells_passing_both": 0,
+    "n_cells": 6,
+    "all_cells_pass": false,
+    "ratio_vs_dense_by_cell": [
+      1.0839,
+      1.0176,
+      1.0375,
+      1.0849,
+      0.9979,
+      1.0183
+    ],
+    "ratio_vs_pca_by_cell": [
+      1.0563,
+      1.0382,
+      1.0293,
+      1.1043,
+      1.0259,
+      1.1085
+    ]
+  },
+  "sae_spaces_passing_base": [],
+  "PROCEED_TO_SLCP": false,
+  "verdict": "STOP \u2014 CONTROL A (temporal-adjacency) clears the bar. The premise is compromised: k-NN in ANY reasonably smooth space recovers temporally-nearby windows, and S_t is serially correlated, so the apparent 'local structure' in correlated/random_k is likely serial correlation, not feature content. Write as a methodological note on local-structure claims in time series; NOT a falsification of SAE structure per se.",
+  "temporal_exclusion_check": {
+    "temporal_exclude_radius": 40,
+    "per_sae_space": {
+      "mvdf": {
+        "cells_passing_both": 2,
+        "n_cells": 6,
+        "all_cells_pass": false,
+        "ratio_vs_dense_by_cell": [
+          0.6964,
+          1.3546,
+          0.7179,
+          0.8984,
+          0.9119,
+          1.0809
+        ],
+        "ratio_vs_pca_by_cell": [
+          0.679,
+          1.4036,
+          0.6973,
+          0.9278,
+          0.9531,
+          1.2112
+        ]
+      },
+      "correlated": {
+        "cells_passing_both": 2,
+        "n_cells": 6,
+        "all_cells_pass": false,
+        "ratio_vs_dense_by_cell": [
+          0.613,
+          0.7803,
+          0.6463,
+          0.9432,
+          0.8755,
+          0.9724
+        ],
+        "ratio_vs_pca_by_cell": [
+          0.5977,
+          0.8085,
+          0.6277,
+          0.9741,
+          0.915,
+          1.0896
+        ]
+      },
+      "random_k": {
+        "cells_passing_both": 4,
+        "n_cells": 6,
+        "all_cells_pass": false,
+        "ratio_vs_dense_by_cell": [
+          0.7921,
+          0.5453,
+          0.6917,
+          0.5906,
+          0.9218,
+          0.8393
+        ],
+        "ratio_vs_pca_by_cell": [
+          0.7723,
+          0.5651,
+          0.6718,
+          0.6099,
+          0.9633,
+          0.9405
+        ]
+      }
+    },
+    "sae_spaces_surviving": [],
+    "verdict": "CONFIRMS the confound (+/-40): no SAE space clears the bar once temporally-near windows are excluded from the candidate pool. 'Not enough signal once you control for time' is now a number, not just an argument \u2014 the \u00a71 STOP verdict is empirically grounded."
+  }
+}

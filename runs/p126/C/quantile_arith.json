@@ -1,0 +1,5 @@
+{
+  "rank_rule_matches_ceil_np1_level": true,
+  "max_abs_diff_vs_kth_order_stat_numpy": 0,
+  "note": "empirical_quantile clips rank to n: when ceil((n+1)(1-a)) > n (n < 9 at a=0.1) it returns max(score) instead of +inf. Not reachable at the block sizes used (>= 350)."
+}

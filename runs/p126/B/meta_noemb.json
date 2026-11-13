@@ -1,0 +1,170 @@
+[
+  {
+    "dataset": "ETTh1",
+    "seed": 0,
+    "embargo": 0,
+    "n_fit": 983,
+    "n_cal": 589,
+    "n_test_ID": 394,
+    "n_test_shift": 1871,
+    "best_nonrep": "roll_q90",
+    "inner_selection_spearman": {
+      "last_obs": 0.2586961399310068,
+      "ema": 0.46472884160535505,
+      "roll_q90": 0.4979097727181271,
+      "in_std": -0.16488955929364793,
+      "in_diff_std": -0.08652556777183212,
+      "in_range": -0.25878113880268605,
+      "in_allch_std": -0.6496910262043435,
+      "fc_rough": -0.2800312245832828,
+      "fc_range": -0.10084792506100013,
+      "knn": -0.41678238586174876,
+      "gbm_union": 0.008339647110156879
+    },
+    "gbm_union_hparams": [
+      2,
+      100
+    ],
+    "q_base": 0.7633453052746166
+  },
+  {
+    "dataset": "ETTh1",
+    "seed": 1,
+    "embargo": 0,
+    "n_fit": 983,
+    "n_cal": 589,
+    "n_test_ID": 394,
+    "n_test_shift": 1871,
+    "best_nonrep": "roll_q90",
+    "inner_selection_spearman": {
+      "last_obs": 0.05724429029513777,
+      "ema": 0.2796895304159227,
+      "roll_q90": 0.5733954176153166,
+      "in_std": -0.21444390741444336,
+      "in_diff_std": 0.01016271967214342,
+      "in_range": -0.2881913163455075,
+      "in_allch_std": -0.5893565305187582,
+      "fc_rough": -0.35086942701954815,
+      "fc_range": -0.29046434881785976,
+      "knn": -0.4927250284055608,
+      "gbm_union": -0.11477668852387789
+    },
+    "gbm_union_hparams": [
+      2,
+      100
+    ],
+    "q_base": 0.7703131099161907
+  },
+  {
+    "dataset": "ETTh1",
+    "seed": 2,
+    "embargo": 0,
+    "n_fit": 983,
+    "n_cal": 589,
+    "n_test_ID": 394,
+    "n_test_shift": 1871,
+    "best_nonrep": "roll_q90",
+    "inner_selection_spearman": {
+      "last_obs": 0.09414211859732444,
+      "ema": 0.2511863471911899,
+      "roll_q90": 0.4953951949911295,
+      "in_std": -0.21713866626040534,
+      "in_diff_std": -0.0019319053609442199,
+      "in_range": -0.277329517628235,
+      "in_allch_std": -0.5886371497751643,
+      "fc_rough": -0.3762529565193004,
+      "fc_range": -0.24921190647582908,
+      "knn": -0.4901118417754756,
+      "gbm_union": 0.10849105084895223
+    },
+    "gbm_union_hparams": [
+      3,
+      100
+    ],
+    "q_base": 0.7620004086917556
+  },
+  {
+    "dataset": "ETTh2",
+    "seed": 0,
+    "embargo": 0,
+    "n_fit": 983,
+    "n_cal": 589,
+    "n_test_ID": 394,
+    "n_test_shift": 1871,
+    "best_nonrep": "gbm_union",
+    "inner_selection_spearman": {
+      "last_obs": -0.45617106210326563,
+      "ema": -0.6341591331906103,
+      "roll_q90": -0.2786997883326137,
+      "in_std": -0.22430967879452945,
+      "in_diff_std": -0.24082264787143237,
+      "in_range": -0.2836414016726528,
+      "in_allch_std": 0.2704044237942544,
+      "fc_rough": -0.21485551618723536,
+      "fc_range": -0.19805547505305376,
+      "knn": 0.34395985957817365,
+      "gbm_union": 0.37079058095470907
+    },
+    "gbm_union_hparams": [
+      3,
+      300
+    ],
+    "q_base": 1.4668211019193569
+  },
+  {
+    "dataset": "ETTh2",
+    "seed": 1,
+    "embargo": 0,
+    "n_fit": 983,
+    "n_cal": 589,
+    "n_test_ID": 394,
+    "n_test_shift": 1871,
+    "best_nonrep": "gbm_union",
+    "inner_selection_spearman": {
+      "last_obs": -0.4752993914010864,
+      "ema": -0.6647695083530436,
+      "roll_q90": -0.30282339229695526,
+      "in_std": -0.29141638008092374,
+      "in_diff_std": -0.2954159953626948,
+      "in_range": -0.3519686400090628,
+      "in_allch_std": 0.22070685351557023,
+      "fc_rough": -0.26012695504220934,
+      "fc_range": -0.24273747978348467,
+      "knn": 0.4163008703970495,
+      "gbm_union": 0.4939070659157865
+    },
+    "gbm_union_hparams": [
+      3,
+      100
+    ],
+    "q_base": 1.4948909575707174
+  },
+  {
+    "dataset": "ETTh2",
+    "seed": 2,
+    "embargo": 0,
+    "n_fit": 983,
+    "n_cal": 589,
+    "n_test_ID": 394,
+    "n_test_shift": 1871,
+    "best_nonrep": "knn",
+    "inner_selection_spearman": {
+      "last_obs": -0.5274047136032609,
+      "ema": -0.8023754989856687,
+      "roll_q90": -0.3441575093911409,
+      "in_std": -0.3427957954775267,
+      "in_diff_std": -0.3432133081501812,
+      "in_range": -0.3934751206270542,
+      "in_allch_std": 0.20553768919386356,
+      "fc_rough": -0.31929380089186393,
+      "fc_range": -0.26267353482849853,
+      "knn": 0.5839273542222588,
+      "gbm_union": 0.545895848411786
+    },
+    "gbm_union_hparams": [
+      2,
+      100
+    ],
+    "q_base": 1.5051818072627665
+  }
+]

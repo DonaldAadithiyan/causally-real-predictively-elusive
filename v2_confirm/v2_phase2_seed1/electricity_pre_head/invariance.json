@@ -1,0 +1,206 @@
+{
+  "dataset": "electricity",
+  "tap": "pre_head",
+  "env_split": {
+    "n_select": 2333,
+    "n_eval_id": 2334,
+    "n_eval_shift": 2333,
+    "ks_evalID_vs_select": {
+      "stat": 0.3687340938532901,
+      "p": 1.647178068753102e-141
+    },
+    "ks_evalShift_vs_select": {
+      "stat": 0.16502357479639948,
+      "p": 3.871726833932441e-28
+    },
+    "shift_verified": true
+  },
+  "eval_tags": [
+    "E_eval_ID",
+    "E_eval_shift_1",
+    "E_eval_shift_2"
+  ],
+  "results": {
+    "random": {
+      "I": 0.7097787882242512,
+      "spearman_stability": 0.6666666666666666,
+      "conditional_error_drift": 0.27562537678184934,
+      "n_env_pairs": 3,
+      "envs": [
+        "E_eval_ID",
+        "E_eval_shift_1",
+        "E_eval_shift_2"
+      ],
+      "degenerate": false,
+      "curves": {
+        "E_eval_ID": [
+          NaN,
+          NaN,
+          0.7653346094701972,
+          0.7758934735868932,
+          0.7749046984525513
+        ],
+        "E_eval_shift_1": [
+          NaN,
+          NaN,
+          1.1295138953694999,
+          1.1664610443902867,
+          1.1230207468782152
+        ],
+        "E_eval_shift_2": [
+          NaN,
+          NaN,
+          0.9100136547703324,
+          0.9927017925298802,
+          0.9294864609837532
+        ]
+      },
+      "I_shift_vs_id": 0.8826011964291065
+    },
+    "correlated": {
+      "I": 1.0888505516208336,
+      "spearman_stability": 0.13333333333333333,
+      "conditional_error_drift": 0.2741729239547014,
+      "n_env_pairs": 3,
+      "envs": [
+        "E_eval_ID",
+        "E_eval_shift_1",
+        "E_eval_shift_2"
+      ],
+      "degenerate": false,
+      "curves": {
+        "E_eval_ID": [
+          NaN,
+          0.7730097393854272,
+          0.769624520972563,
+          0.7633866764748632,
+          0.7677805103377561
+        ],
+        "E_eval_shift_1": [
+          NaN,
+          1.1671445446887188,
+          1.1361769828026604,
+          1.157149619289807,
+          1.0504375318331378
+        ],
+        "E_eval_shift_2": [
+          NaN,
+          0.9357762370733607,
+          0.9368936375581792,
+          0.9604023354203177,
+          0.8833515882225973
+        ]
+      },
+      "I_shift_vs_id": 1.4367327579875422
+    },
+    "intervention_only": {
+      "I": 1.3990723793899271,
+      "spearman_stability": -0.3333333333333333,
+      "conditional_error_drift": 0.2642369908312846,
+      "n_env_pairs": 3,
+      "envs": [
+        "E_eval_ID",
+        "E_eval_shift_1",
+        "E_eval_shift_2"
+      ],
+      "degenerate": false,
+      "curves": {
+        "E_eval_ID": [
+          NaN,
+          NaN,
+          0.7711679034999439,
+          0.7692056223590573,
+          0.7641051585847867
+        ],
+        "E_eval_shift_1": [
+          NaN,
+          NaN,
+          1.1237527852442155,
+          1.1504024541271585,
+          1.156336948275566
+        ],
+        "E_eval_shift_2": [
+          NaN,
+          0.9036033708243829,
+          0.9360691592363375,
+          0.9610656618804675,
+          0.9477178049939019
+        ]
+      },
+      "I_shift_vs_id": 1.7394909062299464
+    },
+    "MVDF_v1": {
+      "I": 1.3990723793899271,
+      "spearman_stability": -0.3333333333333333,
+      "conditional_error_drift": 0.2642369908312846,
+      "n_env_pairs": 3,
+      "envs": [
+        "E_eval_ID",
+        "E_eval_shift_1",
+        "E_eval_shift_2"
+      ],
+      "degenerate": false,
+      "curves": {
+        "E_eval_ID": [
+          NaN,
+          NaN,
+          0.7711679034999439,
+          0.7692056223590573,
+          0.7641051585847867
+        ],
+        "E_eval_shift_1": [
+          NaN,
+          NaN,
+          1.1237527852442155,
+          1.1504024541271585,
+          1.156336948275566
+        ],
+        "E_eval_shift_2": [
+          NaN,
+          0.9036033708243829,
+          0.9360691592363375,
+          0.9610656618804675,
+          0.9477178049939019
+        ]
+      },
+      "I_shift_vs_id": 1.7394909062299464
+    },
+    "MVDF_v2": {
+      "I": 1.401304731527614,
+      "spearman_stability": 0.0,
+      "conditional_error_drift": 0.30191942481424444,
+      "n_env_pairs": 3,
+      "envs": [
+        "E_eval_ID",
+        "E_eval_shift_1",
+        "E_eval_shift_2"
+      ],
+      "degenerate": false,
+      "curves": {
+        "E_eval_ID": [
+          NaN,
+          NaN,
+          0.7697169871841159,
+          0.7818646010418265,
+          0.7557958219623158
+        ],
+        "E_eval_shift_1": [
+          NaN,
+          NaN,
+          1.126692923010728,
+          1.1295735673712832,
+          1.1683585473469325
+        ],
+        "E_eval_shift_2": [
+          NaN,
+          NaN,
+          0.9432830577813389,
+          0.9645522518810136,
+          0.8578506491280028
+        ]
+      },
+      "I_shift_vs_id": 1.1098455813250379
+    }
+  },
+  "forecaster_val_mse": 0.06859256101146805
+}

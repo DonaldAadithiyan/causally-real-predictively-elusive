@@ -1,0 +1,51 @@
+{
+  "tag": "solar_seed0",
+  "val_mse": 0.15904461579167373,
+  "n_channels": 48,
+  "fingerprint": {
+    "dataset": "solar",
+    "rows": 35040,
+    "channels": 48,
+    "train_rows": 24528,
+    "val_rows": 3504,
+    "test_rows": 7008,
+    "edge_hash": "ca31025722e7d295"
+  },
+  "device": "mps",
+  "n_windows": {
+    "train": 24337,
+    "val": 3313,
+    "test": 6817
+  },
+  "sae_fvu": 0.0022606193087995052,
+  "mvdf": [
+    804,
+    1098,
+    132,
+    1503,
+    1209,
+    1225,
+    102,
+    580,
+    278,
+    1311,
+    1211,
+    1940
+  ],
+  "correlated": [
+    775,
+    1975,
+    882,
+    1954,
+    1970,
+    1225,
+    1768,
+    1466,
+    452,
+    613,
+    648,
+    589
+  ],
+  "enrichment_typeB": 0.499999999997,
+  "n_gate1": 87
+}

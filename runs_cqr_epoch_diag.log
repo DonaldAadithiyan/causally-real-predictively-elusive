@@ -1,0 +1,17 @@
+[cqr-fc] epoch 01  val_pinball=0.22424  (10.7s)
+[cqr-fc] epoch 02  val_pinball=0.20830  (10.4s)
+[cqr-fc] epoch 03  val_pinball=0.20431  (10.1s)
+[cqr-fc] epoch 04  val_pinball=0.20138  (10.2s)
+[cqr-fc] epoch 05  val_pinball=0.19944  (10.3s)
+[cqr-fc] epoch 06  val_pinball=0.19979  (10.4s)
+[cqr-fc] epoch 07  val_pinball=0.19958  (10.7s)
+[cqr-fc] epoch 08  val_pinball=0.20121  (10.7s)
+[cqr-fc] epoch 09  val_pinball=0.20082  (10.5s)
+[cqr-fc] epoch 10  val_pinball=0.20100  (10.7s)
+[cqr-fc] epoch 11  val_pinball=0.20164  (10.5s)
+[cqr-fc] epoch 12  val_pinball=0.20092  (10.8s)
+[cqr-fc] epoch 13  val_pinball=0.20106  (10.8s)
+[cqr-fc] epoch 14  val_pinball=0.20105  (10.8s)
+[cqr-fc] epoch 15  val_pinball=0.20088  (10.7s)
+[cqr-fc] early stop at epoch 15
+raw per-step coverage first/mid/last: [0.942 0.916 0.891 0.85  0.84 ] [0.594 0.589 0.614 0.596 0.607] [0.617 0.614 0.609 0.614 0.604]

@@ -1,0 +1,109 @@
+============================================================================== 
+ ETTh1  seed 0
+ ==============================================================================
+[itr] epoch 01  val_mse=0.72236  lr=1.00e-04  (5.7s)
+[itr] epoch 02  val_mse=0.71338  lr=1.00e-04  (6.5s)
+[itr] epoch 03  val_mse=0.72370  lr=8.00e-05  (6.2s)
+[itr] epoch 04  val_mse=0.72003  lr=6.40e-05  (6.2s)
+[itr] epoch 05  val_mse=0.72708  lr=5.12e-05  (6.5s)
+[itr] epoch 06  val_mse=0.73381  lr=4.10e-05  (6.7s)
+[itr] epoch 07  val_mse=0.73733  lr=3.28e-05  (6.2s)
+[itr] early stop at epoch 7
+[sae] step 2000  mse=0.03717  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02330  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01755  dead=0  (resample off)
+[sae] step 8000  mse=0.01448  dead=0  (resample off)
+[sae] step 10000  mse=0.01271  dead=0  (resample off)
+[sae] final  FVU=0.0118  l0=64.0  dead=0
+[ETTh1 s0] noise -0.0015  denoise -0.0013  rnd-set +0.0016±0.0022  rnd-dir +0.0006  necessity=False sufficiency=False
+============================================================================== 
+ ETTh1  seed 1
+ ==============================================================================
+[itr] epoch 01  val_mse=0.72261  lr=1.00e-04  (10.4s)
+[itr] epoch 02  val_mse=0.71188  lr=1.00e-04  (9.4s)
+[itr] epoch 03  val_mse=0.71695  lr=8.00e-05  (9.5s)
+[itr] epoch 04  val_mse=0.72797  lr=6.40e-05  (10.2s)
+[itr] epoch 05  val_mse=0.72562  lr=5.12e-05  (9.9s)
+[itr] epoch 06  val_mse=0.73605  lr=4.10e-05  (9.2s)
+[itr] epoch 07  val_mse=0.73515  lr=3.28e-05  (9.0s)
+[itr] early stop at epoch 7
+[sae] step 2000  mse=0.03760  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02331  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01775  dead=0  (resample off)
+[sae] step 8000  mse=0.01458  dead=0  (resample off)
+[sae] step 10000  mse=0.01293  dead=0  (resample off)
+[sae] final  FVU=0.0118  l0=64.0  dead=0
+[ETTh1 s1] noise -0.0018  denoise -0.0000  rnd-set -0.0001±0.0000  rnd-dir +0.0006  necessity=False sufficiency=False
+============================================================================== 
+ ETTh1  seed 2
+ ==============================================================================
+[itr] epoch 01  val_mse=0.72355  lr=1.00e-04  (8.3s)
+[itr] epoch 02  val_mse=0.71144  lr=1.00e-04  (8.2s)
+[itr] epoch 03  val_mse=0.70882  lr=8.00e-05  (8.5s)
+[itr] epoch 04  val_mse=0.72057  lr=6.40e-05  (8.2s)
+[itr] epoch 05  val_mse=0.72994  lr=5.12e-05  (8.2s)
+[itr] epoch 06  val_mse=0.72706  lr=4.10e-05  (8.1s)
+[itr] epoch 07  val_mse=0.74353  lr=3.28e-05  (8.6s)
+[itr] epoch 08  val_mse=0.73473  lr=2.62e-05  (8.2s)
+[itr] early stop at epoch 8
+[sae] step 2000  mse=0.03955  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02420  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01839  dead=0  (resample off)
+[sae] step 8000  mse=0.01478  dead=0  (resample off)
+[sae] step 10000  mse=0.01308  dead=0  (resample off)
+[sae] final  FVU=0.0119  l0=64.0  dead=0
+[ETTh1 s2] noise -0.0020  denoise +0.0010  rnd-set -0.0002±0.0004  rnd-dir +0.0011  necessity=False sufficiency=True
+============================================================================== 
+ ETTh2  seed 0
+ ==============================================================================
+[itr] epoch 01  val_mse=0.22632  lr=1.00e-04  (9.9s)
+[itr] epoch 02  val_mse=0.23725  lr=1.00e-04  (9.7s)
+[itr] epoch 03  val_mse=0.24016  lr=8.00e-05  (9.8s)
+[itr] epoch 04  val_mse=0.25922  lr=6.40e-05  (11.0s)
+[itr] epoch 05  val_mse=0.27012  lr=5.12e-05  (9.9s)
+[itr] epoch 06  val_mse=0.25802  lr=4.10e-05  (8.7s)
+[itr] early stop at epoch 6
+[sae] step 2000  mse=0.02324  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01469  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01093  dead=0  (resample off)
+[sae] step 8000  mse=0.00858  dead=0  (resample off)
+[sae] step 10000  mse=0.00760  dead=0  (resample off)
+[sae] final  FVU=0.0067  l0=64.0  dead=0
+[ETTh2 s0] noise -0.0004  denoise +0.0023  rnd-set +0.0013±0.0023  rnd-dir +0.0006  necessity=False sufficiency=True
+============================================================================== 
+ ETTh2  seed 1
+ ==============================================================================
+[itr] epoch 01  val_mse=0.22071  lr=1.00e-04  (8.6s)
+[itr] epoch 02  val_mse=0.22425  lr=1.00e-04  (8.6s)
+[itr] epoch 03  val_mse=0.23799  lr=8.00e-05  (8.6s)
+[itr] epoch 04  val_mse=0.25156  lr=6.40e-05  (8.4s)
+[itr] epoch 05  val_mse=0.25326  lr=5.12e-05  (8.9s)
+[itr] epoch 06  val_mse=0.26311  lr=4.10e-05  (8.4s)
+[itr] early stop at epoch 6
+[sae] step 2000  mse=0.02109  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01246  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00908  dead=0  (resample off)
+[sae] step 8000  mse=0.00761  dead=0  (resample off)
+[sae] step 10000  mse=0.00641  dead=0  (resample off)
+[sae] final  FVU=0.0057  l0=64.0  dead=0
+[ETTh2 s1] noise -0.0021  denoise -0.0007  rnd-set +0.0135±0.0109  rnd-dir +0.0015  necessity=False sufficiency=False
+============================================================================== 
+ ETTh2  seed 2
+ ==============================================================================
+[itr] epoch 01  val_mse=0.22379  lr=1.00e-04  (8.4s)
+[itr] epoch 02  val_mse=0.23066  lr=1.00e-04  (8.5s)
+[itr] epoch 03  val_mse=0.24446  lr=8.00e-05  (8.3s)
+[itr] epoch 04  val_mse=0.24667  lr=6.40e-05  (8.2s)
+[itr] epoch 05  val_mse=0.25163  lr=5.12e-05  (8.2s)
+[itr] epoch 06  val_mse=0.25870  lr=4.10e-05  (8.0s)
+[itr] early stop at epoch 6
+[sae] step 2000  mse=0.02042  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01233  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00896  dead=0  (resample off)
+[sae] step 8000  mse=0.00732  dead=0  (resample off)
+[sae] step 10000  mse=0.00614  dead=0  (resample off)
+[sae] final  FVU=0.0055  l0=64.0  dead=0
+[ETTh2 s2] noise +0.0249  denoise +0.0175  rnd-set +0.0006±0.0011  rnd-dir +0.0184  necessity=True sufficiency=True
+wrote runs/phase2_necessity/PHASE2_NECESSITY_RESULT.md
+
+Phase 2 necessity done in 2082s -> runs/phase2_necessity

@@ -1,0 +1,86 @@
+{
+  "MVDF_v2": [
+    499,
+    808,
+    432,
+    940,
+    670,
+    496,
+    514,
+    917,
+    390,
+    1002,
+    532,
+    642
+  ],
+  "MVDF_v1": [
+    683,
+    439,
+    142,
+    499,
+    286,
+    35,
+    808,
+    432,
+    940,
+    74,
+    642,
+    155
+  ],
+  "correlated": [
+    439,
+    670,
+    888,
+    808,
+    940,
+    707,
+    918,
+    564,
+    432,
+    126,
+    962,
+    108
+  ],
+  "random": [
+    176,
+    245,
+    310,
+    321,
+    352,
+    443,
+    567,
+    611,
+    651,
+    785,
+    955,
+    988
+  ],
+  "n_gate1": 110,
+  "u_threshold": 0.0,
+  "enrichment_v2": {
+    "selected_type_B_fraction": 0.3333333333333333,
+    "pool_type_B_fraction": 0.175,
+    "enrichment_ratio": 1.9047619047510203,
+    "n_selected_in_pool": 12
+  },
+  "enrichment_v1": {
+    "selected_type_B_fraction": 0.25,
+    "pool_type_B_fraction": 0.175,
+    "enrichment_ratio": 1.4285714285632654,
+    "n_selected_in_pool": 12
+  },
+  "enrichment_corr": {
+    "selected_type_B_fraction": 0.5833333333333334,
+    "pool_type_B_fraction": 0.175,
+    "enrichment_ratio": 3.333333333314286,
+    "n_selected_in_pool": 12
+  },
+  "feature_type_counts": {
+    "A": 21,
+    "B": 21,
+    "C": 39,
+    "D": 39
+  },
+  "H1_rho": 0.09268699215223278,
+  "H1b_rho": -0.007792207792207791
+}

@@ -1,0 +1,115 @@
+{
+  "_doc": "Phase 1 synthetic positive control DGP. FROZEN before the first pipeline run per phase1-synthetic-positive-control-task.md §1 and causal-predictive-dissociation-experiments.md §1.1. DO NOT EDIT after seeing any downstream result (anything from the MVDF/R_j/conformal pipeline). Pre-run DGP-validity corrections (below) are permitted BEFORE the first full run and are gated on pre-declared manipulation checks, never on the hypothesis-test outcome.",
+  "_design_history": {
+    "note": "The DGP was frozen too quickly the first time and failed three successive DGP-VALIDITY checks (each caught cheaply, before any training run — the intended discipline, but a sign the first freeze was under-stress-tested). Corrections 1-3 operated on the original AR params (a_0=0.3, a_1=0.9, dwell ~33) and are SUPERSEDED by correction 4, which replaces those params. Kept here for traceability.",
+    "correction_1_horizon": "H 96->24, L 96->48. At a_0=0.3/a_1=0.9 an optimal AR forecast decays to noise within a few steps; at H=96 both regimes look identical over most of the horizon, diluting the difficulty signal below any detection floor. DGP-only Monte-Carlo (experiments/phase1_horizon_check.py) picked H=24 as smallest with clear oracle-S_t regime separation (rank-AUC 0.80, median S ratio ~1.8-3.0). H/L kept at 24/48 in correction 4.",
+    "correction_2_sigma_easy": "sigma_easy 1.0->0.3 (sigma_hard 5.0->1.5, 5x ratio preserved). Original SNR put Var(f(x))~0.27 vs mean noise var ~13 (f was ~2% of target variance) — the forecaster had almost nothing to learn. Kept in correction 4.",
+    "correction_3_mu_z_attempt": "Added y = mu_z*1[z==1] + f(x) + sigma(z)*eta to give an MSE point-forecaster a direct incentive to encode z (a variance-only regime gives ZERO MSE gradient to encode it). Blind gate grid over mu_z in {0.3,0.6,0.9} (experiments/phase1_muz_gate.py): NO value cleared the manipulation checks — regime-probe gain stayed NEGATIVE (hidden state predicted regime worse than majority baseline) at every mu_z, on all 3 seeds. Root cause (runs/phase1_synthetic/muz_gate.json + follow-up): the regime itself is near-unidentifiable from short x-windows at a_0=0.3/a_1=0.9, dwell ~33 — ideal hand-crafted autocorrelation features + logistic regression reach only 67.6% regime accuracy vs 59.9% baseline (8pt gain), degrading toward baseline for longer windows (transition-straddling). An MSE forecaster cannot condition on a regime it cannot detect. mu_z mean-channel RETAINED as a mechanism (still needed) but its value is re-calibrated under correction 4."
+  },
+  "_pre_run_correction_4": {
+    "date": "2026-09-09",
+    "what": "AR coefficients a_0 0.3->0.1, a_1 0.9->0.95 (wider separation); dwell p_stay_0=p_stay_1 0.97->0.995 (mean dwell ~33 -> ~200 steps, so a 48-step window sits well inside one regime instead of straddling transitions); n_timesteps 80000->160000 (episodes are ~6x longer, keep episode counts per split healthy). H=24/L=48, sigma_easy=0.3/sigma_hard=1.5, f unchanged (corrections 1-2 retained). mu_z re-set to null pending the correction-3 grid re-run.",
+    "why": "Directly targets the correction-3 root cause: make the latent regime actually identifiable from the x-dynamics (the spec's 'z_t inferable only from recent dynamics of x_t' constraint requires it to be inferable AT ALL). Wider a_z separation + longer dwell both raise identifiability; the wider separation ALSO strengthens the AR-decay MSE incentive pathway (a more extreme a_z makes knowing the regime more consequential for multi-step forecasts), plausibly addressing corrections 2 and 3 at once. This is a DGP-validity fix, pre-run, gated on pre-declared checks — NOT hypothesis-outcome tuning.",
+    "gates_pre_declared_before_running": {
+      "A_detectability": "Idealized regime detector (hand-crafted autocorrelation lags {1,2,3,5,8} + log-variance of the 48-step window -> logistic regression, 4-fold CV) must reach >= 0.75 accuracy. Baseline at 200-step dwell / 50-50 stationary mix is ~0.50, so this demands a >= 25pt gain — 'meaningfully above baseline given the wider coefficient separation', declared before seeing the number.",
+      "B_episode_counts": "Each of E_train / E_select / E_eval_ID / E_eval_shift must contain >= 30 independent regime episodes of EACH regime (contiguous runs of z, not windows) — the H7-A lesson that a window-level count can hide an episode-level starvation.",
+      "C_incentive_and_separation": "Re-run experiments/phase1_horizon_check.py: incentive relative_gain at H=24 must stay > 0.02 and oracle-S_t regime rank-AUC > 0.6 (as correction 1).",
+      "then": "If A + B + C all clear, re-run the blind mu_z grid (experiments/phase1_muz_gate.py) with gates A/B/C from that script (probe gain > 0.05, signal headroom > 0.03, regime feature not Type-A). Pick the smallest mu_z clearing all three on >= 2/3 seeds. Freeze mu_z, record the final config hash, then run the full pipeline once.",
+      "escalation": "If gate A fails even at a_0=0.1/a_1=0.95/dwell~200, escalate to a directly-observable regime driver (Option 2) as an explicitly-labeled SECOND experiment — a pass there would isolate the failure to 'inferring regime from dynamics specifically', itself a reportable finding. Do NOT proceed to the full run on a failing gate A."
+    },
+    "gate_results": {
+      "A_detectability": "PASS. Ideal AC-feature + logistic-regression regime CV accuracy 0.884 (per-seed 0.878/0.884/0.889), baseline 0.523, +36pt gain, threshold 0.75. runs/phase1_synthetic/pre_run_gates_v4.json.",
+      "B_episode_counts": "PASS. Min episodes of either regime across all four splits and 3 seeds = 35 (worst cell E_eval_ID regime-1), threshold 30. E_train ~235+ per regime.",
+      "C_incentive_and_separation": "PASS. Incentive relative_gain at H=24 = 0.169 (threshold 0.02); oracle-S_t regime rank-AUC 0.958 (threshold 0.60); median S ratio hard/easy 2.84.",
+      "mu_z_grid": "PASS. Blind grid over mu_z in {0.3,0.6,0.9} x 3 seeds (experiments/phase1_muz_gate.py): probe-gain now strongly positive (~0.147 mean, was NEGATIVE at old params), regime feature Type B or C on every run (never Type A). 0.3 failed the signal-headroom gate on 2/3 seeds; 0.6 and 0.9 pass all three gates on >=2/3 seeds. Frozen mu_z = 0.6 (smallest passing).",
+      "ALL_PASS": true,
+      "artifacts": "runs/phase1_synthetic_gates/{pre_run_gates_v4.json, muz_gate.json} (regenerated to a dedicated dir after an accidental rm of runs/phase1_synthetic/; all gate scripts are deterministic/seeded and reproduce identical numbers).",
+      "config_frozen_hash_sha256_16": "ec9470b5f521616c"
+    }
+  },
+  "_pipeline_run": {
+    "date": "2026-09-09",
+    "status": "COMPLETE. Full 3-seed pipeline run: runs/phase1_synthetic/ (PHASE1_RESULT.md, AGG_phase1.csv, seed{0,1,2}/).",
+    "outcome": "Causal->predictive chain (links 1-3) recovered on 3/3 seeds: MVDF U_j correctly signed, natural activation tracks the designed-in regime ~2.2-2.4x the pool baseline and always as Type B/C (never Type A), natural activation predicts S_t out-of-sample (best held-out R^2 0.26-0.48 across linear/isotonic/GBM/MLP). Link 2 passes the SOURCE-SPEC criterion (enrichment vs pool >= 1.0x; MVDF 1.2-2.5x) on every seed; it fails a self-imposed stricter 'beat correlated' test because this DGP entangles the difficulty and prediction causal roles (pool corr(|P_j|,|U_j|) ~0.5-0.6 vs ~0.02-0.42 on real data) and the regime proxy is dense -- a genuine boundary condition on R_j, reported, not a pipeline failure. Link 4 (learned conformal scorer beats naive_matched) is a mixed 1/3, reproducing the real-data Task G learned-scorer instability on data where the upstream signal is known present -> points to the scorer mechanism, not the representation. Reviewer objection 'maybe the pipeline can't find anything' is answered.",
+    "do_not_edit_dgp_after_this_point": true
+  },
+  "dgp": {
+    "a_0": 0.1,
+    "a_1": 0.95,
+    "sigma_easy": 0.3,
+    "sigma_hard": 1.5,
+    "sigma_hard_over_easy": 5.0,
+    "mu_z": 0.6,
+    "mu_z_units": "0.6 = 2x sigma_easy. Regime-1 direct mean offset in y. FROZEN by the blind gate grid (experiments/phase1_muz_gate.py, runs/phase1_synthetic/muz_gate.json) after correction 4's gates A/B/C cleared: smallest of {0.3,0.6,0.9} passing probe-gain>0.05 AND signal-headroom>0.03 AND regime-feature-not-Type-A on >=2/3 seeds. 0.3 failed the headroom gate (1/3 seeds); 0.6 and 0.9 both pass, 0.6 is the smallest. Grid was blind to all MVDF/R_j/conformal recovery.",
+    "f": "0.5*x + 0.1*x**2",
+    "f_description": "mild nonlinearity, frozen",
+    "markov_p_stay_0": 0.995,
+    "markov_p_stay_1": 0.995,
+    "mean_dwell_steps": 200.0,
+    "n_timesteps": 160000,
+    "burn_in": 500,
+    "eps_sd": 1.0,
+    "eta_sd": 1.0
+  },
+  "windowing": {
+    "lookback": 48,
+    "horizon": 24,
+    "target_var": 0,
+    "n_vars": 1,
+    "comment": "z_t is NEVER placed in the window input. The forecaster sees only past x. H=24 / L=48 set by the pre-run correction above (see _pre_run_correction)."
+  },
+  "splits": {
+    "scheme": "chronological 60/10/30 of the 80000-step series into E_train_series / val_series / E_test_series; E_test_series is then carved 1/3 E_select / 1/3 E_eval_ID / 1/3 E_eval_shift by shift.shift_windows.three_way_env_masks, exactly as the real-data pipeline does.",
+    "train_frac": 0.60,
+    "val_frac": 0.10,
+    "test_frac": 0.30
+  },
+  "shift_construction": {
+    "type": "regime-base-rate shift in E_eval_shift only",
+    "detail": "The E_eval_shift block tilts the stationary regime mix toward the hard regime while keeping episodes long (no abrupt flicker). With base p_stay_0=p_stay_1=0.995 the stationary P(hard)=0.5; in the shift block p_stay_0 is lowered to 0.985 and p_stay_1 raised to 0.997, giving stationary P(hard) = (1-0.985)/((1-0.985)+(1-0.997)) = 0.833, so difficulty is genuinely elevated, mean dwell stays >= ~65 steps (still well inside a 48-window). E_train/val/E_select/E_eval_ID use the frozen 0.995/0.995 chain. Mirrors the real pipeline's 'final third is a regime shift' design (shift/shift_windows.py).",
+    "shift_block_p_stay_0": 0.985,
+    "shift_block_p_stay_1": 0.997
+  },
+  "forecaster": {
+    "arch": "ITransformer (forecasters/itransformer.py) with n_vars=1 — the project's real forecaster, unchanged in kind, run univariate. NOT a lighter-weight stand-in.",
+    "d_model": 128,
+    "n_layers": 3,
+    "n_heads": 8,
+    "d_ff": 256,
+    "dropout": 0.1,
+    "lr": 0.0003,
+    "batch_size": 64,
+    "max_epochs": 30,
+    "patience": 6,
+    "lr_decay": 0.8,
+    "warmup_epochs": 3,
+    "tap": "pre_head",
+    "tap_rationale": "Phase 0's already-established pre-head extraction point. No layer sweep re-run on synthetic data (scope violation per task §11)."
+  },
+  "sae": {
+    "expansion": 8,
+    "k": 32,
+    "steps": 12000,
+    "batch_size": 512,
+    "lr": 0.0001,
+    "resample_every": 2000,
+    "resample_until_frac": 0.5,
+    "resample_cap": 32,
+    "fvu_target_max": 0.05,
+    "fvu_target_comment": "project's own real-data SAEs hit 0.004-0.010; synthetic d_model is smaller so allow up to 0.05 before declaring the SAE mis-fit."
+  },
+  "dose_response": {
+    "lambdas": [0.0, 0.25, 0.5, 0.75, 1.0, 1.25],
+    "candidate_pool_size": 120,
+    "window_cap": 2048,
+    "feature_budget_k": 12,
+    "u_threshold": 0.0,
+    "residualize_method": "isotonic"
+  },
+  "conformal": {
+    "alpha": 0.10,
+    "gamma_global": 0.03
+  },
+  "seeds": [0, 1, 2],
+  "seed_note": "Primary run + replication across all 3 seeds, matching project convention."
+}

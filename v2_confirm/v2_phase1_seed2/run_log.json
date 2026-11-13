@@ -1,0 +1,253 @@
+{
+  "config": {
+    "dataset_defaults": {
+      "horizon": 96,
+      "lookback": 96,
+      "max_channels": 48,
+      "target_var": -1
+    },
+    "datasets": [
+      "ETTh1",
+      "ETTh2",
+      "electricity",
+      "traffic"
+    ],
+    "device": "cuda",
+    "fallback_tap": "pre_head",
+    "forecaster": {
+      "batch_size": 32,
+      "d_ff": 512,
+      "d_model": 256,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "lr_decay": 0.8,
+      "max_epochs": 20,
+      "n_heads": 8,
+      "n_layers": 3,
+      "patience": 5,
+      "warmup_epochs": 3
+    },
+    "phase1": {
+      "ablation_window_cap": 2048,
+      "candidate_pool_size": 120,
+      "feature_budget_k": 12,
+      "lambdas": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25
+      ],
+      "residualize_method": "isotonic",
+      "u_threshold": 0.0
+    },
+    "run_name": "v2_phase1_seed2",
+    "sae": {
+      "batch_size": 512,
+      "expansion": 8,
+      "k": 64,
+      "lr": 0.0001,
+      "resample_cap": 64,
+      "resample_every": 2000,
+      "resample_until_frac": 0.5,
+      "steps": 20000
+    },
+    "seed": 2,
+    "strict_fingerprint": true
+  },
+  "phase0_result": "OVERRIDE",
+  "winning_taps": [
+    "pre_head"
+  ],
+  "started": "2026-09-03T17:36:32",
+  "per_run": {
+    "ETTh1_pre_head": {
+      "forecaster_val_mse": 0.7109946740985847,
+      "seconds": 85.6,
+      "env_split": {
+        "n_select": 1967,
+        "n_eval_id": 1966,
+        "n_eval_shift": 1967,
+        "ks_evalID_vs_select": {
+          "stat": 0.1244160385940759,
+          "p": 9.112094717571395e-14
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.5048296898830706,
+          "p": 2.0481399292246724e-228
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 27,
+        "B": 27,
+        "C": 33,
+        "D": 33
+      },
+      "type_fractions": {
+        "A": 0.225,
+        "B": 0.225,
+        "C": 0.275,
+        "D": 0.275
+      },
+      "H1_rho": -0.03360650045142023,
+      "H1b_rho": 0.09643030766025418,
+      "enrichment_v2": 2.9629629629497938,
+      "enrichment_v1": 1.8518518518436213,
+      "enrichment_corr": 0.0,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 2
+    },
+    "ETTh2_pre_head": {
+      "forecaster_val_mse": 0.22411679844179752,
+      "seconds": 86.0,
+      "env_split": {
+        "n_select": 1967,
+        "n_eval_id": 1966,
+        "n_eval_shift": 1967,
+        "ks_evalID_vs_select": {
+          "stat": 0.10804779368222674,
+          "p": 1.9006066408401269e-10
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.7676664972038637,
+          "p": 0.0
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 22,
+        "B": 22,
+        "C": 38,
+        "D": 38
+      },
+      "type_fractions": {
+        "A": 0.18333333333333332,
+        "B": 0.18333333333333332,
+        "C": 0.31666666666666665,
+        "D": 0.31666666666666665
+      },
+      "H1_rho": 0.24636433085630946,
+      "H1b_rho": 0.17726925480936173,
+      "enrichment_v2": 2.272727272714876,
+      "enrichment_v1": 0.9090909090859504,
+      "enrichment_corr": 0.9090909090859504,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 3
+    },
+    "electricity_pre_head": {
+      "forecaster_val_mse": 0.06849854913686258,
+      "seconds": 106.2,
+      "env_split": {
+        "n_select": 2333,
+        "n_eval_id": 2334,
+        "n_eval_shift": 2333,
+        "ks_evalID_vs_select": {
+          "stat": 0.3687340938532901,
+          "p": 1.647178068753102e-141
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.16502357479639948,
+          "p": 3.871726833932441e-28
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 22,
+        "B": 22,
+        "C": 38,
+        "D": 38
+      },
+      "type_fractions": {
+        "A": 0.18333333333333332,
+        "B": 0.18333333333333332,
+        "C": 0.31666666666666665,
+        "D": 0.31666666666666665
+      },
+      "H1_rho": -0.07449822904368358,
+      "H1b_rho": 0.16062921036183067,
+      "enrichment_v2": 2.272727272714876,
+      "enrichment_v1": 0.4545454545429752,
+      "enrichment_corr": 0.4545454545429752,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 7
+    },
+    "traffic_pre_head": {
+      "forecaster_val_mse": 0.2747112431413377,
+      "seconds": 94.2,
+      "env_split": {
+        "n_select": 1170,
+        "n_eval_id": 1169,
+        "n_eval_shift": 1170,
+        "ks_evalID_vs_select": {
+          "stat": 0.032518845093695396,
+          "p": 0.5508543749246717
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.07435897435897436,
+          "p": 0.003090918502946371
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 9,
+        "B": 9,
+        "C": 51,
+        "D": 51
+      },
+      "type_fractions": {
+        "A": 0.075,
+        "B": 0.075,
+        "C": 0.425,
+        "D": 0.425
+      },
+      "H1_rho": -0.029807625529550658,
+      "H1b_rho": 0.18156121952913395,
+      "enrichment_v2": 3.3333333332888886,
+      "enrichment_v1": 0.0,
+      "enrichment_corr": 0.0,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 2
+    }
+  },
+  "data_fingerprints": {
+    "ETTh1": {
+      "dataset": "ETTh1",
+      "rows": 17420,
+      "channels": 7,
+      "train_rows": 8640,
+      "val_rows": 2880,
+      "test_rows": 5900,
+      "edge_hash": "f56e3fc3a29f4258"
+    },
+    "ETTh2": {
+      "dataset": "ETTh2",
+      "rows": 17420,
+      "channels": 7,
+      "train_rows": 8640,
+      "val_rows": 2880,
+      "test_rows": 5900,
+      "edge_hash": "11324ab9896c76d3"
+    },
+    "electricity": {
+      "dataset": "electricity",
+      "rows": 35000,
+      "channels": 47,
+      "train_rows": 24500,
+      "val_rows": 3500,
+      "test_rows": 7000,
+      "edge_hash": "cc6af3b5973c14af"
+    },
+    "traffic": {
+      "dataset": "traffic",
+      "rows": 17544,
+      "channels": 48,
+      "train_rows": 12280,
+      "val_rows": 1755,
+      "test_rows": 3509,
+      "edge_hash": "a93d2ec2b5815355"
+    }
+  },
+  "finished": "2026-09-03T17:47:06"
+}

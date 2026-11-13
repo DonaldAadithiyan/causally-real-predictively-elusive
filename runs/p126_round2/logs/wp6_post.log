@@ -1,0 +1,108 @@
+electricity_seed0 stepzero done
+electricity_seed0 wp1 done
+electricity_seed0 A done
+electricity_seed0 C done
+WP3 electricity_seed0
+electricity_seed0 wp3 done
+Traceback (most recent call last):
+  File "<repo>/p126/r2_wp6_post.py", line 62, in <module>
+    post(ds, int(s), parts)
+  File "<repo>/p126/r2_wp6_post.py", line 27, in post
+    dump(stepzero(ds, seed), os.path.join(OUT, "stepzero", f"{tag}_rule.json"))
+         ^^^^^^^^^^^^^^^^^^
+  File "<repo>/p126/r2_wp6.py", line 178, in stepzero
+    rows, meta = wb.run(ds, seed, embargo=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/p126/work_b.py", line 263, in run
+    pr_i, _ = gbm_fit_predict(U[fi], np.log(S_all[fi]), U[iva], sseed, L + H)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/p126/work_b.py", line 139, in gbm_fit_predict
+    m.fit(Ftr[itr], ytr[itr])
+  File "<venv>/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/ensemble/_gb.py", line 659, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1301, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1087, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 14)) while a minimum of 1 is required by GradientBoostingRegressor.
+Traceback (most recent call last):
+  File "<repo>/p126/r2_wp6_post.py", line 62, in <module>
+    post(ds, int(s), parts)
+  File "<repo>/p126/r2_wp6_post.py", line 27, in post
+    dump(stepzero(ds, seed), os.path.join(OUT, "stepzero", f"{tag}_rule.json"))
+         ^^^^^^^^^^^^^^^^^^
+  File "<repo>/p126/r2_wp6.py", line 178, in stepzero
+    rows, meta = wb.run(ds, seed, embargo=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/p126/work_b.py", line 263, in run
+    pr_i, _ = gbm_fit_predict(U[fi], np.log(S_all[fi]), U[iva], sseed, L + H)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/p126/work_b.py", line 139, in gbm_fit_predict
+    m.fit(Ftr[itr], ytr[itr])
+  File "<venv>/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/ensemble/_gb.py", line 659, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1301, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1087, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 14)) while a minimum of 1 is required by GradientBoostingRegressor.
+ETTm1_seed0 stepzero done
+ETTm2_seed0 stepzero done
+electricity_seed1 stepzero done
+electricity_seed1 wp1 done
+electricity_seed1 A done
+electricity_seed1 C done
+WP3 electricity_seed1
+electricity_seed1 wp3 done
+electricity_seed2 stepzero done
+electricity_seed2 wp1 done
+electricity_seed2 A done
+electricity_seed2 C done
+WP3 electricity_seed2
+electricity_seed2 wp3 done
+Traceback (most recent call last):
+  File "<repo>/p126/r2_wp6_post.py", line 62, in <module>
+    post(ds, int(s), parts)
+  File "<repo>/p126/r2_wp6_post.py", line 27, in post
+    dump(stepzero(ds, seed), os.path.join(OUT, "stepzero", f"{tag}_rule.json"))
+         ^^^^^^^^^^^^^^^^^^
+  File "<repo>/p126/r2_wp6.py", line 178, in stepzero
+    rows, meta = wb.run(ds, seed, embargo=True)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/p126/work_b.py", line 263, in run
+    pr_i, _ = gbm_fit_predict(U[fi], np.log(S_all[fi]), U[iva], sseed, L + H)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<repo>/p126/work_b.py", line 139, in gbm_fit_predict
+    m.fit(Ftr[itr], ytr[itr])
+  File "<venv>/lib/python3.12/site-packages/sklearn/base.py", line 1473, in wrapper
+    return fit_method(estimator, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/ensemble/_gb.py", line 659, in fit
+    X, y = self._validate_data(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/base.py", line 650, in _validate_data
+    X, y = check_X_y(X, y, **check_params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1301, in check_X_y
+    X = check_array(
+        ^^^^^^^^^^^^
+  File "<venv>/lib/python3.12/site-packages/sklearn/utils/validation.py", line 1087, in check_array
+    raise ValueError(
+ValueError: Found array with 0 sample(s) (shape=(0, 14)) while a minimum of 1 is required by GradientBoostingRegressor.
+WP6_POST_DONE

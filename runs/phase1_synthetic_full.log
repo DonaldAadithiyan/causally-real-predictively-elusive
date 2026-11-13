@@ -1,0 +1,123 @@
+============================================================================== 
+ SEED 0
+ ==============================================================================
+[seed 0] windows: train 95929  val 15929  test 47929
+[seed 0] hard-regime fraction {'train': 0.5155625, 'val': 0.5205, 'test': 0.6371041666666667, 'test_first_two_thirds': 0.541, 'test_final_third': 0.8293125}
+[itr] epoch 01  val_mse=0.94369  lr=3.00e-04  (8.2s)
+[itr] epoch 02  val_mse=0.94383  lr=3.00e-04  (8.9s)
+[itr] epoch 03  val_mse=0.93588  lr=2.40e-04  (9.1s)
+[itr] epoch 04  val_mse=0.93901  lr=1.92e-04  (9.1s)
+[itr] epoch 05  val_mse=0.92727  lr=1.54e-04  (9.0s)
+[itr] epoch 06  val_mse=0.93151  lr=1.23e-04  (10.2s)
+[itr] epoch 07  val_mse=0.92620  lr=9.83e-05  (9.4s)
+[itr] epoch 08  val_mse=0.93259  lr=7.86e-05  (8.8s)
+[itr] epoch 09  val_mse=0.92995  lr=6.29e-05  (8.0s)
+[itr] epoch 10  val_mse=0.92743  lr=5.03e-05  (8.5s)
+[itr] epoch 11  val_mse=0.92637  lr=4.03e-05  (7.5s)
+[itr] epoch 12  val_mse=0.92823  lr=3.22e-05  (7.3s)
+[itr] epoch 13  val_mse=0.92952  lr=2.58e-05  (7.3s)
+[itr] early stop at epoch 13
+[sae] step 2000  mse=0.04288  dead=0  (resampled<= 32)
+[sae] step 4000  mse=0.02552  dead=0  (resampled<= 32)
+[sae] step 6000  mse=0.01880  dead=0  (resample off)
+[sae] step 8000  mse=0.01590  dead=0  (resample off)
+[sae] step 10000  mse=0.01549  dead=4  (resample off)
+[sae] final  FVU=0.0133  l0=32.0  dead=23
+[seed 0] SAE FVU (standardized) = 0.0133
+[seed 0] eligible features 243  pool 120
+[dose] 1/120 feat 0  P_j=+0.0003  U_j=+0.0017  n_active=603
+[dose] 13/120 feat 89  P_j=+0.0007  U_j=+0.0006  n_active=56
+[dose] 25/120 feat 258  P_j=+0.0134  U_j=+0.0038  n_active=506
+[dose] 37/120 feat 369  P_j=-0.0003  U_j=+0.0003  n_active=256
+[dose] 49/120 feat 486  P_j=+0.0005  U_j=+0.0010  n_active=78
+[dose] 61/120 feat 580  P_j=+0.0028  U_j=+0.0018  n_active=49
+[dose] 73/120 feat 657  P_j=-0.0002  U_j=-0.0004  n_active=77
+[dose] 85/120 feat 777  P_j=+0.0090  U_j=+0.0073  n_active=313
+[dose] 97/120 feat 874  P_j=+0.0059  U_j=+0.0024  n_active=593
+[dose] 109/120 feat 952  P_j=-0.0011  U_j=-0.0007  n_active=93
+
+[seed 0] LINKS: 1=True 2=False 3=True 4=True
+============================================================================== 
+ SEED 1
+ ==============================================================================
+[seed 1] windows: train 95929  val 15929  test 47929
+[seed 1] hard-regime fraction {'train': 0.48410416666666667, 'val': 0.675625, 'test': 0.6366666666666667, 'test_first_two_thirds': 0.55671875, 'test_final_third': 0.7965625}
+[itr] epoch 01  val_mse=1.44456  lr=3.00e-04  (9.0s)
+[itr] epoch 02  val_mse=1.42989  lr=3.00e-04  (7.7s)
+[itr] epoch 03  val_mse=1.43149  lr=2.40e-04  (8.4s)
+[itr] epoch 04  val_mse=1.41182  lr=1.92e-04  (8.5s)
+[itr] epoch 05  val_mse=1.41532  lr=1.54e-04  (8.3s)
+[itr] epoch 06  val_mse=1.40571  lr=1.23e-04  (8.4s)
+[itr] epoch 07  val_mse=1.41141  lr=9.83e-05  (8.4s)
+[itr] epoch 08  val_mse=1.40759  lr=7.86e-05  (8.1s)
+[itr] epoch 09  val_mse=1.41143  lr=6.29e-05  (8.0s)
+[itr] epoch 10  val_mse=1.40988  lr=5.03e-05  (8.0s)
+[itr] epoch 11  val_mse=1.41429  lr=4.03e-05  (8.3s)
+[itr] epoch 12  val_mse=1.41261  lr=3.22e-05  (8.3s)
+[itr] early stop at epoch 12
+[sae] step 2000  mse=0.04470  dead=0  (resampled<= 32)
+[sae] step 4000  mse=0.02576  dead=0  (resampled<= 32)
+[sae] step 6000  mse=0.02152  dead=0  (resample off)
+[sae] step 8000  mse=0.02064  dead=0  (resample off)
+[sae] step 10000  mse=0.01609  dead=3  (resample off)
+[sae] final  FVU=0.0157  l0=32.0  dead=13
+[seed 1] SAE FVU (standardized) = 0.0157
+[seed 1] eligible features 260  pool 120
+[dose] 1/120 feat 15  P_j=-0.0011  U_j=-0.0002  n_active=275
+[dose] 13/120 feat 132  P_j=-0.0008  U_j=-0.0010  n_active=117
+[dose] 25/120 feat 232  P_j=-0.0008  U_j=-0.0005  n_active=56
+[dose] 37/120 feat 353  P_j=+0.0000  U_j=+0.0002  n_active=258
+[dose] 49/120 feat 491  P_j=+0.0005  U_j=-0.0004  n_active=327
+[dose] 61/120 feat 570  P_j=+0.0001  U_j=-0.0004  n_active=724
+[dose] 73/120 feat 666  P_j=-0.0009  U_j=-0.0006  n_active=437
+[dose] 85/120 feat 748  P_j=+0.0022  U_j=+0.0019  n_active=90
+[dose] 97/120 feat 864  P_j=+0.0019  U_j=-0.0001  n_active=42
+[dose] 109/120 feat 963  P_j=+0.0001  U_j=-0.0005  n_active=44
+
+[seed 1] LINKS: 1=True 2=False 3=True 4=False
+============================================================================== 
+ SEED 2
+ ==============================================================================
+[seed 2] windows: train 95929  val 15929  test 47929
+[seed 2] hard-regime fraction {'train': 0.5080833333333333, 'val': 0.4474375, 'test': 0.638875, 'test_first_two_thirds': 0.533375, 'test_final_third': 0.849875}
+[itr] epoch 01  val_mse=0.89555  lr=3.00e-04  (9.9s)
+[itr] epoch 02  val_mse=0.88657  lr=3.00e-04  (9.2s)
+[itr] epoch 03  val_mse=0.88693  lr=2.40e-04  (9.1s)
+[itr] epoch 04  val_mse=0.88366  lr=1.92e-04  (9.5s)
+[itr] epoch 05  val_mse=0.87543  lr=1.54e-04  (8.7s)
+[itr] epoch 06  val_mse=0.88720  lr=1.23e-04  (9.1s)
+[itr] epoch 07  val_mse=0.87692  lr=9.83e-05  (9.1s)
+[itr] epoch 08  val_mse=0.87584  lr=7.86e-05  (8.4s)
+[itr] epoch 09  val_mse=0.87126  lr=6.29e-05  (8.6s)
+[itr] epoch 10  val_mse=0.87033  lr=5.03e-05  (8.9s)
+[itr] epoch 11  val_mse=0.87192  lr=4.03e-05  (8.6s)
+[itr] epoch 12  val_mse=0.87426  lr=3.22e-05  (7.5s)
+[itr] epoch 13  val_mse=0.87385  lr=2.58e-05  (8.8s)
+[itr] epoch 14  val_mse=0.87039  lr=2.06e-05  (8.9s)
+[itr] epoch 15  val_mse=0.87236  lr=1.65e-05  (8.6s)
+[itr] epoch 16  val_mse=0.87300  lr=1.32e-05  (8.4s)
+[itr] early stop at epoch 16
+[sae] step 2000  mse=0.05181  dead=0  (resampled<= 32)
+[sae] step 4000  mse=0.03439  dead=0  (resampled<= 32)
+[sae] step 6000  mse=0.02744  dead=0  (resample off)
+[sae] step 8000  mse=0.02530  dead=0  (resample off)
+[sae] step 10000  mse=0.02122  dead=2  (resample off)
+[sae] final  FVU=0.0204  l0=32.0  dead=5
+[seed 2] SAE FVU (standardized) = 0.0204
+[seed 2] eligible features 269  pool 120
+[dose] 1/120 feat 35  P_j=-0.0068  U_j=-0.0053  n_active=35
+[dose] 13/120 feat 142  P_j=-0.0015  U_j=-0.0049  n_active=310
+[dose] 25/120 feat 287  P_j=-0.0003  U_j=-0.0007  n_active=56
+[dose] 37/120 feat 390  P_j=-0.0009  U_j=+0.0013  n_active=46
+[dose] 49/120 feat 466  P_j=-0.0003  U_j=+0.0004  n_active=308
+[dose] 61/120 feat 567  P_j=-0.0000  U_j=+0.0011  n_active=395
+[dose] 73/120 feat 649  P_j=-0.0001  U_j=+0.0005  n_active=193
+[dose] 85/120 feat 707  P_j=+0.0002  U_j=+0.0011  n_active=468
+[dose] 97/120 feat 795  P_j=-0.0011  U_j=-0.0003  n_active=158
+[dose] 109/120 feat 891  P_j=+0.0008  U_j=+0.0018  n_active=63
+
+[seed 2] LINKS: 1=True 2=False 3=True 4=False
+
+wrote runs/phase1_synthetic/PHASE1_RESULT.md
+
+Phase 1 synthetic control done in 662s -> runs/phase1_synthetic

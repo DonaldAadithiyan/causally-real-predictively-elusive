@@ -1,0 +1,21 @@
+C: ETTh1 0
+C: ETTh1 1
+C: ETTh1 2
+C: ETTh2 0
+C: ETTh2 1
+C: ETTh2 2
+        dataset  seed  id_coverage_scorer_run  shift_coverage_scorer_run  id_coverage_baseline_run  shift_coverage_baseline_run   id_diff
+0         ETTh1     0                0.824873                   0.893640                  0.829949                     0.893640 -0.005076
+1         ETTh1     1                0.835025                   0.893640                  0.832487                     0.894174  0.002538
+2         ETTh1     2                0.827411                   0.894174                  0.827411                     0.892571  0.000000
+3         ETTh2     0                0.845178                   0.898450                  0.845178                     0.897916  0.000000
+4         ETTh2     1                0.837563                   0.897381                  0.840102                     0.897916 -0.002538
+5         ETTh2     2                0.845178                   0.898450                  0.842640                     0.897916  0.002538
+6   electricity     0                0.910064                   0.893608                       NaN                          NaN       NaN
+7   electricity     1                0.905782                   0.894502                       NaN                          NaN       NaN
+8   electricity     2                0.905782                   0.894055                       NaN                          NaN       NaN
+9       traffic     0                1.000000                   0.916201                       NaN                          NaN       NaN
+10      traffic     1                1.000000                   0.916201                       NaN                          NaN       NaN
+11      traffic     2                1.000000                   0.916201                       NaN                          NaN       NaN
+{'naive_ACI': {'mean': 0.8996531302876482, 'mc_se': 0.00017788042574733918, 'sd': 0.0030758400987945297, 'reps': 300, 'within_3se_of_target': True}, 'naive_static': {'mean': 0.9017343485617596, 'mc_se': 0.0009936691266792836, 'sd': 0.017182145432435254, 'reps': 300, 'within_3se_of_target': True}, 'naive_ACI_delayed': {'mean': 0.8804399323181049, 'mc_se': 0.0018281205034431495, 'sd': 0.03161115859878694, 'reps': 300, 'within_3se_of_target': False}, 'pid': {'mean': 0.9000507614213198, 'mc_se': 0.0003347838420645627, 'sd': 0.005788953795924226, 'reps': 300, 'within_3se_of_target': True}, 'cqr': {'mean': 0.9023434856175973, 'mc_se': 0.001073834991262043, 'sd': 0.01856834281644883, 'reps': 300, 'within_3se_of_target': True}, 'scorer_mvdf_like': {'mean': 0.008223350253807106, 'mc_se': 0.00539216742892297, 'sd': 0.053651388505538584, 'reps': 100, 'within_3se_of_target': False}}
+C done

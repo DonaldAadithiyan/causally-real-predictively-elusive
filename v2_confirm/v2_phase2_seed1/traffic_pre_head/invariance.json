@@ -1,0 +1,202 @@
+{
+  "dataset": "traffic",
+  "tap": "pre_head",
+  "env_split": {
+    "n_select": 1170,
+    "n_eval_id": 1169,
+    "n_eval_shift": 1170,
+    "ks_evalID_vs_select": {
+      "stat": 0.032518845093695396,
+      "p": 0.5508543749246717
+    },
+    "ks_evalShift_vs_select": {
+      "stat": 0.07435897435897436,
+      "p": 0.003090918502946371
+    },
+    "shift_verified": true
+  },
+  "eval_tags": [
+    "E_eval_ID",
+    "E_eval_shift_1",
+    "E_eval_shift_2"
+  ],
+  "results": {
+    "random": {
+      "I": NaN,
+      "spearman_stability": NaN,
+      "conditional_error_drift": NaN,
+      "n_env_pairs": 0,
+      "envs": [],
+      "degenerate": true,
+      "note": "need >=2 environments with >=3 populated bins; the feature signal barely varies so its conditional curve is degenerate (I is not meaningful).",
+      "curves": {
+        "E_eval_ID": [
+          NaN,
+          NaN,
+          NaN,
+          1.8453626072343021,
+          2.0107072808294215
+        ],
+        "E_eval_shift_1": [
+          NaN,
+          NaN,
+          NaN,
+          1.382406921653481,
+          1.4125121715996
+        ],
+        "E_eval_shift_2": [
+          NaN,
+          NaN,
+          NaN,
+          1.6681653357052302,
+          1.9613178896683234
+        ]
+      },
+      "I_shift_vs_id": null
+    },
+    "correlated": {
+      "I": 0.6466430188481967,
+      "spearman_stability": 0.5,
+      "conditional_error_drift": 0.5859773866960212,
+      "n_env_pairs": 1,
+      "envs": [
+        "E_eval_ID",
+        "E_eval_shift_1"
+      ],
+      "degenerate": false,
+      "curves": {
+        "E_eval_ID": [
+          NaN,
+          NaN,
+          1.9056257604702393,
+          1.9373914594324226,
+          1.7381465037663777
+        ],
+        "E_eval_shift_1": [
+          NaN,
+          NaN,
+          1.446779053033509,
+          1.3514140727364015,
+          1.2512937320603266
+        ],
+        "E_eval_shift_2": [
+          NaN,
+          NaN,
+          NaN,
+          1.7526916981021285,
+          1.6255603945917554
+        ]
+      },
+      "I_shift_vs_id": 0.6466430188481967
+    },
+    "intervention_only": {
+      "I": 1.2796254991665572,
+      "spearman_stability": -0.3333333333333333,
+      "conditional_error_drift": 0.6722860164721677,
+      "n_env_pairs": 3,
+      "envs": [
+        "E_eval_ID",
+        "E_eval_shift_1",
+        "E_eval_shift_2"
+      ],
+      "degenerate": false,
+      "curves": {
+        "E_eval_ID": [
+          NaN,
+          NaN,
+          1.7617078130153379,
+          2.034403073736745,
+          2.0722736978632774
+        ],
+        "E_eval_shift_1": [
+          NaN,
+          1.4300629906876143,
+          1.421224130091266,
+          1.4175707073969261,
+          1.2443453084539484
+        ],
+        "E_eval_shift_2": [
+          NaN,
+          NaN,
+          1.7148250322904646,
+          2.013898051230707,
+          1.479671381689884
+        ]
+      },
+      "I_shift_vs_id": 1.618839549841499
+    },
+    "MVDF_v1": {
+      "I": 1.495567024117231,
+      "spearman_stability": -0.3333333333333333,
+      "conditional_error_drift": 0.6064350465480647,
+      "n_env_pairs": 3,
+      "envs": [
+        "E_eval_ID",
+        "E_eval_shift_1",
+        "E_eval_shift_2"
+      ],
+      "degenerate": false,
+      "curves": {
+        "E_eval_ID": [
+          NaN,
+          1.8497593843529367,
+          1.7729137460561268,
+          1.789589228028925,
+          2.129826356457849
+        ],
+        "E_eval_shift_1": [
+          NaN,
+          1.3907212351643763,
+          1.4850656484889093,
+          1.457177803895184,
+          1.220173786635752
+        ],
+        "E_eval_shift_2": [
+          NaN,
+          1.7460103589434957,
+          1.8419779383133505,
+          1.6936423483295975,
+          1.608904289426627
+        ]
+      },
+      "I_shift_vs_id": 1.9481483774485606
+    },
+    "MVDF_v2": {
+      "I": 1.4555223242793456,
+      "spearman_stability": -0.3333333333333333,
+      "conditional_error_drift": 0.6763057166185136,
+      "n_env_pairs": 3,
+      "envs": [
+        "E_eval_ID",
+        "E_eval_shift_1",
+        "E_eval_shift_2"
+      ],
+      "degenerate": false,
+      "curves": {
+        "E_eval_ID": [
+          NaN,
+          NaN,
+          1.7028034046271048,
+          2.0209439664314957,
+          2.262194302092251
+        ],
+        "E_eval_shift_1": [
+          NaN,
+          NaN,
+          1.4430213931554592,
+          1.3663134279652176,
+          1.2477357271644804
+        ],
+        "E_eval_shift_2": [
+          NaN,
+          NaN,
+          1.6767465903522065,
+          1.7226487643250794,
+          1.8817540854215622
+        ]
+      },
+      "I_shift_vs_id": 1.1875799248625651
+    }
+  },
+  "forecaster_val_mse": 0.2745593268700573
+}

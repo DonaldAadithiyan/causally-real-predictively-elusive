@@ -1,0 +1,146 @@
+{
+  "config": {
+    "dataset_defaults": {
+      "horizon": 96,
+      "lookback": 96,
+      "max_channels": 48,
+      "target_var": -1
+    },
+    "datasets": [
+      "ETTh1",
+      "ETTh2",
+      "electricity",
+      "traffic"
+    ],
+    "device": "cuda",
+    "fallback_tap": "pre_head",
+    "forecaster": {
+      "batch_size": 32,
+      "d_ff": 512,
+      "d_model": 256,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "lr_decay": 0.8,
+      "max_epochs": 20,
+      "n_heads": 8,
+      "n_layers": 3,
+      "patience": 5,
+      "warmup_epochs": 3
+    },
+    "phase2": {
+      "conditions": [
+        "random",
+        "correlated",
+        "intervention_only",
+        "MVDF_v1",
+        "MVDF_v2"
+      ],
+      "feature_budget_k": 12,
+      "n_bins": 5,
+      "n_shift_subenvs": 2
+    },
+    "run_name": "v2_phase2_seed2",
+    "sae": {
+      "batch_size": 512,
+      "expansion": 8,
+      "k": 64,
+      "lr": 0.0001,
+      "resample_cap": 64,
+      "resample_every": 2000,
+      "resample_until_frac": 0.5,
+      "steps": 20000
+    },
+    "seed": 2,
+    "strict_fingerprint": true
+  },
+  "started": "2026-09-03T18:06:19",
+  "per_run": {
+    "ETTh1_pre_head": {
+      "seconds": 78.1,
+      "I_by_condition": {
+        "random": NaN,
+        "correlated": 1.1189388880961086,
+        "intervention_only": 1.7249799584731715,
+        "MVDF_v1": 1.720710656986369,
+        "MVDF_v2": 1.708982234211204
+      },
+      "MVDFv2_beats_correlated_on_I": false,
+      "MVDFv2_beats_MVDFv1_on_I": true
+    },
+    "ETTh2_pre_head": {
+      "seconds": 78.3,
+      "I_by_condition": {
+        "random": 1.318090567406752,
+        "correlated": 0.6428184420429307,
+        "intervention_only": 1.3910502232372524,
+        "MVDF_v1": 1.3910502232372524,
+        "MVDF_v2": 1.4395517232238
+      },
+      "MVDFv2_beats_correlated_on_I": false,
+      "MVDFv2_beats_MVDFv1_on_I": false
+    },
+    "electricity_pre_head": {
+      "seconds": 81.2,
+      "I_by_condition": {
+        "random": NaN,
+        "correlated": 1.5981191271605881,
+        "intervention_only": 1.56769986272049,
+        "MVDF_v1": 1.618769756983489,
+        "MVDF_v2": 1.1702206869753065
+      },
+      "MVDFv2_beats_correlated_on_I": true,
+      "MVDFv2_beats_MVDFv1_on_I": true
+    },
+    "traffic_pre_head": {
+      "seconds": 79.4,
+      "I_by_condition": {
+        "random": 0.8216459655586857,
+        "correlated": 1.3789717757233253,
+        "intervention_only": 1.583881468092521,
+        "MVDF_v1": 1.6812316307890756,
+        "MVDF_v2": 1.63962278496846
+      },
+      "MVDFv2_beats_correlated_on_I": false,
+      "MVDFv2_beats_MVDFv1_on_I": true
+    }
+  },
+  "data_fingerprints": {
+    "ETTh1": {
+      "dataset": "ETTh1",
+      "rows": 17420,
+      "channels": 7,
+      "train_rows": 8640,
+      "val_rows": 2880,
+      "test_rows": 5900,
+      "edge_hash": "f56e3fc3a29f4258"
+    },
+    "ETTh2": {
+      "dataset": "ETTh2",
+      "rows": 17420,
+      "channels": 7,
+      "train_rows": 8640,
+      "val_rows": 2880,
+      "test_rows": 5900,
+      "edge_hash": "11324ab9896c76d3"
+    },
+    "electricity": {
+      "dataset": "electricity",
+      "rows": 35000,
+      "channels": 47,
+      "train_rows": 24500,
+      "val_rows": 3500,
+      "test_rows": 7000,
+      "edge_hash": "cc6af3b5973c14af"
+    },
+    "traffic": {
+      "dataset": "traffic",
+      "rows": 17544,
+      "channels": 48,
+      "train_rows": 12280,
+      "val_rows": 1755,
+      "test_rows": 3509,
+      "edge_hash": "a93d2ec2b5815355"
+    }
+  },
+  "finished": "2026-09-03T18:15:57"
+}

@@ -1,0 +1,18 @@
+{
+  "ETTh1": {
+    "channels": 7,
+    "edge_hash": "e683635e42804659",
+    "rows": 17420,
+    "test_rows": 5900,
+    "train_rows": 8640,
+    "val_rows": 2880
+  },
+  "ETTh2": {
+    "channels": 7,
+    "edge_hash": "2e9659fd45147208",
+    "rows": 17420,
+    "test_rows": 5900,
+    "train_rows": 8640,
+    "val_rows": 2880
+  }
+}

@@ -1,0 +1,130 @@
+--- mu_z=0.3  seed=0 ---
+{
+  "regime_probe_gain": 0.1354,
+  "signal_headroom": 0.0343,
+  "regime_feature_type": "B",
+  "gateA_probe_gain_pass": true,
+  "gateB_signal_headroom_pass": true,
+  "gateC_not_typeA_pass": true
+}
+--- mu_z=0.3  seed=1 ---
+{
+  "regime_probe_gain": 0.1467,
+  "signal_headroom": -0.0707,
+  "regime_feature_type": "B",
+  "gateA_probe_gain_pass": true,
+  "gateB_signal_headroom_pass": false,
+  "gateC_not_typeA_pass": true
+}
+--- mu_z=0.3  seed=2 ---
+{
+  "regime_probe_gain": 0.1466,
+  "signal_headroom": 0.0053,
+  "regime_feature_type": "C",
+  "gateA_probe_gain_pass": true,
+  "gateB_signal_headroom_pass": false,
+  "gateC_not_typeA_pass": true
+}
+--- mu_z=0.6  seed=0 ---
+{
+  "regime_probe_gain": 0.1387,
+  "signal_headroom": 0.0819,
+  "regime_feature_type": "C",
+  "gateA_probe_gain_pass": true,
+  "gateB_signal_headroom_pass": true,
+  "gateC_not_typeA_pass": true
+}
+--- mu_z=0.6  seed=1 ---
+{
+  "regime_probe_gain": 0.1505,
+  "signal_headroom": -0.018,
+  "regime_feature_type": "B",
+  "gateA_probe_gain_pass": true,
+  "gateB_signal_headroom_pass": false,
+  "gateC_not_typeA_pass": true
+}
+--- mu_z=0.6  seed=2 ---
+{
+  "regime_probe_gain": 0.151,
+  "signal_headroom": 0.0511,
+  "regime_feature_type": "C",
+  "gateA_probe_gain_pass": true,
+  "gateB_signal_headroom_pass": true,
+  "gateC_not_typeA_pass": true
+}
+--- mu_z=0.9  seed=0 ---
+{
+  "regime_probe_gain": 0.1399,
+  "signal_headroom": 0.1337,
+  "regime_feature_type": "B",
+  "gateA_probe_gain_pass": true,
+  "gateB_signal_headroom_pass": true,
+  "gateC_not_typeA_pass": true
+}
+--- mu_z=0.9  seed=1 ---
+{
+  "regime_probe_gain": 0.1524,
+  "signal_headroom": 0.04,
+  "regime_feature_type": "C",
+  "gateA_probe_gain_pass": true,
+  "gateB_signal_headroom_pass": true,
+  "gateC_not_typeA_pass": true
+}
+--- mu_z=0.9  seed=2 ---
+{
+  "regime_probe_gain": 0.153,
+  "signal_headroom": 0.1016,
+  "regime_feature_type": "C",
+  "gateA_probe_gain_pass": true,
+  "gateB_signal_headroom_pass": true,
+  "gateC_not_typeA_pass": true
+}
+
+=== SUMMARY ===
+[
+  {
+    "mu_z": 0.3,
+    "gateA_pass_seeds": 3,
+    "gateB_pass_seeds": 1,
+    "gateC_pass_seeds": 3,
+    "mean_probe_gain": 0.1429,
+    "mean_signal_headroom": -0.0104,
+    "regime_feature_types": [
+      "B",
+      "B",
+      "C"
+    ],
+    "all_gates_2of3": false
+  },
+  {
+    "mu_z": 0.6,
+    "gateA_pass_seeds": 3,
+    "gateB_pass_seeds": 2,
+    "gateC_pass_seeds": 3,
+    "mean_probe_gain": 0.1467,
+    "mean_signal_headroom": 0.0383,
+    "regime_feature_types": [
+      "C",
+      "B",
+      "C"
+    ],
+    "all_gates_2of3": true
+  },
+  {
+    "mu_z": 0.9,
+    "gateA_pass_seeds": 3,
+    "gateB_pass_seeds": 3,
+    "gateC_pass_seeds": 3,
+    "mean_probe_gain": 0.1484,
+    "mean_signal_headroom": 0.0918,
+    "regime_feature_types": [
+      "B",
+      "C",
+      "C"
+    ],
+    "all_gates_2of3": true
+  }
+]
+
+CHOSEN mu_z = 0.6
+wrote <repo>/runs/phase1_synthetic_gates/muz_gate.json

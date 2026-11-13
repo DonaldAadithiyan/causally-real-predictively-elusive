@@ -1,0 +1,25 @@
+WP5 ETTh1 0
+  ETTh1 0 mvdf
+  ETTh1 0 correlated
+  ETTh1 0 random_k
+WP5 ETTh1 1
+  ETTh1 1 mvdf
+  ETTh1 1 correlated
+  ETTh1 1 random_k
+WP5 ETTh1 2
+  ETTh1 2 mvdf
+  ETTh1 2 correlated
+  ETTh1 2 random_k
+WP5 ETTh2 0
+  ETTh2 0 mvdf
+  ETTh2 0 correlated
+  ETTh2 0 random_k
+WP5 ETTh2 1
+  ETTh2 1 mvdf
+  ETTh2 1 correlated
+  ETTh2 1 random_k
+WP5 ETTh2 2
+  ETTh2 2 mvdf
+  ETTh2 2 correlated
+  ETTh2 2 random_k
+WP5 done

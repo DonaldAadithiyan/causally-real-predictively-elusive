@@ -1,0 +1,7 @@
+{
+  "n": 120,
+  "spearman_rho": 0.0064240572261962635,
+  "top_set_jaccard": 0.09090909090909091,
+  "interpretation": "LOW rho -> interventional and observational rankings differ (H1b)",
+  "_which": "H1_deltaPred_vs_corr"
+}

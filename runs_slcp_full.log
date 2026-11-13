@@ -1,0 +1,227 @@
+[fingerprint] ETTh1: OK (17420 rows, 7 ch, hash e683635e42804659)
+[sae] step 2000  mse=0.03717  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02330  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01755  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.01448  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.01271  dead=0  (resample off)
+[sae] step 12000  mse=0.01203  dead=0  (resample off)
+[sae] step 14000  mse=0.01104  dead=0  (resample off)
+[sae] step 16000  mse=0.01038  dead=0  (resample off)
+[sae] step 18000  mse=0.00990  dead=0  (resample off)
+[sae] final  FVU=0.0095  l0=64.0  dead=0
+[ETTh1 s0] dense       local_var(S)=0.0487  vs dense=1.000 CI[1.000,1.000]  vs pca=0.975 CI[0.939,1.014]
+[ETTh1 s0] mvdf        local_var(S)=0.0481  vs dense=0.986 CI[0.925,1.053]  vs pca=0.961 CI[0.904,1.020]
+[ETTh1 s0] correlated  local_var(S)=0.0335  vs dense=0.687 CI[0.643,0.734]  vs pca=0.670 CI[0.627,0.715]
+[ETTh1 s0] random_k    local_var(S)=0.0472  vs dense=0.968 CI[0.914,1.029]  vs pca=0.944 CI[0.895,0.995]
+[ETTh1 s0] pca_k       local_var(S)=0.0500  vs dense=1.026 CI[0.988,1.065]  vs pca=1.000 CI[1.000,1.000]
+[ETTh1 s0] temporal_adj local_var(S)=0.0175  vs dense=0.359 CI[0.319,0.404]  vs pca=0.350 CI[0.310,0.393]
+[ETTh1 s0] rand_gauss_dense local_var(S)=0.0528  vs dense=1.084 CI[1.038,1.133]  vs pca=1.056 CI[1.016,1.101]
+[fingerprint] ETTh1: OK (17420 rows, 7 ch, hash e683635e42804659)
+[sae] step 2000  mse=0.03760  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02331  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01775  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.01458  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.01293  dead=0  (resample off)
+[sae] step 12000  mse=0.01171  dead=0  (resample off)
+[sae] step 14000  mse=0.01098  dead=0  (resample off)
+[sae] step 16000  mse=0.01025  dead=0  (resample off)
+[sae] step 18000  mse=0.00979  dead=0  (resample off)
+[sae] final  FVU=0.0093  l0=64.0  dead=0
+[ETTh1 s1] dense       local_var(S)=0.0444  vs dense=1.000 CI[1.000,1.000]  vs pca=1.020 CI[0.986,1.057]
+[ETTh1 s1] mvdf        local_var(S)=0.0250  vs dense=0.562 CI[0.519,0.607]  vs pca=0.573 CI[0.532,0.615]
+[ETTh1 s1] correlated  local_var(S)=0.0340  vs dense=0.765 CI[0.721,0.812]  vs pca=0.780 CI[0.739,0.822]
+[ETTh1 s1] random_k    local_var(S)=0.0252  vs dense=0.568 CI[0.522,0.617]  vs pca=0.579 CI[0.536,0.625]
+[ETTh1 s1] pca_k       local_var(S)=0.0436  vs dense=0.980 CI[0.947,1.013]  vs pca=1.000 CI[1.000,1.000]
+[ETTh1 s1] temporal_adj local_var(S)=0.0155  vs dense=0.348 CI[0.300,0.400]  vs pca=0.355 CI[0.307,0.408]
+[ETTh1 s1] rand_gauss_dense local_var(S)=0.0452  vs dense=1.018 CI[0.977,1.060]  vs pca=1.038 CI[0.995,1.082]
+[fingerprint] ETTh1: OK (17420 rows, 7 ch, hash e683635e42804659)
+[sae] step 2000  mse=0.03955  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02420  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01839  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.01478  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.01308  dead=0  (resample off)
+[sae] step 12000  mse=0.01203  dead=0  (resample off)
+[sae] step 14000  mse=0.01116  dead=0  (resample off)
+[sae] step 16000  mse=0.01040  dead=0  (resample off)
+[sae] step 18000  mse=0.00998  dead=0  (resample off)
+[sae] final  FVU=0.0094  l0=64.0  dead=0
+[ETTh1 s2] dense       local_var(S)=0.0491  vs dense=1.000 CI[1.000,1.000]  vs pca=0.992 CI[0.960,1.026]
+[ETTh1 s2] mvdf        local_var(S)=0.0325  vs dense=0.662 CI[0.622,0.704]  vs pca=0.657 CI[0.619,0.698]
+[ETTh1 s2] correlated  local_var(S)=0.0305  vs dense=0.622 CI[0.574,0.672]  vs pca=0.617 CI[0.573,0.666]
+[ETTh1 s2] random_k    local_var(S)=0.0351  vs dense=0.715 CI[0.665,0.768]  vs pca=0.709 CI[0.662,0.758]
+[ETTh1 s2] pca_k       local_var(S)=0.0495  vs dense=1.008 CI[0.975,1.040]  vs pca=1.000 CI[1.000,1.000]
+[ETTh1 s2] temporal_adj local_var(S)=0.0174  vs dense=0.356 CI[0.312,0.406]  vs pca=0.353 CI[0.309,0.402]
+[ETTh1 s2] rand_gauss_dense local_var(S)=0.0509  vs dense=1.038 CI[0.984,1.094]  vs pca=1.029 CI[0.978,1.085]
+[fingerprint] ETTh2: OK (17420 rows, 7 ch, hash 2e9659fd45147208)
+[sae] step 2000  mse=0.02324  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01469  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01093  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.00858  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.00760  dead=0  (resample off)
+[sae] step 12000  mse=0.00678  dead=0  (resample off)
+[sae] step 14000  mse=0.00625  dead=0  (resample off)
+[sae] step 16000  mse=0.00570  dead=0  (resample off)
+[sae] step 18000  mse=0.00536  dead=0  (resample off)
+[sae] final  FVU=0.0052  l0=64.0  dead=0
+[ETTh2 s0] dense       local_var(S)=0.1215  vs dense=1.000 CI[1.000,1.000]  vs pca=1.018 CI[0.989,1.047]
+[ETTh2 s0] mvdf        local_var(S)=0.1313  vs dense=1.080 CI[1.048,1.114]  vs pca=1.100 CI[1.059,1.141]
+[ETTh2 s0] correlated  local_var(S)=0.1423  vs dense=1.172 CI[1.139,1.205]  vs pca=1.193 CI[1.152,1.237]
+[ETTh2 s0] random_k    local_var(S)=0.0862  vs dense=0.709 CI[0.677,0.741]  vs pca=0.722 CI[0.686,0.760]
+[ETTh2 s0] pca_k       local_var(S)=0.1193  vs dense=0.982 CI[0.954,1.010]  vs pca=1.000 CI[1.000,1.000]
+[ETTh2 s0] temporal_adj local_var(S)=0.0457  vs dense=0.376 CI[0.353,0.400]  vs pca=0.383 CI[0.357,0.409]
+[ETTh2 s0] rand_gauss_dense local_var(S)=0.1318  vs dense=1.085 CI[1.060,1.112]  vs pca=1.104 CI[1.071,1.139]
+[fingerprint] ETTh2: OK (17420 rows, 7 ch, hash 2e9659fd45147208)
+[sae] step 2000  mse=0.02109  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01246  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00908  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.00761  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.00641  dead=0  (resample off)
+[sae] step 12000  mse=0.00565  dead=0  (resample off)
+[sae] step 14000  mse=0.00520  dead=0  (resample off)
+[sae] step 16000  mse=0.00482  dead=0  (resample off)
+[sae] step 18000  mse=0.00457  dead=0  (resample off)
+[sae] final  FVU=0.0043  l0=64.0  dead=0
+[ETTh2 s1] dense       local_var(S)=0.1324  vs dense=1.000 CI[1.000,1.000]  vs pca=1.028 CI[0.998,1.059]
+[ETTh2 s1] mvdf        local_var(S)=0.1078  vs dense=0.814 CI[0.781,0.849]  vs pca=0.837 CI[0.801,0.877]
+[ETTh2 s1] correlated  local_var(S)=0.0961  vs dense=0.726 CI[0.689,0.764]  vs pca=0.746 CI[0.705,0.785]
+[ETTh2 s1] random_k    local_var(S)=0.1139  vs dense=0.860 CI[0.828,0.895]  vs pca=0.884 CI[0.848,0.924]
+[ETTh2 s1] pca_k       local_var(S)=0.1288  vs dense=0.973 CI[0.945,1.001]  vs pca=1.000 CI[1.000,1.000]
+[ETTh2 s1] temporal_adj local_var(S)=0.0516  vs dense=0.390 CI[0.364,0.416]  vs pca=0.401 CI[0.375,0.428]
+[ETTh2 s1] rand_gauss_dense local_var(S)=0.1321  vs dense=0.998 CI[0.974,1.023]  vs pca=1.026 CI[0.994,1.060]
+[fingerprint] ETTh2: OK (17420 rows, 7 ch, hash 2e9659fd45147208)
+[sae] step 2000  mse=0.02042  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01233  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00896  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.00732  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.00614  dead=0  (resample off)
+[sae] step 12000  mse=0.00555  dead=0  (resample off)
+[sae] step 14000  mse=0.00505  dead=0  (resample off)
+[sae] step 16000  mse=0.00473  dead=0  (resample off)
+[sae] step 18000  mse=0.00439  dead=0  (resample off)
+[sae] final  FVU=0.0042  l0=64.0  dead=0
+[ETTh2 s2] dense       local_var(S)=0.1321  vs dense=1.000 CI[1.000,1.000]  vs pca=1.089 CI[1.056,1.121]
+[ETTh2 s2] mvdf        local_var(S)=0.1637  vs dense=1.239 CI[1.203,1.278]  vs pca=1.349 CI[1.300,1.399]
+[ETTh2 s2] correlated  local_var(S)=0.1792  vs dense=1.356 CI[1.316,1.398]  vs pca=1.476 CI[1.423,1.533]
+[ETTh2 s2] random_k    local_var(S)=0.1233  vs dense=0.933 CI[0.903,0.966]  vs pca=1.016 CI[0.974,1.058]
+[ETTh2 s2] pca_k       local_var(S)=0.1214  vs dense=0.919 CI[0.892,0.946]  vs pca=1.000 CI[1.000,1.000]
+[ETTh2 s2] temporal_adj local_var(S)=0.0452  vs dense=0.342 CI[0.318,0.367]  vs pca=0.373 CI[0.346,0.399]
+[ETTh2 s2] rand_gauss_dense local_var(S)=0.1346  vs dense=1.018 CI[0.991,1.047]  vs pca=1.108 CI[1.073,1.147]
+
+======================================================================
+{
+  "k_nn": 50,
+  "ratio_threshold": 0.8,
+  "n_sample": 800,
+  "rule": "base: >=1 of {mvdf,correlated,random_k} has ratio<0.80 AND CI-excl-1 vs BOTH dense and pca_k on ALL cells. Then control A (temporal) / control B (rand-gauss-dense) gate the interpretation \u2014 see verdict.",
+  "per_sae_space": {
+    "mvdf": {
+      "cells_passing_both": 2,
+      "n_cells": 6,
+      "all_cells_pass": false,
+      "ratio_vs_dense_by_cell": [
+        0.9862,
+        0.5616,
+        0.6623,
+        1.0805,
+        0.8145,
+        1.239
+      ],
+      "ratio_vs_pca_by_cell": [
+        0.9612,
+        0.5729,
+        0.657,
+        1.0998,
+        0.8373,
+        1.3487
+      ]
+    },
+    "correlated": {
+      "cells_passing_both": 4,
+      "n_cells": 6,
+      "all_cells_pass": false,
+      "ratio_vs_dense_by_cell": [
+        0.6871,
+        0.7645,
+        0.6218,
+        1.1718,
+        0.7256,
+        1.3563
+      ],
+      "ratio_vs_pca_by_cell": [
+        0.6697,
+        0.78,
+        0.6169,
+        1.1928,
+        0.746,
+        1.4764
+      ]
+    },
+    "random_k": {
+      "cells_passing_both": 3,
+      "n_cells": 6,
+      "all_cells_pass": false,
+      "ratio_vs_dense_by_cell": [
+        0.9685,
+        0.5678,
+        0.7145,
+        0.7094,
+        0.8601,
+        0.933
+      ],
+      "ratio_vs_pca_by_cell": [
+        0.9439,
+        0.5793,
+        0.7089,
+        0.7221,
+        0.8843,
+        1.0156
+      ]
+    }
+  },
+  "control_A_temporal_adjacency": {
+    "cells_passing_both": 6,
+    "n_cells": 6,
+    "all_cells_pass": true,
+    "ratio_vs_dense_by_cell": [
+      0.3593,
+      0.3482,
+      0.3556,
+      0.3758,
+      0.3898,
+      0.3423
+    ],
+    "ratio_vs_pca_by_cell": [
+      0.3501,
+      0.3553,
+      0.3528,
+      0.3826,
+      0.4007,
+      0.3726
+    ]
+  },
+  "control_B_rand_gauss_dense": {
+    "cells_passing_both": 0,
+    "n_cells": 6,
+    "all_cells_pass": false,
+    "ratio_vs_dense_by_cell": [
+      1.0839,
+      1.0176,
+      1.0375,
+      1.0849,
+      0.9979,
+      1.0183
+    ],
+    "ratio_vs_pca_by_cell": [
+      1.0563,
+      1.0382,
+      1.0293,
+      1.1043,
+      1.0259,
+      1.1085
+    ]
+  },
+  "sae_spaces_passing_base": [],
+  "PROCEED_TO_SLCP": false,
+  "verdict": "STOP \u2014 CONTROL A (temporal-adjacency) clears the bar. The premise is compromised: k-NN in ANY reasonably smooth space recovers temporally-nearby windows, and S_t is serially correlated, so the apparent 'local structure' in correlated/random_k is likely serial correlation, not feature content. Write as a methodological note on local-structure claims in time series; NOT a falsification of SAE structure per se."
+}
+======================================================================

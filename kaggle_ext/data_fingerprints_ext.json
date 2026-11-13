@@ -1,0 +1,34 @@
+{
+  "ETTh1": {
+    "channels": 7,
+    "edge_hash": "e683635e42804659",
+    "rows": 17420,
+    "test_rows": 5900,
+    "train_rows": 8640,
+    "val_rows": 2880
+  },
+  "ETTh2": {
+    "channels": 7,
+    "edge_hash": "2e9659fd45147208",
+    "rows": 17420,
+    "test_rows": 5900,
+    "train_rows": 8640,
+    "val_rows": 2880
+  },
+  "electricity": {
+    "channels": 47,
+    "edge_hash": "cc6af3b5973c14af",
+    "rows": 35000,
+    "test_rows": 7000,
+    "train_rows": 24500,
+    "val_rows": 3500
+  },
+  "traffic": {
+    "channels": 48,
+    "edge_hash": "a93d2ec2b5815355",
+    "rows": 17544,
+    "test_rows": 3509,
+    "train_rows": 12280,
+    "val_rows": 1755
+  }
+}

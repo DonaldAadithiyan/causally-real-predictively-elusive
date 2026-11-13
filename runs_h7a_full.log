@@ -1,0 +1,178 @@
+[fingerprint] ETTh1: OK (17420 rows, 7 ch, hash e683635e42804659)
+[sae] step 2000  mse=0.03717  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02330  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01755  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.01448  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.01271  dead=0  (resample off)
+[sae] step 12000  mse=0.01203  dead=0  (resample off)
+[sae] step 14000  mse=0.01104  dead=0  (resample off)
+[sae] step 16000  mse=0.01038  dead=0  (resample off)
+[sae] step 18000  mse=0.00990  dead=0  (resample off)
+[sae] final  FVU=0.0095  l0=64.0  dead=0
+[ETTh1 s0 E_eval_ID GATE] R_Q=1.028  CI[0.927,1.156]  P(>1)=0.644  n1=340 n0=1626  D_rate=0.1729  tau_A=0.0833  Q1=0.901 Q0=0.877  incl 1
+[ETTh1 s0 E_eval_shift readout] R_Q=0.937  CI[0.877,1.016]  P(>1)=0.043  n1=363 n0=1508  D_rate=0.1940  tau_A=0.0833  Q1=0.893 Q0=0.953  incl 1
+[fingerprint] ETTh1: OK (17420 rows, 7 ch, hash e683635e42804659)
+[sae] step 2000  mse=0.03760  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02331  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01775  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.01458  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.01293  dead=0  (resample off)
+[sae] step 12000  mse=0.01171  dead=0  (resample off)
+[sae] step 14000  mse=0.01098  dead=0  (resample off)
+[sae] step 16000  mse=0.01025  dead=0  (resample off)
+[sae] step 18000  mse=0.00979  dead=0  (resample off)
+[sae] final  FVU=0.0093  l0=64.0  dead=0
+[ETTh1 s1 E_eval_ID GATE] R_Q=0.912  CI[0.862,1.004]  P(>1)=0.035  n1=550 n0=1416  D_rate=0.2798  tau_A=0.0800  Q1=0.797 Q0=0.873  incl 1
+[ETTh1 s1 E_eval_shift readout] R_Q=1.024  CI[0.954,1.107]  P(>1)=0.737  n1=486 n0=1385  D_rate=0.2598  tau_A=0.0800  Q1=0.930 Q0=0.908  incl 1
+[fingerprint] ETTh1: OK (17420 rows, 7 ch, hash e683635e42804659)
+[sae] step 2000  mse=0.03955  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02420  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01839  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.01478  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.01308  dead=0  (resample off)
+[sae] step 12000  mse=0.01203  dead=0  (resample off)
+[sae] step 14000  mse=0.01116  dead=0  (resample off)
+[sae] step 16000  mse=0.01040  dead=0  (resample off)
+[sae] step 18000  mse=0.00998  dead=0  (resample off)
+[sae] final  FVU=0.0094  l0=64.0  dead=0
+[ETTh1 s2 E_eval_ID GATE] R_Q=1.059  CI[0.912,1.205]  P(>1)=0.666  n1=237 n0=1729  D_rate=0.1205  tau_A=0.1111  Q1=0.911 Q0=0.860  incl 1
+[ETTh1 s2 E_eval_shift readout] R_Q=0.978  CI[0.871,1.134]  P(>1)=0.440  n1=199 n0=1672  D_rate=0.1064  tau_A=0.1111  Q1=0.888 Q0=0.908  incl 1
+[data] downloading ETTh2 <- https://raw.githubusercontent.com/zhouhaoyi/ETDataset/main/ETT-small/ETTh2.csv
+[data] saved <repo>/data/raw/ETTh2.csv  (2417960 bytes)
+[fingerprint] ETTh2: recorded canonical fingerprint 2e9659fd45147208 (17420 rows, 7 ch)
+[sae] step 2000  mse=0.02324  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01469  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01093  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.00858  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.00760  dead=0  (resample off)
+[sae] step 12000  mse=0.00678  dead=0  (resample off)
+[sae] step 14000  mse=0.00625  dead=0  (resample off)
+[sae] step 16000  mse=0.00570  dead=0  (resample off)
+[sae] step 18000  mse=0.00536  dead=0  (resample off)
+[sae] final  FVU=0.0052  l0=64.0  dead=0
+[ETTh2 s0 E_eval_ID GATE] R_Q=0.971  CI[0.918,1.019]  P(>1)=0.082  n1=215 n0=1751  D_rate=0.1094  tau_A=0.1200  Q1=1.644 Q0=1.694  incl 1
+[ETTh2 s0 E_eval_shift readout] R_Q=1.040  CI[0.964,1.072]  P(>1)=0.864  n1=170 n0=1701  D_rate=0.0909  tau_A=0.1200  Q1=1.595 Q0=1.533  incl 1
+[fingerprint] ETTh2: OK (17420 rows, 7 ch, hash 2e9659fd45147208)
+[sae] step 2000  mse=0.02109  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01246  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00908  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.00761  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.00641  dead=0  (resample off)
+[sae] step 12000  mse=0.00565  dead=0  (resample off)
+[sae] step 14000  mse=0.00520  dead=0  (resample off)
+[sae] step 16000  mse=0.00482  dead=0  (resample off)
+[sae] step 18000  mse=0.00457  dead=0  (resample off)
+[sae] final  FVU=0.0043  l0=64.0  dead=0
+[ETTh2 s1 E_eval_ID GATE] R_Q=1.045  CI[1.009,1.093]  P(>1)=0.993  n1=626 n0=1340  D_rate=0.3184  tau_A=0.0833  Q1=1.753 Q0=1.678  EXCL>1
+[ETTh2 s1 E_eval_shift readout] R_Q=1.063  CI[1.022,1.090]  P(>1)=0.998  n1=601 n0=1270  D_rate=0.3212  tau_A=0.0833  Q1=1.623 Q0=1.527  EXCL>1
+[fingerprint] ETTh2: OK (17420 rows, 7 ch, hash 2e9659fd45147208)
+[sae] step 2000  mse=0.02042  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01233  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00896  dead=0  (resampled<= 64)
+[sae] step 8000  mse=0.00732  dead=0  (resampled<= 64)
+[sae] step 10000  mse=0.00614  dead=0  (resample off)
+[sae] step 12000  mse=0.00555  dead=0  (resample off)
+[sae] step 14000  mse=0.00505  dead=0  (resample off)
+[sae] step 16000  mse=0.00473  dead=0  (resample off)
+[sae] step 18000  mse=0.00439  dead=0  (resample off)
+[sae] final  FVU=0.0042  l0=64.0  dead=0
+[ETTh2 s2 E_eval_ID GATE] R_Q=1.003  CI[0.946,1.051]  P(>1)=0.543  n1=225 n0=1741  D_rate=0.1144  tau_A=0.0909  Q1=1.689 Q0=1.683  incl 1
+[ETTh2 s2 E_eval_shift readout] R_Q=0.985  CI[0.944,1.042]  P(>1)=0.292  n1=281 n0=1590  D_rate=0.1502  tau_A=0.0909  Q1=1.495 Q0=1.518  incl 1
+
+======================================================================
+{
+  "gate_env": "E_eval_ID",
+  "D_t_definition": "A_t (frac of 24-feat cell-B active) >= p90 of A_t on E_select",
+  "rule": "CI on R_Q excludes 1 (R_Q>1 direction) on E_eval_ID, BOTH datasets, ALL seeds",
+  "per_dataset_GATING": {
+    "ETTh1": {
+      "n_seeds": 3,
+      "seeds_exclude_1_above": [
+        false,
+        false,
+        false
+      ],
+      "all_seeds_pass": false,
+      "R_Q_by_seed": [
+        1.0283,
+        0.9124,
+        1.0588
+      ],
+      "activation_rate_by_seed": [
+        0.17294,
+        0.27976,
+        0.12055
+      ],
+      "n1_by_seed": [
+        340,
+        550,
+        237
+      ]
+    },
+    "ETTh2": {
+      "n_seeds": 3,
+      "seeds_exclude_1_above": [
+        false,
+        true,
+        false
+      ],
+      "all_seeds_pass": false,
+      "R_Q_by_seed": [
+        0.9707,
+        1.0448,
+        1.0035
+      ],
+      "activation_rate_by_seed": [
+        0.10936,
+        0.31841,
+        0.11445
+      ],
+      "n1_by_seed": [
+        215,
+        626,
+        225
+      ]
+    }
+  },
+  "E_eval_shift_SECONDARY_nongating": {
+    "ETTh1": {
+      "R_Q_by_seed": [
+        0.9369,
+        1.024,
+        0.9781
+      ],
+      "seeds_exclude_1_above": [
+        false,
+        false,
+        false
+      ],
+      "all_seeds_separate": false,
+      "n1_by_seed": [
+        363,
+        486,
+        199
+      ]
+    },
+    "ETTh2": {
+      "R_Q_by_seed": [
+        1.0403,
+        1.0632,
+        0.9849
+      ],
+      "seeds_exclude_1_above": [
+        false,
+        true,
+        false
+      ],
+      "all_seeds_separate": false,
+      "n1_by_seed": [
+        170,
+        601,
+        281
+      ]
+    }
+  },
+  "PROCEED_TO_MGCP1": false,
+  "note": "STOP \u2014 H7-A negative on E_eval_ID. H1c stands (sharpened): interventionally validated uncertainty-specific features exist, but high co-activation of the cell-B set does not induce a sufficiently separated empirical tail-error regime for binary conformal conditioning."
+}
+======================================================================

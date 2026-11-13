@@ -1,0 +1,68 @@
+============================================================================== 
+ ETTh1
+ ==============================================================================
+[itr] epoch 01  val_mse=0.72236  lr=1.00e-04  (4.2s)
+[itr] epoch 02  val_mse=0.71338  lr=1.00e-04  (5.3s)
+[itr] epoch 03  val_mse=0.72370  lr=8.00e-05  (4.7s)
+[itr] epoch 04  val_mse=0.72003  lr=6.40e-05  (4.6s)
+[itr] epoch 05  val_mse=0.72708  lr=5.12e-05  (4.8s)
+[itr] epoch 06  val_mse=0.73381  lr=4.10e-05  (5.0s)
+[itr] epoch 07  val_mse=0.73733  lr=3.28e-05  (4.7s)
+[itr] early stop at epoch 7
+[ETTh1] forecaster val_mse 0.7134  fp c6d1709fd0693b1a
+[sae] step 2000  mse=0.03797  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02332  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01816  dead=0  (resample off)
+[sae] step 8000  mse=0.01483  dead=0  (resample off)
+[sae] step 10000  mse=0.01261  dead=0  (resample off)
+[sae] final  FVU=0.0117  l0=64.0  dead=0
+[ETTh1] SAE run 0 (seed 10) FVU 0.0117  pool 120  MVDF 12
+[sae] step 2000  mse=0.03660  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02350  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01801  dead=0  (resample off)
+[sae] step 8000  mse=0.01460  dead=0  (resample off)
+[sae] step 10000  mse=0.01281  dead=0  (resample off)
+[sae] final  FVU=0.0117  l0=64.0  dead=0
+[ETTh1] SAE run 1 (seed 20) FVU 0.0117  pool 120  MVDF 12
+[sae] step 2000  mse=0.03722  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.02298  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01792  dead=0  (resample off)
+[sae] step 8000  mse=0.01508  dead=0  (resample off)
+[sae] step 10000  mse=0.01320  dead=0  (resample off)
+[sae] final  FVU=0.0121  l0=64.0  dead=0
+[ETTh1] SAE run 2 (seed 30) FVU 0.0121  pool 120  MVDF 12
+============================================================================== 
+ ETTh2
+ ==============================================================================
+[itr] epoch 01  val_mse=0.22632  lr=1.00e-04  (7.3s)
+[itr] epoch 02  val_mse=0.23725  lr=1.00e-04  (8.0s)
+[itr] epoch 03  val_mse=0.24016  lr=8.00e-05  (7.2s)
+[itr] epoch 04  val_mse=0.25922  lr=6.40e-05  (7.9s)
+[itr] epoch 05  val_mse=0.27012  lr=5.12e-05  (6.9s)
+[itr] epoch 06  val_mse=0.25802  lr=4.10e-05  (7.1s)
+[itr] early stop at epoch 6
+[ETTh2] forecaster val_mse 0.2263  fp c022db5521d23684
+[sae] step 2000  mse=0.02350  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01416  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01047  dead=0  (resample off)
+[sae] step 8000  mse=0.00869  dead=0  (resample off)
+[sae] step 10000  mse=0.00742  dead=0  (resample off)
+[sae] final  FVU=0.0066  l0=64.0  dead=0
+[ETTh2] SAE run 0 (seed 10) FVU 0.0066  pool 120  MVDF 12
+[sae] step 2000  mse=0.02315  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01418  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01053  dead=1  (resample off)
+[sae] step 8000  mse=0.00878  dead=0  (resample off)
+[sae] step 10000  mse=0.00751  dead=1  (resample off)
+[sae] final  FVU=0.0067  l0=64.0  dead=1
+[ETTh2] SAE run 1 (seed 20) FVU 0.0067  pool 120  MVDF 12
+[sae] step 2000  mse=0.02339  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01384  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.01071  dead=0  (resample off)
+[sae] step 8000  mse=0.00856  dead=0  (resample off)
+[sae] step 10000  mse=0.00748  dead=0  (resample off)
+[sae] final  FVU=0.0067  l0=64.0  dead=0
+[ETTh2] SAE run 2 (seed 30) FVU 0.0067  pool 120  MVDF 12
+wrote runs/phase5_sae_repro/PHASE5_RESULT.md
+
+Phase 5 done in 1498s -> runs/phase5_sae_repro

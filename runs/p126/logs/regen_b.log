@@ -1,0 +1,6 @@
+[ETTh2_seed0] val_mse 0.2263214994 (saved 0.2263214994)  fvu 0.00673634 (saved 0.00673634)  match=True,True
+  done ETTh2:0 in 420s
+[ETTh2_seed1] val_mse 0.2207091005 (saved 0.2207091005)  fvu 0.00566161 (saved 0.00566161)  match=True,True
+  done ETTh2:1 in 375s
+[ETTh2_seed2] val_mse 0.2237947142 (saved 0.2237947142)  fvu 0.00549144 (saved 0.00549144)  match=True,True
+  done ETTh2:2 in 394s

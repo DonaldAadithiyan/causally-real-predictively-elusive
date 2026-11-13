@@ -1,0 +1,78 @@
+{
+  "thresholds": [
+    0.1,
+    0.25,
+    0.5,
+    1.0
+  ],
+  "headline_threshold": 0.25,
+  "pairwise": {
+    "run0_vs_run1": {
+      "n_mvdf_query": 12,
+      "n_pool": 120,
+      "mutual_nn_rate_no_threshold": 0.25,
+      "median_mvdf_matched_distance": 0.06341821145271152,
+      "by_threshold": {
+        "thr_0.1": {
+          "mvdf_match_rate": 0.16666666666666666,
+          "pool_base_rate": 0.31666666666666665,
+          "signature_shuffle_rate": 0.1666666666666667
+        },
+        "thr_0.25": {
+          "mvdf_match_rate": 0.25,
+          "pool_base_rate": 0.425,
+          "signature_shuffle_rate": 0.25
+        },
+        "thr_0.5": {
+          "mvdf_match_rate": 0.25,
+          "pool_base_rate": 0.4666666666666667,
+          "signature_shuffle_rate": 0.25
+        },
+        "thr_1": {
+          "mvdf_match_rate": 0.25,
+          "pool_base_rate": 0.4666666666666667,
+          "signature_shuffle_rate": 0.25
+        }
+      }
+    },
+    "run0_vs_run2": {
+      "n_mvdf_query": 12,
+      "n_pool": 120,
+      "mutual_nn_rate_no_threshold": 0.3333333333333333,
+      "median_mvdf_matched_distance": 0.11151766537653121,
+      "by_threshold": {
+        "thr_0.1": {
+          "mvdf_match_rate": 0.08333333333333333,
+          "pool_base_rate": 0.26666666666666666,
+          "signature_shuffle_rate": 0.08333333333333336
+        },
+        "thr_0.25": {
+          "mvdf_match_rate": 0.3333333333333333,
+          "pool_base_rate": 0.35,
+          "signature_shuffle_rate": 0.3333333333333334
+        },
+        "thr_0.5": {
+          "mvdf_match_rate": 0.3333333333333333,
+          "pool_base_rate": 0.375,
+          "signature_shuffle_rate": 0.3333333333333334
+        },
+        "thr_1": {
+          "mvdf_match_rate": 0.3333333333333333,
+          "pool_base_rate": 0.4,
+          "signature_shuffle_rate": 0.3333333333333334
+        }
+      }
+    }
+  },
+  "sae_seeds": [
+    10,
+    20,
+    30
+  ],
+  "fvus": [
+    0.011727147735655308,
+    0.011688766069710255,
+    0.012082220055162907
+  ],
+  "forecaster_val_mse": 0.7133840074566671
+}

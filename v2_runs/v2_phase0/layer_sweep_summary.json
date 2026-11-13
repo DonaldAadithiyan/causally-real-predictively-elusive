@@ -1,0 +1,47 @@
+{
+  "go_threshold": 0.3,
+  "go_min_datasets": 2,
+  "metric": "max_abs_corr_pc",
+  "result": "NO_GO",
+  "winning_layers": null,
+  "all_cleared": null,
+  "per_tap_signal_across_datasets": {
+    "embed": {
+      "mean": 0.119,
+      "max": 0.165,
+      "min": 0.081
+    },
+    "head_input": {
+      "mean": 0.146,
+      "max": 0.168,
+      "min": 0.095
+    },
+    "layer1": {
+      "mean": 0.149,
+      "max": 0.208,
+      "min": 0.102
+    },
+    "layer2": {
+      "mean": 0.15,
+      "max": 0.186,
+      "min": 0.11
+    },
+    "layer3_attn": {
+      "mean": 0.154,
+      "max": 0.198,
+      "min": 0.112
+    },
+    "layer3_ffn": {
+      "mean": 0.146,
+      "max": 0.19,
+      "min": 0.094
+    },
+    "pre_head": {
+      "mean": 0.146,
+      "max": 0.168,
+      "min": 0.095
+    }
+  },
+  "run5_prehead_baseline": "0.09-0.22 (max ~0.22 weather)",
+  "interpretation": "NO-GO: no tap clears the threshold on enough datasets. Difficulty is not recoverable above the Run 5 pre-head ceiling at any probed depth (spec \u00a77 row 4). Phase 1 proceeds at pre_head as a documented fallback; this null sweep is a reported result."
+}

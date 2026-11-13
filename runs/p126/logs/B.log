@@ -1,0 +1,29 @@
+                   case dataset  seed  block     n  oracle_ratio  oracle_cov  oracle_ratio_permuted identical  oracle_ratio_sd
+0                  real   ETTh1   0.0     ID  1966      0.249155    0.903357               0.249155      True              NaN
+1                  real   ETTh1   0.0  shift  1871      0.254935    0.903795               0.254935      True              NaN
+2                  real   ETTh1   1.0     ID  1966      0.236322    0.903357               0.236322      True              NaN
+3                  real   ETTh1   1.0  shift  1871      0.254455    0.903795               0.254455      True              NaN
+4                  real   ETTh1   2.0     ID  1966      0.250898    0.903357               0.250898      True              NaN
+5                  real   ETTh1   2.0  shift  1871      0.252398    0.903795               0.252398      True              NaN
+6                  real   ETTh2   0.0     ID  1966      0.300417    0.903357               0.300417      True              NaN
+7                  real   ETTh2   0.0  shift  1871      0.249693    0.903795               0.249693      True              NaN
+8                  real   ETTh2   1.0     ID  1966      0.294212    0.903357               0.294212      True              NaN
+9                  real   ETTh2   1.0  shift  1871      0.251163    0.903795               0.251163      True              NaN
+10                 real   ETTh2   2.0     ID  1966      0.282060    0.903357               0.282060      True              NaN
+11                 real   ETTh2   2.0  shift  1871      0.235440    0.903795               0.235440      True              NaN
+12       iid_abs_normal     NaN   NaN    NaN  1966      0.440609         NaN                    NaN       NaN         0.008761
+13      iid_exponential     NaN   NaN    NaN  1966      0.465094         NaN                    NaN       NaN         0.012523
+14  iid_lognormal_sd0.4     NaN   NaN    NaN  1966      0.290179         NaN                    NaN       NaN         0.007996
+B: ETTh1 0 embargo
+B: ETTh1 1 embargo
+B: ETTh1 2 embargo
+B: ETTh2 0 embargo
+B: ETTh2 1 embargo
+B: ETTh2 2 embargo
+B: ETTh1 0 no-embargo
+B: ETTh1 1 no-embargo
+B: ETTh1 2 no-embargo
+B: ETTh2 0 no-embargo
+B: ETTh2 1 no-embargo
+B: ETTh2 2 no-embargo
+B done

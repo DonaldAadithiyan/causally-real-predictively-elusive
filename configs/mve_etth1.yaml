@@ -1,0 +1,66 @@
+# Minimum Viable Experiment (spec §7): iTransformer + ETTh1 (in-distribution baseline)
+# and ETTh1's pre-registered shift tail. Add ETTh2/traffic by copying this file.
+#
+# PRE-REGISTERED, spec §4.4 — do not edit after seeing results:
+#   Outcome A (strong): MVDF >> SAE-correlated under shift, comparable in-distribution
+#                       -> causal validation buys robustness, not raw sharpness.
+#   Outcome B (negative): MVDF ~ SAE-correlated everywhere
+#                       -> causal influence found, but doesn't translate to CP robustness.
+#   Outcome C (correlation wins): SAE-correlated > MVDF under shift
+#                       -> causal influence and UQ-usefulness are different objectives.
+# All three are reportable. The paper frames the contribution as "we ran the controlled
+# experiment that determines which of A/B/C holds", not "we prove A".
+
+run_name: mve_etth1
+seed: 0
+device: cpu
+alpha: 0.10                 # 90% target coverage
+
+dataset:
+  name: ETTh1
+  lookback: 96
+  horizon: 96
+  target_var: -1            # last channel = conventional univariate target ('OT' on ETT)
+  max_channels: 48          # cap for wide sets (traffic 862, electricity 370) so the
+                            # per-variate-token SAE stays tractable; keeps the most
+                            # variable channels + the target. ETT (7) is unaffected.
+
+forecaster:                 # fixed config, NOT searched (spec §5.2)
+  d_model: 256
+  n_layers: 3
+  n_heads: 8
+  d_ff: 512
+  dropout: 0.1
+  lr: 0.0001               # 3e-4 overshoots on ETT; reference iTransformer uses 1e-4
+  batch_size: 32
+  max_epochs: 20
+  patience: 5
+  lr_decay: 0.8
+  warmup_epochs: 3
+
+sae:                        # Dissecting-Chronos recipe (spec §5.3)
+  expansion: 8              # d_sae = 8 * d_model = 2048
+  k: 64
+  steps: 20000             # MVE debug: ~4000; notebook: full
+  batch_size: 512
+  lr: 0.0001              # 3e-4 diverged late on traffic/weather; flat 1e-4 + warmup is stable
+  resample_every: 2000
+  resample_until_frac: 0.5  # stop dead-feature resampling after half of training (Templeton)
+  resample_cap: 64          # rewrite at most this many dead rows per event (was unbounded -> blew up)
+
+validation:
+  feature_budget_k: 12       # matched across all three conditions (spec §5.4, k in 8-16)
+  n_bins: 3                  # Mondrian K (spec §5.5, keep 3-5; 3 so per-bin sets don't starve)
+  min_active_frac: 0.02
+  rq1_sample_size: 400       # ablate this many features, NOT correlation-prefiltered (spec §6.5)
+  ablation_batch_cap: 2048   # subsample eval windows for the ablation sweep (compute)
+
+calibration:
+  gamma_perbin: 0.05         # per-bin ACI learning rate (0.02 too slow to reach 1-alpha on short splits)
+  gamma_global: 0.03         # Variant A global ACI
+  clip_mult: 20.0
+  burn_in: 0                 # optional: exclude first N steps per bin from metrics
+
+shift:
+  # window comes from shift/shift_windows.py::REGISTERED[dataset.name]
+  require_ks_check: true

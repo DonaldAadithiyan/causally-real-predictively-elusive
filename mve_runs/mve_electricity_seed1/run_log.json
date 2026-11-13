@@ -1,0 +1,168 @@
+{
+  "config": {
+    "alpha": 0.1,
+    "calibration": {
+      "burn_in": 0,
+      "clip_mult": 20.0,
+      "gamma_global": 0.03,
+      "gamma_perbin": 0.05
+    },
+    "dataset": {
+      "horizon": 96,
+      "lookback": 96,
+      "max_channels": 48,
+      "name": "electricity",
+      "target_var": -1
+    },
+    "device": "cuda",
+    "forecaster": {
+      "batch_size": 32,
+      "d_ff": 512,
+      "d_model": 256,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "lr_decay": 0.8,
+      "max_epochs": 20,
+      "n_heads": 8,
+      "n_layers": 3,
+      "patience": 5,
+      "warmup_epochs": 3
+    },
+    "run_name": "mve_electricity_seed1",
+    "sae": {
+      "batch_size": 512,
+      "expansion": 8,
+      "k": 64,
+      "lr": 0.0001,
+      "resample_cap": 64,
+      "resample_every": 2000,
+      "resample_until_frac": 0.5,
+      "steps": 20000
+    },
+    "seed": 1,
+    "shift": {
+      "require_ks_check": true
+    },
+    "validation": {
+      "ablation_batch_cap": 2048,
+      "feature_budget_k": 12,
+      "min_active_frac": 0.02,
+      "n_bins": 3,
+      "rq1_sample_size": 400
+    }
+  },
+  "started": "2026-09-03T09:23:42",
+  "data_fingerprint": "c9ff32a34168040d",
+  "shapes": {
+    "train": [
+      24309,
+      96,
+      47
+    ],
+    "val": [
+      3309,
+      96,
+      47
+    ],
+    "test": [
+      6809,
+      96,
+      47
+    ]
+  },
+  "shift_check": {
+    "n_tail": 1400,
+    "ks_stat": 0.6275714285714286,
+    "ks_pvalue": 0.0,
+    "tail_mean": 16387.355198642857,
+    "cal_mean": 6253.922263130715,
+    "tail_std": 3521.782300856609,
+    "cal_std": 8468.681099031053,
+    "is_shift": true,
+    "window": {
+      "description": "Final 20% of the electricity test split.",
+      "rationale": "Final 20% of the test split: the block furthest in calendar time from the train+val calibration window, so autocorrelation-driven similarity to calibration is weakest and a seasonal/regime difference is most likely. Pre-registered before results were seen; KS-checked at run time. Client consumption has weekday/weekend and seasonal regimes.",
+      "tail_frac": 0.2
+    }
+  },
+  "shift_n_windows": 1304,
+  "forecaster_val_mse": 0.06842582706833722,
+  "forecaster_train_s": 150.6,
+  "forecaster_test_mae_target": 0.2631567120552063,
+  "hidden_difficulty_signal": {
+    "max_abs_corr_hiddenPC_vs_score": 0.1342801463643648,
+    "score_dispersion": 0.47826361656188965,
+    "note": "max |corr| >> 0.1 means difficulty is linearly readable pre-head; near 0.1 predicts weak H2/H3 (spec outcome B regime, aleatoric-dominated)."
+  },
+  "sae_reconstruction": {
+    "mse_raw": 0.007017466239631176,
+    "fvu_raw": 0.007651660657017682,
+    "fvu_standardized": 0.011992312967777252,
+    "l0": 64.0
+  },
+  "sae_reconstruction_cal": {
+    "mse_raw": 0.06839936971664429,
+    "fvu_raw": 0.0740992498388942,
+    "fvu_standardized": 0.0717349424958229,
+    "l0": 64.0
+  },
+  "n_eligible_features": 1007,
+  "ablation_s": 58.9,
+  "ablation_n_features": 400,
+  "ablation_n_windows": 2048,
+  "ablation_positive_rate": 0.235,
+  "ablation_max_over_median": 17.050251475459024,
+  "feature_sets": {
+    "SAE_correlated": [
+      1535,
+      1339,
+      1294,
+      1520,
+      1550,
+      1538,
+      143,
+      439,
+      362,
+      1372,
+      672,
+      1174
+    ],
+    "MVDF": [
+      1520,
+      908,
+      1339,
+      1294,
+      2027,
+      689,
+      1538,
+      871,
+      897,
+      546,
+      2006,
+      799
+    ],
+    "SAE_random": [
+      172,
+      257,
+      395,
+      593,
+      699,
+      706,
+      797,
+      860,
+      929,
+      930,
+      1741,
+      1797
+    ],
+    "overlap_corr_mvdf": 4
+  },
+  "H3_delta_shift_correlated_minus_mvdf": {
+    "d_coverage": -0.0009462845548160459,
+    "d_worst_step_coverage": -0.00014686444411815547,
+    "d_width": 0.04032169141965891,
+    "d_winkler": 0.04115901221767615,
+    "d_mace": 0.0018194247762984422
+  },
+  "finished": "2026-09-03T09:28:48"
+}

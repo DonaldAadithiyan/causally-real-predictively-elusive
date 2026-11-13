@@ -1,0 +1,19 @@
+{
+  "dataset": "ETTh2",
+  "seed": 0,
+  "forecaster_val_mse": 0.2263214994469909,
+  "n_active_windows": 1014,
+  "n_mvdf": 12,
+  "delta_noise": -0.00043617343180812895,
+  "delta_denoise": 0.0022721930872648954,
+  "random_set_noise_mean": 0.0012916559411678464,
+  "random_set_noise_sd": 0.002328469525247788,
+  "random_dir_noise": 0.0006370882038027048,
+  "s_clean_mean": 0.8323689103126526,
+  "s_corrupt_mean": 1.0406776666641235,
+  "natrange_restored_within_5_95pct": 0.8896178220272822,
+  "necessity_supported": false,
+  "sufficiency_supported": true,
+  "noise_over_random_ratio": -0.33768519945688097,
+  "noise_over_randdir_ratio": -0.6846347877262162
+}

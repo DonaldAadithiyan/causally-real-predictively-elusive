@@ -1,0 +1,56 @@
+# V2 Phase 1 — full mechanistic characterization at the winning layer(s). PRE-REGISTERED.
+# Depends on runs/v2_phase0/layer_sweep_summary.json (winning_layers or NO_GO).
+#
+# PRE-REGISTERED THRESHOLDS (spec §4.6, do not edit after seeing Phase 1 results):
+#   u_threshold  — |U_j| gate for the MVDF_v2 dose-response criterion. Set relative to
+#                  the pool's own |U_j| distribution: a feature must be in the top ~40%
+#                  by |U_j| AND monotone. We fix an absolute floor here and also apply
+#                  the "top-k by R_j" gate, so this is a permissive first filter.
+#   residualize_method — 'isotonic' (fixed before running; 'local_linear'/'linear' as
+#                        robustness checks only, reported not tuned).
+
+run_name: v2_phase1
+seed: 0
+device: cpu
+
+datasets: [ETTh1, ETTh2, ETTm1, ETTm2, traffic, electricity, weather, solar]
+
+dataset_defaults:
+  lookback: 96
+  horizon: 96
+  target_var: -1
+  max_channels: 48
+
+forecaster:
+  d_model: 256
+  n_layers: 3
+  n_heads: 8
+  d_ff: 512
+  dropout: 0.1
+  lr: 0.0001
+  batch_size: 32
+  max_epochs: 20
+  patience: 5
+  lr_decay: 0.8
+  warmup_epochs: 3
+
+sae:                              # trained at EACH winning tap
+  expansion: 8
+  k: 64
+  steps: 20000
+  batch_size: 512
+  lr: 0.0001
+  resample_every: 2000
+  resample_until_frac: 0.5
+  resample_cap: 64
+
+phase1:
+  candidate_pool_size: 120        # >=100 unbiased candidates (spec §4.4, §11 Phase 1)
+  ablation_window_cap: 2048       # subsample windows for the dose-response sweep (compute)
+  lambdas: [0.0, 0.25, 0.5, 0.75, 1.0, 1.25]   # spec §4.3 grid
+  feature_budget_k: 12            # matched across all feature-set conditions
+  u_threshold: 0.0               # permissive |U_j| floor; the top-k-by-R_j gate does the work
+  residualize_method: isotonic
+
+# If Phase 0 said NO_GO, Phase 1 runs at this fallback tap and reports the null sweep.
+fallback_tap: pre_head

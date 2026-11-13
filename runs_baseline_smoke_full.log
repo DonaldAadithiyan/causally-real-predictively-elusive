@@ -1,0 +1,8 @@
+[fingerprint] ETTh1: OK (17420 rows, 7 ch, hash e683635e42804659)
+[ETTh1 s0] naive_matched   ID cov 0.830 w 1.871  SHIFT cov 0.894 w 1.937
+[ETTh1 s0] cqr             ID cov 0.683 w 1.779  SHIFT cov 0.869 w 1.682
+[ETTh1 s0] pid_conformal   ID cov 0.845 w 1.865  SHIFT cov 0.896 w 1.876
+
+=== baseline vs naive_matched summary ===
+  cqr: 0/1 coverage-equivalent (±1.5pt); 1/1 narrower than naive_matched; 0/1 narrower AND coverage-equivalent
+  pid_conformal: 1/1 coverage-equivalent (±1.5pt); 1/1 narrower than naive_matched; 1/1 narrower AND coverage-equivalent

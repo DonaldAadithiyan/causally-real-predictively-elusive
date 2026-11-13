@@ -1,0 +1,249 @@
+============================================================================== 
+ ETTh1  seed 0
+ ==============================================================================
+[ETTh1 s0] windows tr 8449 va 2689 te 5709  fp c6d1709fd0693b1a
+[tmx] epoch 01  val_mse=0.72425  lr=1.00e-04  (0.9s)
+[tmx] epoch 02  val_mse=0.71045  lr=1.00e-04  (0.9s)
+[tmx] epoch 03  val_mse=0.70358  lr=8.00e-05  (0.9s)
+[tmx] epoch 04  val_mse=0.70544  lr=6.40e-05  (0.9s)
+[tmx] epoch 05  val_mse=0.70833  lr=5.12e-05  (1.0s)
+[tmx] epoch 06  val_mse=0.70433  lr=4.10e-05  (1.0s)
+[tmx] epoch 07  val_mse=0.70259  lr=3.28e-05  (1.0s)
+[tmx] epoch 08  val_mse=0.70254  lr=2.62e-05  (1.0s)
+[tmx] epoch 09  val_mse=0.70411  lr=2.10e-05  (1.0s)
+[tmx] epoch 10  val_mse=0.70478  lr=1.68e-05  (1.0s)
+[tmx] epoch 11  val_mse=0.70333  lr=1.34e-05  (1.1s)
+[tmx] epoch 12  val_mse=0.70147  lr=1.07e-05  (1.3s)
+[tmx] epoch 13  val_mse=0.70151  lr=8.59e-06  (1.0s)
+[tmx] epoch 14  val_mse=0.70158  lr=6.87e-06  (1.1s)
+[tmx] epoch 15  val_mse=0.70211  lr=5.50e-06  (1.0s)
+[tmx] epoch 16  val_mse=0.70163  lr=4.40e-06  (1.0s)
+[tmx] epoch 17  val_mse=0.70167  lr=3.52e-06  (1.0s)
+[tmx] epoch 18  val_mse=0.70135  lr=2.81e-06  (1.0s)
+[tmx] epoch 19  val_mse=0.70112  lr=2.25e-06  (1.0s)
+[tmx] epoch 20  val_mse=0.70106  lr=1.80e-06  (1.0s)
+[tmx] epoch 21  val_mse=0.70115  lr=1.44e-06  (1.0s)
+[tmx] epoch 22  val_mse=0.70123  lr=1.15e-06  (1.0s)
+[tmx] epoch 23  val_mse=0.70123  lr=9.22e-07  (1.0s)
+[tmx] epoch 24  val_mse=0.70123  lr=7.38e-07  (1.0s)
+[tmx] epoch 25  val_mse=0.70122  lr=5.90e-07  (1.0s)
+[ETTh1 s0] TimeMixer val_mse 0.7011
+[sae] step 2000  mse=0.02335  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01140  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00702  dead=0  (resample off)
+[sae] step 8000  mse=0.00450  dead=3  (resample off)
+[sae] step 10000  mse=0.00345  dead=3  (resample off)
+[sae] final  FVU=0.0027  l0=64.0  dead=21
+[ETTh1 s0] SAE FVU 0.0027
+[dose] 1/120 feat 9  P_j=-0.0000  U_j=+0.0003  n_active=120
+[dose] 13/120 feat 177  P_j=+0.0000  U_j=-0.0003  n_active=39
+[dose] 25/120 feat 405  P_j=-0.0000  U_j=+0.0000  n_active=38
+[dose] 37/120 feat 668  P_j=-0.0000  U_j=-0.0002  n_active=47
+[dose] 49/120 feat 841  P_j=+0.0000  U_j=-0.0007  n_active=875
+[dose] 61/120 feat 1094  P_j=+0.0000  U_j=+0.0001  n_active=92
+[dose] 73/120 feat 1240  P_j=+0.0000  U_j=+0.0003  n_active=533
+[dose] 85/120 feat 1488  P_j=-0.0000  U_j=-0.0001  n_active=61
+[dose] 97/120 feat 1617  P_j=+0.0000  U_j=-0.0001  n_active=78
+[dose] 109/120 feat 1878  P_j=-0.0000  U_j=+0.0000  n_active=47
+[ETTh1 s0] CHECKS  H1c=True (enr 1.20)  TaskG=True (nm-dense -0.256)  Phase3=True (marg R2 -0.520)
+============================================================================== 
+ ETTh1  seed 1
+ ==============================================================================
+[ETTh1 s1] windows tr 8449 va 2689 te 5709  fp c6d1709fd0693b1a
+[tmx] epoch 01  val_mse=0.72790  lr=1.00e-04  (1.9s)
+[tmx] epoch 02  val_mse=0.71416  lr=1.00e-04  (1.8s)
+[tmx] epoch 03  val_mse=0.72002  lr=8.00e-05  (1.8s)
+[tmx] epoch 04  val_mse=0.70739  lr=6.40e-05  (1.7s)
+[tmx] epoch 05  val_mse=0.70797  lr=5.12e-05  (1.8s)
+[tmx] epoch 06  val_mse=0.70511  lr=4.10e-05  (1.7s)
+[tmx] epoch 07  val_mse=0.70189  lr=3.28e-05  (1.7s)
+[tmx] epoch 08  val_mse=0.70324  lr=2.62e-05  (1.8s)
+[tmx] epoch 09  val_mse=0.69901  lr=2.10e-05  (1.9s)
+[tmx] epoch 10  val_mse=0.70146  lr=1.68e-05  (1.8s)
+[tmx] epoch 11  val_mse=0.70303  lr=1.34e-05  (2.3s)
+[tmx] epoch 12  val_mse=0.70015  lr=1.07e-05  (1.8s)
+[tmx] epoch 13  val_mse=0.69882  lr=8.59e-06  (1.8s)
+[tmx] epoch 14  val_mse=0.69965  lr=6.87e-06  (1.8s)
+[tmx] epoch 15  val_mse=0.70007  lr=5.50e-06  (1.7s)
+[tmx] epoch 16  val_mse=0.69992  lr=4.40e-06  (1.7s)
+[tmx] epoch 17  val_mse=0.69975  lr=3.52e-06  (1.9s)
+[tmx] epoch 18  val_mse=0.69959  lr=2.81e-06  (2.2s)
+[tmx] epoch 19  val_mse=0.69961  lr=2.25e-06  (2.3s)
+[tmx] early stop at epoch 19
+[ETTh1 s1] TimeMixer val_mse 0.6988
+[sae] step 2000  mse=0.02311  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01050  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00603  dead=0  (resample off)
+[sae] step 8000  mse=0.00400  dead=0  (resample off)
+[sae] step 10000  mse=0.00299  dead=5  (resample off)
+[sae] final  FVU=0.0024  l0=64.0  dead=23
+[ETTh1 s1] SAE FVU 0.0024
+[dose] 1/120 feat 11  P_j=+0.0000  U_j=+0.0000  n_active=149
+[dose] 13/120 feat 335  P_j=+0.0000  U_j=-0.0002  n_active=277
+[dose] 25/120 feat 631  P_j=-0.0000  U_j=+0.0000  n_active=41
+[dose] 37/120 feat 758  P_j=+0.0000  U_j=+0.0000  n_active=92
+[dose] 49/120 feat 910  P_j=-0.0000  U_j=-0.0003  n_active=46
+[dose] 61/120 feat 1080  P_j=-0.0000  U_j=+0.0000  n_active=79
+[dose] 73/120 feat 1342  P_j=+0.0008  U_j=-0.0345  n_active=861
+[dose] 85/120 feat 1594  P_j=+0.0004  U_j=-0.0012  n_active=943
+[dose] 97/120 feat 1718  P_j=+0.0000  U_j=+0.0002  n_active=75
+[dose] 109/120 feat 1881  P_j=+0.0000  U_j=-0.0002  n_active=60
+[ETTh1 s1] CHECKS  H1c=True (enr 1.92)  TaskG=True (nm-dense -0.285)  Phase3=True (marg R2 -0.520)
+============================================================================== 
+ ETTh1  seed 2
+ ==============================================================================
+[ETTh1 s2] windows tr 8449 va 2689 te 5709  fp c6d1709fd0693b1a
+[tmx] epoch 01  val_mse=0.72720  lr=1.00e-04  (2.1s)
+[tmx] epoch 02  val_mse=0.72087  lr=1.00e-04  (1.9s)
+[tmx] epoch 03  val_mse=0.70945  lr=8.00e-05  (1.9s)
+[tmx] epoch 04  val_mse=0.70850  lr=6.40e-05  (1.8s)
+[tmx] epoch 05  val_mse=0.70297  lr=5.12e-05  (1.8s)
+[tmx] epoch 06  val_mse=0.69922  lr=4.10e-05  (1.7s)
+[tmx] epoch 07  val_mse=0.70181  lr=3.28e-05  (1.8s)
+[tmx] epoch 08  val_mse=0.70257  lr=2.62e-05  (1.7s)
+[tmx] epoch 09  val_mse=0.70257  lr=2.10e-05  (1.7s)
+[tmx] epoch 10  val_mse=0.70119  lr=1.68e-05  (1.8s)
+[tmx] epoch 11  val_mse=0.70079  lr=1.34e-05  (1.7s)
+[tmx] epoch 12  val_mse=0.70086  lr=1.07e-05  (1.8s)
+[tmx] early stop at epoch 12
+[ETTh1 s2] TimeMixer val_mse 0.6992
+[sae] step 2000  mse=0.02252  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.01071  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00629  dead=0  (resample off)
+[sae] step 8000  mse=0.00417  dead=2  (resample off)
+[sae] step 10000  mse=0.00315  dead=7  (resample off)
+[sae] final  FVU=0.0025  l0=64.0  dead=29
+[ETTh1 s2] SAE FVU 0.0025
+[dose] 1/120 feat 6  P_j=+0.0000  U_j=+0.0002  n_active=67
+[dose] 13/120 feat 198  P_j=+0.0000  U_j=+0.0001  n_active=68
+[dose] 25/120 feat 335  P_j=+0.0000  U_j=+0.0002  n_active=104
+[dose] 37/120 feat 577  P_j=-0.0000  U_j=+0.0001  n_active=39
+[dose] 49/120 feat 818  P_j=-0.0000  U_j=-0.0000  n_active=379
+[dose] 61/120 feat 1026  P_j=+0.0000  U_j=+0.0002  n_active=141
+[dose] 73/120 feat 1135  P_j=+0.0000  U_j=-0.0002  n_active=58
+[dose] 85/120 feat 1392  P_j=+0.0000  U_j=+0.0003  n_active=60
+[dose] 97/120 feat 1593  P_j=-0.0001  U_j=-0.0008  n_active=74
+[dose] 109/120 feat 1848  P_j=+0.0000  U_j=-0.0001  n_active=57
+[ETTh1 s2] CHECKS  H1c=True (enr 2.00)  TaskG=True (nm-dense -0.252)  Phase3=True (marg R2 -0.494)
+============================================================================== 
+ ETTh2  seed 0
+ ==============================================================================
+[ETTh2 s0] windows tr 8449 va 2689 te 5709  fp c022db5521d23684
+[tmx] epoch 01  val_mse=0.22120  lr=1.00e-04  (2.0s)
+[tmx] epoch 02  val_mse=0.21856  lr=1.00e-04  (1.9s)
+[tmx] epoch 03  val_mse=0.21756  lr=8.00e-05  (2.1s)
+[tmx] epoch 04  val_mse=0.21629  lr=6.40e-05  (1.8s)
+[tmx] epoch 05  val_mse=0.21756  lr=5.12e-05  (1.8s)
+[tmx] epoch 06  val_mse=0.21682  lr=4.10e-05  (1.8s)
+[tmx] epoch 07  val_mse=0.21628  lr=3.28e-05  (1.8s)
+[tmx] epoch 08  val_mse=0.21548  lr=2.62e-05  (1.8s)
+[tmx] epoch 09  val_mse=0.21481  lr=2.10e-05  (1.8s)
+[tmx] epoch 10  val_mse=0.21480  lr=1.68e-05  (1.7s)
+[tmx] epoch 11  val_mse=0.21490  lr=1.34e-05  (1.8s)
+[tmx] epoch 12  val_mse=0.21514  lr=1.07e-05  (1.8s)
+[tmx] epoch 13  val_mse=0.21496  lr=8.59e-06  (1.7s)
+[tmx] epoch 14  val_mse=0.21495  lr=6.87e-06  (1.7s)
+[tmx] epoch 15  val_mse=0.21499  lr=5.50e-06  (1.7s)
+[tmx] epoch 16  val_mse=0.21499  lr=4.40e-06  (1.7s)
+[tmx] early stop at epoch 16
+[ETTh2 s0] TimeMixer val_mse 0.2148
+[sae] step 2000  mse=0.00770  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.00310  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00186  dead=13  (resample off)
+[sae] step 8000  mse=0.00121  dead=46  (resample off)
+[sae] step 10000  mse=0.00099  dead=102  (resample off)
+[sae] final  FVU=0.0008  l0=64.0  dead=351
+[ETTh2 s0] SAE FVU 0.0008
+[dose] 1/120 feat 28  P_j=-0.0000  U_j=-0.0007  n_active=84
+[dose] 13/120 feat 246  P_j=-0.0000  U_j=+0.0000  n_active=455
+[dose] 25/120 feat 479  P_j=-0.0000  U_j=-0.0004  n_active=101
+[dose] 37/120 feat 668  P_j=-0.0000  U_j=-0.0006  n_active=55
+[dose] 49/120 feat 875  P_j=+0.0001  U_j=+0.0001  n_active=65
+[dose] 61/120 feat 1132  P_j=-0.0000  U_j=+0.0009  n_active=138
+[dose] 73/120 feat 1379  P_j=-0.0047  U_j=-0.0233  n_active=697
+[dose] 85/120 feat 1631  P_j=+0.0000  U_j=+0.0000  n_active=152
+[dose] 97/120 feat 1789  P_j=-0.0000  U_j=-0.0002  n_active=47
+[dose] 109/120 feat 1900  P_j=-0.0057  U_j=-0.0225  n_active=1041
+[ETTh2 s0] CHECKS  H1c=True (enr 1.67)  TaskG=True (nm-dense -0.252)  Phase3=True (marg R2 -1.165)
+============================================================================== 
+ ETTh2  seed 1
+ ==============================================================================
+[ETTh2 s1] windows tr 8449 va 2689 te 5709  fp c022db5521d23684
+[tmx] epoch 01  val_mse=0.22424  lr=1.00e-04  (1.8s)
+[tmx] epoch 02  val_mse=0.21872  lr=1.00e-04  (1.8s)
+[tmx] epoch 03  val_mse=0.21791  lr=8.00e-05  (1.8s)
+[tmx] epoch 04  val_mse=0.21631  lr=6.40e-05  (1.8s)
+[tmx] epoch 05  val_mse=0.21617  lr=5.12e-05  (1.8s)
+[tmx] epoch 06  val_mse=0.21519  lr=4.10e-05  (1.8s)
+[tmx] epoch 07  val_mse=0.21538  lr=3.28e-05  (1.9s)
+[tmx] epoch 08  val_mse=0.21554  lr=2.62e-05  (2.1s)
+[tmx] epoch 09  val_mse=0.21528  lr=2.10e-05  (2.2s)
+[tmx] epoch 10  val_mse=0.21537  lr=1.68e-05  (2.2s)
+[tmx] epoch 11  val_mse=0.21542  lr=1.34e-05  (2.7s)
+[tmx] epoch 12  val_mse=0.21549  lr=1.07e-05  (2.9s)
+[tmx] early stop at epoch 12
+[ETTh2 s1] TimeMixer val_mse 0.2152
+[sae] step 2000  mse=0.00809  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.00325  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00184  dead=12  (resample off)
+[sae] step 8000  mse=0.00130  dead=45  (resample off)
+[sae] step 10000  mse=0.00100  dead=109  (resample off)
+[sae] final  FVU=0.0008  l0=64.0  dead=346
+[ETTh2 s1] SAE FVU 0.0008
+[dose] 1/120 feat 14  P_j=+0.0000  U_j=+0.0001  n_active=298
+[dose] 13/120 feat 269  P_j=+0.0000  U_j=+0.0003  n_active=154
+[dose] 25/120 feat 465  P_j=-0.0000  U_j=-0.0002  n_active=64
+[dose] 37/120 feat 728  P_j=-0.0000  U_j=-0.0001  n_active=44
+[dose] 49/120 feat 998  P_j=+0.0000  U_j=+0.0004  n_active=59
+[dose] 61/120 feat 1145  P_j=+0.0000  U_j=+0.0000  n_active=204
+[dose] 73/120 feat 1352  P_j=+0.0001  U_j=-0.0005  n_active=269
+[dose] 85/120 feat 1611  P_j=+0.0000  U_j=+0.0002  n_active=126
+[dose] 97/120 feat 1734  P_j=-0.0000  U_j=+0.0002  n_active=45
+[dose] 109/120 feat 1843  P_j=-0.0000  U_j=-0.0004  n_active=174
+[ETTh2 s1] CHECKS  H1c=True (enr 2.50)  TaskG=True (nm-dense -0.238)  Phase3=True (marg R2 -1.036)
+============================================================================== 
+ ETTh2  seed 2
+ ==============================================================================
+[ETTh2 s2] windows tr 8449 va 2689 te 5709  fp c022db5521d23684
+[tmx] epoch 01  val_mse=0.22124  lr=1.00e-04  (2.2s)
+[tmx] epoch 02  val_mse=0.21919  lr=1.00e-04  (2.7s)
+[tmx] epoch 03  val_mse=0.21707  lr=8.00e-05  (2.1s)
+[tmx] epoch 04  val_mse=0.21694  lr=6.40e-05  (1.9s)
+[tmx] epoch 05  val_mse=0.21542  lr=5.12e-05  (1.9s)
+[tmx] epoch 06  val_mse=0.21568  lr=4.10e-05  (1.8s)
+[tmx] epoch 07  val_mse=0.21490  lr=3.28e-05  (1.9s)
+[tmx] epoch 08  val_mse=0.21444  lr=2.62e-05  (2.7s)
+[tmx] epoch 09  val_mse=0.21478  lr=2.10e-05  (2.1s)
+[tmx] epoch 10  val_mse=0.21469  lr=1.68e-05  (2.0s)
+[tmx] epoch 11  val_mse=0.21448  lr=1.34e-05  (1.9s)
+[tmx] epoch 12  val_mse=0.21498  lr=1.07e-05  (2.2s)
+[tmx] epoch 13  val_mse=0.21439  lr=8.59e-06  (2.0s)
+[tmx] epoch 14  val_mse=0.21450  lr=6.87e-06  (2.0s)
+[tmx] epoch 15  val_mse=0.21451  lr=5.50e-06  (2.0s)
+[tmx] epoch 16  val_mse=0.21456  lr=4.40e-06  (2.0s)
+[tmx] epoch 17  val_mse=0.21452  lr=3.52e-06  (2.0s)
+[tmx] epoch 18  val_mse=0.21447  lr=2.81e-06  (2.0s)
+[tmx] epoch 19  val_mse=0.21444  lr=2.25e-06  (2.0s)
+[tmx] early stop at epoch 19
+[ETTh2 s2] TimeMixer val_mse 0.2144
+[sae] step 2000  mse=0.00794  dead=0  (resampled<= 64)
+[sae] step 4000  mse=0.00303  dead=0  (resampled<= 64)
+[sae] step 6000  mse=0.00173  dead=15  (resample off)
+[sae] step 8000  mse=0.00122  dead=34  (resample off)
+[sae] step 10000  mse=0.00090  dead=114  (resample off)
+[sae] final  FVU=0.0008  l0=64.0  dead=366
+[ETTh2 s2] SAE FVU 0.0008
+[dose] 1/120 feat 0  P_j=-0.0000  U_j=+0.0000  n_active=106
+[dose] 13/120 feat 249  P_j=+0.0000  U_j=-0.0003  n_active=55
+[dose] 25/120 feat 386  P_j=+0.0000  U_j=+0.0003  n_active=125
+[dose] 37/120 feat 614  P_j=+0.0000  U_j=-0.0001  n_active=108
+[dose] 49/120 feat 739  P_j=-0.0005  U_j=-0.0026  n_active=866
+[dose] 61/120 feat 961  P_j=+0.0000  U_j=-0.0001  n_active=249
+[dose] 73/120 feat 1063  P_j=-0.0054  U_j=-0.0320  n_active=752
+[dose] 85/120 feat 1280  P_j=-0.0001  U_j=+0.0003  n_active=81
+[dose] 97/120 feat 1618  P_j=-0.0057  U_j=-0.0308  n_active=1031
+[dose] 109/120 feat 1793  P_j=-0.0001  U_j=-0.0005  n_active=54
+[ETTh2 s2] CHECKS  H1c=True (enr 2.14)  TaskG=True (nm-dense -0.247)  Phase3=True (marg R2 -1.147)
+wrote runs/arch_gen_timemixer/ARCH_GEN_RESULT.md
+
+Arch-gen (TimeMixer) done in 1478s -> runs/arch_gen_timemixer

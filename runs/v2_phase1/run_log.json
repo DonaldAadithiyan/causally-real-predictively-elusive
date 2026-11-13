@@ -1,0 +1,366 @@
+{
+  "config": {
+    "dataset_defaults": {
+      "horizon": 96,
+      "lookback": 96,
+      "max_channels": 48,
+      "target_var": -1
+    },
+    "datasets": [
+      "ETTh1",
+      "ETTh2",
+      "ETTm1",
+      "ETTm2",
+      "traffic",
+      "electricity",
+      "weather",
+      "solar"
+    ],
+    "device": "cuda",
+    "fallback_tap": "pre_head",
+    "forecaster": {
+      "batch_size": 32,
+      "d_ff": 512,
+      "d_model": 256,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "lr_decay": 0.8,
+      "max_epochs": 20,
+      "n_heads": 8,
+      "n_layers": 3,
+      "patience": 5,
+      "warmup_epochs": 3
+    },
+    "phase1": {
+      "ablation_window_cap": 2048,
+      "candidate_pool_size": 120,
+      "feature_budget_k": 12,
+      "lambdas": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25
+      ],
+      "residualize_method": "isotonic",
+      "u_threshold": 0.0
+    },
+    "run_name": "v2_phase1",
+    "sae": {
+      "batch_size": 512,
+      "expansion": 8,
+      "k": 64,
+      "lr": 0.0001,
+      "resample_cap": 64,
+      "resample_every": 2000,
+      "resample_until_frac": 0.5,
+      "steps": 20000
+    },
+    "seed": 0
+  },
+  "phase0_result": "NO_GO",
+  "winning_taps": [
+    "pre_head"
+  ],
+  "started": "2026-09-03T11:12:38",
+  "per_run": {
+    "ETTh1_pre_head": {
+      "forecaster_val_mse": 0.7051481410290238,
+      "seconds": 84.9,
+      "env_split": {
+        "n_select": 1967,
+        "n_eval_id": 1966,
+        "n_eval_shift": 1967,
+        "ks_evalID_vs_select": {
+          "stat": 0.1244160385940759,
+          "p": 9.112094717571395e-14
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.5048296898830706,
+          "p": 2.0481399292246724e-228
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 23,
+        "B": 23,
+        "C": 37,
+        "D": 37
+      },
+      "type_fractions": {
+        "A": 0.19166666666666668,
+        "B": 0.19166666666666668,
+        "C": 0.30833333333333335,
+        "D": 0.30833333333333335
+      },
+      "H1_rho": 0.04332245294812139,
+      "H1b_rho": 0.10951454962150146,
+      "enrichment_v2": 1.7391304347735348,
+      "enrichment_v1": 1.7391304347735348,
+      "enrichment_corr": 0.8695652173867674,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 5
+    },
+    "ETTh2_pre_head": {
+      "forecaster_val_mse": 0.22906707181235414,
+      "seconds": 86.0,
+      "env_split": {
+        "n_select": 1967,
+        "n_eval_id": 1966,
+        "n_eval_shift": 1967,
+        "ks_evalID_vs_select": {
+          "stat": 0.10804779368222674,
+          "p": 1.9006066408401269e-10
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.7676664972038637,
+          "p": 0.0
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 22,
+        "B": 22,
+        "C": 38,
+        "D": 38
+      },
+      "type_fractions": {
+        "A": 0.18333333333333332,
+        "B": 0.18333333333333332,
+        "C": 0.31666666666666665,
+        "D": 0.31666666666666665
+      },
+      "H1_rho": 0.0955899715258004,
+      "H1b_rho": 0.1111188276963678,
+      "enrichment_v2": 1.3636363636289257,
+      "enrichment_v1": 0.9090909090859504,
+      "enrichment_corr": 0.4545454545429752,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 4
+    },
+    "ETTm1_pre_head": {
+      "forecaster_val_mse": 0.3979529031143888,
+      "seconds": 89.6,
+      "env_split": {
+        "n_select": 7867,
+        "n_eval_id": 7866,
+        "n_eval_shift": 7867,
+        "ks_evalID_vs_select": {
+          "stat": 0.12364850860402915,
+          "p": 7.066225350525935e-53
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.5043854073979916,
+          "p": 0.0
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 24,
+        "B": 24,
+        "C": 36,
+        "D": 36
+      },
+      "type_fractions": {
+        "A": 0.2,
+        "B": 0.2,
+        "C": 0.3,
+        "D": 0.3
+      },
+      "H1_rho": 0.1527606083755816,
+      "H1b_rho": 0.33906521286200425,
+      "enrichment_v2": 1.2499999999937499,
+      "enrichment_v1": 0.8333333333291666,
+      "enrichment_corr": 1.2499999999937499,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 7
+    },
+    "ETTm2_pre_head": {
+      "forecaster_val_mse": 0.1367711257256922,
+      "seconds": 88.6,
+      "env_split": {
+        "n_select": 7867,
+        "n_eval_id": 7866,
+        "n_eval_shift": 7867,
+        "ks_evalID_vs_select": {
+          "stat": 0.1053170671025168,
+          "p": 2.0647009706510512e-38
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.7671285115037498,
+          "p": 0.0
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 26,
+        "B": 26,
+        "C": 34,
+        "D": 34
+      },
+      "type_fractions": {
+        "A": 0.21666666666666667,
+        "B": 0.21666666666666667,
+        "C": 0.2833333333333333,
+        "D": 0.2833333333333333
+      },
+      "H1_rho": 0.26628932564761437,
+      "H1b_rho": 0.11123689145079518,
+      "enrichment_v2": 1.5384615384544378,
+      "enrichment_v1": 1.5384615384544378,
+      "enrichment_corr": 0.7692307692272189,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 3
+    },
+    "traffic_pre_head": {
+      "forecaster_val_mse": 0.2743981580447663,
+      "seconds": 92.9,
+      "env_split": {
+        "n_select": 1170,
+        "n_eval_id": 1169,
+        "n_eval_shift": 1170,
+        "ks_evalID_vs_select": {
+          "stat": 0.032518845093695396,
+          "p": 0.5508543749246717
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.07435897435897436,
+          "p": 0.003090918502946371
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 11,
+        "B": 11,
+        "C": 49,
+        "D": 49
+      },
+      "type_fractions": {
+        "A": 0.09166666666666666,
+        "B": 0.09166666666666666,
+        "C": 0.4083333333333333,
+        "D": 0.4083333333333333
+      },
+      "H1_rho": -0.022487672755052434,
+      "H1b_rho": 0.4264810056253906,
+      "enrichment_v2": 4.545454545404959,
+      "enrichment_v1": 0.9090909090809917,
+      "enrichment_corr": 1.8181818181619833,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 2
+    },
+    "electricity_pre_head": {
+      "forecaster_val_mse": 0.06794680323171431,
+      "seconds": 106.1,
+      "env_split": {
+        "n_select": 2333,
+        "n_eval_id": 2334,
+        "n_eval_shift": 2333,
+        "ks_evalID_vs_select": {
+          "stat": 0.3687340938532901,
+          "p": 1.647178068753102e-141
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.16502357479639948,
+          "p": 3.871726833932441e-28
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 15,
+        "B": 15,
+        "C": 45,
+        "D": 45
+      },
+      "type_fractions": {
+        "A": 0.125,
+        "B": 0.125,
+        "C": 0.375,
+        "D": 0.375
+      },
+      "H1_rho": 0.019334676019167992,
+      "H1b_rho": 0.07974164872560593,
+      "enrichment_v2": 3.999999999968,
+      "enrichment_v1": 0.0,
+      "enrichment_corr": 1.999999999984,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 5
+    },
+    "weather_pre_head": {
+      "forecaster_val_mse": 0.4589745870621502,
+      "seconds": 98.4,
+      "env_split": {
+        "n_select": 11688,
+        "n_eval_id": 11689,
+        "n_eval_shift": 11688,
+        "ks_evalID_vs_select": {
+          "stat": 0.17791468593210452,
+          "p": 2.695104364127868e-162
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.07340862422997946,
+          "p": 7.835521367775617e-28
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 23,
+        "B": 23,
+        "C": 37,
+        "D": 37
+      },
+      "type_fractions": {
+        "A": 0.19166666666666668,
+        "B": 0.19166666666666668,
+        "C": 0.30833333333333335,
+        "D": 0.30833333333333335
+      },
+      "H1_rho": 0.17184526703243277,
+      "H1b_rho": 0.015619140218070699,
+      "enrichment_v2": 1.7391304347735348,
+      "enrichment_v1": 0.4347826086933837,
+      "enrichment_corr": 0.4347826086933837,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 1
+    },
+    "solar_pre_head": {
+      "forecaster_val_mse": 0.15887666911723353,
+      "seconds": 108.7,
+      "env_split": {
+        "n_select": 2336,
+        "n_eval_id": 2336,
+        "n_eval_shift": 2336,
+        "ks_evalID_vs_select": {
+          "stat": 0.04366438356164384,
+          "p": 0.023258520308778768
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.055222602739726026,
+          "p": 0.001608156497094666
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 12,
+        "B": 12,
+        "C": 48,
+        "D": 48
+      },
+      "type_fractions": {
+        "A": 0.1,
+        "B": 0.1,
+        "C": 0.4,
+        "D": 0.4
+      },
+      "H1_rho": 0.0697617890131259,
+      "H1b_rho": 0.2764011389679839,
+      "enrichment_v2": 2.4999999999749996,
+      "enrichment_v1": 0.0,
+      "enrichment_corr": 0.8333333333249998,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 2
+    }
+  },
+  "finished": "2026-09-03T11:39:23"
+}

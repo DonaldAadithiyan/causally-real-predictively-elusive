@@ -1,0 +1,23 @@
+[
+  {
+    "seed": 0,
+    "mvdf_match": true,
+    "corr_match": true,
+    "enrichment": 1.1764705882269895,
+    "saved_enrichment": 1.1764705882269895
+  },
+  {
+    "seed": 1,
+    "mvdf_match": true,
+    "corr_match": true,
+    "enrichment": 2.499999999985,
+    "saved_enrichment": 2.499999999985
+  },
+  {
+    "seed": 2,
+    "mvdf_match": true,
+    "corr_match": true,
+    "enrichment": 1.9047619047510203,
+    "saved_enrichment": 1.9047619047510203
+  }
+]

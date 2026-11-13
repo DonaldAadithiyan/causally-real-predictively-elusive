@@ -1,0 +1,197 @@
+{
+  "config": {
+    "dataset_defaults": {
+      "horizon": 96,
+      "lookback": 96,
+      "max_channels": 48,
+      "target_var": -1
+    },
+    "datasets": [
+      "ETTh1",
+      "ETTh2",
+      "ETTm1",
+      "ETTm2",
+      "traffic",
+      "electricity",
+      "weather",
+      "solar"
+    ],
+    "device": "cuda",
+    "forecaster": {
+      "batch_size": 32,
+      "d_ff": 512,
+      "d_model": 256,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "lr_decay": 0.8,
+      "max_epochs": 20,
+      "n_heads": 8,
+      "n_layers": 3,
+      "patience": 5,
+      "warmup_epochs": 3
+    },
+    "go_criterion": {
+      "go_min_datasets": 2,
+      "go_threshold": 0.3,
+      "metric": "max_abs_corr_pc"
+    },
+    "phase1_max_taps": 3,
+    "run_name": "v2_phase0",
+    "seed": 0
+  },
+  "started": "2026-09-03T10:56:52",
+  "per_dataset": {
+    "ETTh1": {
+      "forecaster_val_mse": 0.7051481410290238,
+      "train_s": 22.5,
+      "signals": {
+        "embed": 0.08495519310235977,
+        "layer1": 0.1019657775759697,
+        "layer2": 0.1430264264345169,
+        "layer3_attn": 0.14342157542705536,
+        "layer3_ffn": 0.16632261872291565,
+        "pre_head": 0.16627518832683563,
+        "head_input": 0.16627518832683563
+      }
+    },
+    "ETTh2": {
+      "forecaster_val_mse": 0.22906707181235414,
+      "train_s": 14.3,
+      "signals": {
+        "embed": 0.13717328011989594,
+        "layer1": 0.14375196397304535,
+        "layer2": 0.1453782320022583,
+        "layer3_attn": 0.1446094810962677,
+        "layer3_ffn": 0.14420710504055023,
+        "pre_head": 0.14421814680099487,
+        "head_input": 0.14421814680099487
+      }
+    },
+    "ETTm1": {
+      "forecaster_val_mse": 0.3979529031143888,
+      "train_s": 76.3,
+      "signals": {
+        "embed": 0.1180984303355217,
+        "layer1": 0.10472407191991806,
+        "layer2": 0.11018870025873184,
+        "layer3_attn": 0.11165832728147507,
+        "layer3_ffn": 0.0938461571931839,
+        "pre_head": 0.09484802931547165,
+        "head_input": 0.09484802931547165
+      }
+    },
+    "ETTm2": {
+      "forecaster_val_mse": 0.1367711257256922,
+      "train_s": 57.3,
+      "signals": {
+        "embed": 0.1153775081038475,
+        "layer1": 0.10709359496831894,
+        "layer2": 0.1504092663526535,
+        "layer3_attn": 0.1711972951889038,
+        "layer3_ffn": 0.16779780387878418,
+        "pre_head": 0.16811838746070862,
+        "head_input": 0.16811838746070862
+      }
+    },
+    "traffic": {
+      "forecaster_val_mse": 0.2743981580447663,
+      "train_s": 77.7,
+      "signals": {
+        "embed": 0.16484127938747406,
+        "layer1": 0.15396280586719513,
+        "layer2": 0.13911528885364532,
+        "layer3_attn": 0.13299815356731415,
+        "layer3_ffn": 0.1299479752779007,
+        "pre_head": 0.13021118938922882,
+        "head_input": 0.13021104037761688
+      }
+    },
+    "electricity": {
+      "forecaster_val_mse": 0.06794680323171431,
+      "train_s": 156.8,
+      "signals": {
+        "embed": 0.13352088630199432,
+        "layer1": 0.16527363657951355,
+        "layer2": 0.1857350766658783,
+        "layer3_attn": 0.19773942232131958,
+        "layer3_ffn": 0.18964245915412903,
+        "pre_head": 0.16700592637062073,
+        "head_input": 0.16700592637062073
+      }
+    },
+    "weather": {
+      "forecaster_val_mse": 0.4589745870621502,
+      "train_s": 330.5,
+      "signals": {
+        "embed": 0.08065271377563477,
+        "layer1": 0.20843666791915894,
+        "layer2": 0.16012364625930786,
+        "layer3_attn": 0.19041360914707184,
+        "layer3_ffn": 0.14493468403816223,
+        "pre_head": 0.16838419437408447,
+        "head_input": 0.16838419437408447
+      }
+    },
+    "solar": {
+      "forecaster_val_mse": 0.15887666911723353,
+      "train_s": 119.3,
+      "signals": {
+        "embed": 0.11945690214633942,
+        "layer1": 0.20475804805755615,
+        "layer2": 0.16560198366641998,
+        "layer3_attn": 0.1416739970445633,
+        "layer3_ffn": 0.13044874370098114,
+        "pre_head": 0.13195471465587616,
+        "head_input": 0.13195471465587616
+      }
+    }
+  },
+  "summary": {
+    "go_threshold": 0.3,
+    "go_min_datasets": 2,
+    "metric": "max_abs_corr_pc",
+    "result": "NO_GO",
+    "winning_layers": null,
+    "all_cleared": null,
+    "per_tap_signal_across_datasets": {
+      "embed": {
+        "mean": 0.119,
+        "max": 0.165,
+        "min": 0.081
+      },
+      "head_input": {
+        "mean": 0.146,
+        "max": 0.168,
+        "min": 0.095
+      },
+      "layer1": {
+        "mean": 0.149,
+        "max": 0.208,
+        "min": 0.102
+      },
+      "layer2": {
+        "mean": 0.15,
+        "max": 0.186,
+        "min": 0.11
+      },
+      "layer3_attn": {
+        "mean": 0.154,
+        "max": 0.198,
+        "min": 0.112
+      },
+      "layer3_ffn": {
+        "mean": 0.146,
+        "max": 0.19,
+        "min": 0.094
+      },
+      "pre_head": {
+        "mean": 0.146,
+        "max": 0.168,
+        "min": 0.095
+      }
+    },
+    "run5_prehead_baseline": "0.09-0.22 (max ~0.22 weather)",
+    "interpretation": "NO-GO: no tap clears the threshold on enough datasets. Difficulty is not recoverable above the Run 5 pre-head ceiling at any probed depth (spec \u00a77 row 4). Phase 1 proceeds at pre_head as a documented fallback; this null sweep is a reported result."
+  },
+  "finished": "2026-09-03T11:12:38"
+}

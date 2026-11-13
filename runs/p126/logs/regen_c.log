@@ -1,0 +1,4 @@
+[synth_seed0] val_mse 0.926205 fvu 0.013313
+  done synth:0 in 227s
+[synth_seed1] val_mse 1.405714 fvu 0.015560
+  done synth:1 in 265s

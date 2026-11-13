@@ -1,0 +1,52 @@
+{
+  "MVDF_v2": [
+    1124,
+    1682,
+    1779,
+    1300,
+    289,
+    408,
+    658,
+    421,
+    1142,
+    1805,
+    162,
+    1076
+  ],
+  "correlated": [
+    1415,
+    1479,
+    454,
+    1860,
+    1142,
+    64,
+    236,
+    773,
+    1659,
+    992,
+    1385,
+    1622
+  ],
+  "n_gate1": 103,
+  "enrichment_v2": {
+    "selected_type_B_fraction": 0.5,
+    "pool_type_B_fraction": 0.2,
+    "enrichment_ratio": 2.4999999999874998,
+    "n_selected_in_pool": 12
+  },
+  "enrichment_corr": {
+    "selected_type_B_fraction": 0.08333333333333333,
+    "pool_type_B_fraction": 0.2,
+    "enrichment_ratio": 0.4166666666645833,
+    "n_selected_in_pool": 12
+  },
+  "feature_type_counts": {
+    "A": 24,
+    "B": 24,
+    "C": 36,
+    "D": 36
+  },
+  "data_fingerprint": "c6d1709fd0693b1a",
+  "forecaster_val_mse": 0.7133840074566671,
+  "sae_fvu": 0.011834234930574894
+}

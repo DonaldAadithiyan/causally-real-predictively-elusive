@@ -1,0 +1,168 @@
+{
+  "config": {
+    "alpha": 0.1,
+    "calibration": {
+      "burn_in": 0,
+      "clip_mult": 20.0,
+      "gamma_global": 0.03,
+      "gamma_perbin": 0.05
+    },
+    "dataset": {
+      "horizon": 96,
+      "lookback": 96,
+      "max_channels": 48,
+      "name": "weather",
+      "target_var": -1
+    },
+    "device": "cuda",
+    "forecaster": {
+      "batch_size": 32,
+      "d_ff": 512,
+      "d_model": 256,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "lr_decay": 0.8,
+      "max_epochs": 20,
+      "n_heads": 8,
+      "n_layers": 3,
+      "patience": 5,
+      "warmup_epochs": 3
+    },
+    "run_name": "mve_weather_seed1",
+    "sae": {
+      "batch_size": 512,
+      "expansion": 8,
+      "k": 64,
+      "lr": 0.0001,
+      "resample_cap": 64,
+      "resample_every": 2000,
+      "resample_until_frac": 0.5,
+      "steps": 20000
+    },
+    "seed": 1,
+    "shift": {
+      "require_ks_check": true
+    },
+    "validation": {
+      "ablation_batch_cap": 2048,
+      "feature_budget_k": 12,
+      "min_active_frac": 0.02,
+      "n_bins": 3,
+      "rq1_sample_size": 400
+    }
+  },
+  "started": "2026-09-03T09:03:33",
+  "data_fingerprint": "2e2db6ba5fba28e8",
+  "shapes": {
+    "train": [
+      122533,
+      96,
+      20
+    ],
+    "val": [
+      17341,
+      96,
+      20
+    ],
+    "test": [
+      34874,
+      96,
+      20
+    ]
+  },
+  "shift_check": {
+    "n_tail": 7013,
+    "ks_stat": 0.19577573419026667,
+    "ks_pvalue": 9.211506504955985e-225,
+    "tail_mean": 23.779984547483245,
+    "cal_mean": 19.850476443675404,
+    "tail_std": 8.190084060482725,
+    "cal_std": 8.208674853017811,
+    "is_shift": true,
+    "window": {
+      "description": "Final 20% of the weather test split.",
+      "rationale": "Final 20% of the test split: the block furthest in calendar time from the train+val calibration window, so autocorrelation-driven similarity to calibration is weakest and a seasonal/regime difference is most likely. Pre-registered before results were seen; KS-checked at run time. Jena/Beutenberg meteorology has a strong seasonal component.",
+      "tail_frac": 0.2
+    }
+  },
+  "shift_n_windows": 6917,
+  "forecaster_val_mse": 0.4579414513502819,
+  "forecaster_train_s": 310.6,
+  "forecaster_test_mae_target": 0.3520406484603882,
+  "hidden_difficulty_signal": {
+    "max_abs_corr_hiddenPC_vs_score": 0.1681840523900041,
+    "score_dispersion": 0.3632815182209015,
+    "note": "max |corr| >> 0.1 means difficulty is linearly readable pre-head; near 0.1 predicts weak H2/H3 (spec outcome B regime, aleatoric-dominated)."
+  },
+  "sae_reconstruction": {
+    "mse_raw": 0.010066300630569458,
+    "fvu_raw": 0.013246681574259466,
+    "fvu_standardized": 0.026519035920500755,
+    "l0": 64.0
+  },
+  "sae_reconstruction_cal": {
+    "mse_raw": 0.011679090559482574,
+    "fvu_raw": 0.015329718711155387,
+    "fvu_standardized": 0.03072717972099781,
+    "l0": 64.0
+  },
+  "n_eligible_features": 882,
+  "ablation_s": 28.4,
+  "ablation_n_features": 400,
+  "ablation_n_windows": 2048,
+  "ablation_positive_rate": 0.5675,
+  "ablation_max_over_median": 192.20259626884763,
+  "feature_sets": {
+    "SAE_correlated": [
+      756,
+      566,
+      486,
+      1675,
+      62,
+      2046,
+      27,
+      275,
+      807,
+      779,
+      1648,
+      25
+    ],
+    "MVDF": [
+      458,
+      1520,
+      566,
+      764,
+      62,
+      2046,
+      27,
+      44,
+      86,
+      1271,
+      379,
+      1378
+    ],
+    "SAE_random": [
+      30,
+      306,
+      361,
+      400,
+      489,
+      740,
+      900,
+      975,
+      1067,
+      1093,
+      1324,
+      1940
+    ],
+    "overlap_corr_mvdf": 4
+  },
+  "H3_delta_shift_correlated_minus_mvdf": {
+    "d_coverage": -0.0004050393805398178,
+    "d_worst_step_coverage": 0.00042772374152755255,
+    "d_width": -0.004524236395180736,
+    "d_winkler": -0.00391519841193988,
+    "d_mace": 0.0013624425048171518
+  },
+  "finished": "2026-09-03T09:11:04"
+}

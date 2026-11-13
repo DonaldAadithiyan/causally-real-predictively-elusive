@@ -1,0 +1,10 @@
+# heavy / regenerable artifacts (kept on disk, not versioned)
+*.pt
+*.pth
+*.npz
+*.npy
+*.parquet
+data/raw/
+__pycache__/
+*.pyc
+.DS_Store

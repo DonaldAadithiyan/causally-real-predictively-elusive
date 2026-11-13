@@ -1,0 +1,168 @@
+{
+  "config": {
+    "alpha": 0.1,
+    "calibration": {
+      "burn_in": 0,
+      "clip_mult": 20.0,
+      "gamma_global": 0.03,
+      "gamma_perbin": 0.05
+    },
+    "dataset": {
+      "horizon": 96,
+      "lookback": 96,
+      "max_channels": 48,
+      "name": "traffic",
+      "target_var": -1
+    },
+    "device": "cuda",
+    "forecaster": {
+      "batch_size": 32,
+      "d_ff": 512,
+      "d_model": 256,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "lr_decay": 0.8,
+      "max_epochs": 20,
+      "n_heads": 8,
+      "n_layers": 3,
+      "patience": 5,
+      "warmup_epochs": 3
+    },
+    "run_name": "mve_traffic_seed2",
+    "sae": {
+      "batch_size": 512,
+      "expansion": 8,
+      "k": 64,
+      "lr": 0.0001,
+      "resample_cap": 64,
+      "resample_every": 2000,
+      "resample_until_frac": 0.5,
+      "steps": 20000
+    },
+    "seed": 2,
+    "shift": {
+      "require_ks_check": true
+    },
+    "validation": {
+      "ablation_batch_cap": 2048,
+      "feature_budget_k": 12,
+      "min_active_frac": 0.02,
+      "n_bins": 3,
+      "rq1_sample_size": 400
+    }
+  },
+  "started": "2026-09-03T08:51:47",
+  "data_fingerprint": "f7d7a9935c07e8c3",
+  "shapes": {
+    "train": [
+      12089,
+      96,
+      48
+    ],
+    "val": [
+      1564,
+      96,
+      48
+    ],
+    "test": [
+      3318,
+      96,
+      48
+    ]
+  },
+  "shift_check": {
+    "n_tail": 702,
+    "ks_stat": 0.2358056831872294,
+    "ks_pvalue": 3.312792642974819e-33,
+    "tail_mean": 0.03841039886039886,
+    "cal_mean": 0.030161895261845383,
+    "tail_std": 0.025184230981991504,
+    "cal_std": 0.018008235027101072,
+    "is_shift": true,
+    "window": {
+      "description": "Final 20% of the traffic test split.",
+      "rationale": "Final 20% of the test split: the block furthest in calendar time from the train+val calibration window, so autocorrelation-driven similarity to calibration is weakest and a seasonal/regime difference is most likely. Pre-registered before results were seen; KS-checked at run time. SF Bay Area road occupancy has weekly regime structure and holiday anomalies.",
+      "tail_frac": 0.2
+    }
+  },
+  "shift_n_windows": 606,
+  "forecaster_val_mse": 0.2744188724881243,
+  "forecaster_train_s": 76.0,
+  "forecaster_test_mae_target": 0.2636134624481201,
+  "hidden_difficulty_signal": {
+    "max_abs_corr_hiddenPC_vs_score": 0.11400034126840214,
+    "score_dispersion": 0.40517184138298035,
+    "note": "max |corr| >> 0.1 means difficulty is linearly readable pre-head; near 0.1 predicts weak H2/H3 (spec outcome B regime, aleatoric-dominated)."
+  },
+  "sae_reconstruction": {
+    "mse_raw": 0.0017574589001014829,
+    "fvu_raw": 0.0018483211634077222,
+    "fvu_standardized": 0.002588163362815976,
+    "l0": 64.0
+  },
+  "sae_reconstruction_cal": {
+    "mse_raw": 0.004931367468088865,
+    "fvu_raw": 0.005185284915436753,
+    "fvu_standardized": 0.007425992283970118,
+    "l0": 64.0
+  },
+  "n_eligible_features": 903,
+  "ablation_s": 45.6,
+  "ablation_n_features": 400,
+  "ablation_n_windows": 1564,
+  "ablation_positive_rate": 0.225,
+  "ablation_max_over_median": 39.5366406687884,
+  "feature_sets": {
+    "SAE_correlated": [
+      1696,
+      771,
+      2024,
+      1817,
+      709,
+      543,
+      84,
+      113,
+      55,
+      1779,
+      1901,
+      110
+    ],
+    "MVDF": [
+      96,
+      1209,
+      753,
+      82,
+      782,
+      1422,
+      46,
+      1182,
+      352,
+      1135,
+      1859,
+      1500
+    ],
+    "SAE_random": [
+      30,
+      61,
+      88,
+      112,
+      220,
+      297,
+      791,
+      945,
+      999,
+      1072,
+      1132,
+      1301
+    ],
+    "overlap_corr_mvdf": 0
+  },
+  "H3_delta_shift_correlated_minus_mvdf": {
+    "d_coverage": 0.021610298462034216,
+    "d_worst_step_coverage": 0.0022529377711733023,
+    "d_width": -0.1090751106154686,
+    "d_winkler": -0.12427641529662115,
+    "d_mace": -0.009797485712605108
+  },
+  "finished": "2026-09-03T08:55:24"
+}

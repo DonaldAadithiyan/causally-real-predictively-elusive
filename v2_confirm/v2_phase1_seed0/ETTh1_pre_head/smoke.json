@@ -1,0 +1,9 @@
+{
+  "n_pool": 120,
+  "dose_pred_nontrivial_count": 117,
+  "dose_unc_nontrivial_count": 119,
+  "mono_frac_pred": 0.8916666666666667,
+  "mono_frac_unc": 0.875,
+  "PASS": true,
+  "sae_final_fvu": NaN
+}

@@ -1,0 +1,111 @@
+{
+  "config": {
+    "run_name": "v2_phase1",
+    "seed": 0,
+    "device": "cpu",
+    "datasets": [
+      "ETTh1"
+    ],
+    "dataset_defaults": {
+      "lookback": 96,
+      "horizon": 96,
+      "target_var": -1,
+      "max_channels": 48
+    },
+    "forecaster": {
+      "d_model": 256,
+      "n_layers": 3,
+      "n_heads": 8,
+      "d_ff": 512,
+      "dropout": 0.1,
+      "lr": 0.0001,
+      "batch_size": 32,
+      "max_epochs": 3,
+      "patience": 5,
+      "lr_decay": 0.8,
+      "warmup_epochs": 3
+    },
+    "sae": {
+      "expansion": 8,
+      "k": 64,
+      "steps": 3000,
+      "batch_size": 512,
+      "lr": 0.0001,
+      "resample_every": 2000,
+      "resample_until_frac": 0.5,
+      "resample_cap": 64
+    },
+    "phase1": {
+      "candidate_pool_size": 40,
+      "ablation_window_cap": 512,
+      "lambdas": [
+        0.0,
+        0.25,
+        0.5,
+        0.75,
+        1.0,
+        1.25
+      ],
+      "feature_budget_k": 12,
+      "u_threshold": 0.0,
+      "residualize_method": "isotonic"
+    },
+    "fallback_tap": "pre_head"
+  },
+  "phase0_result": "OVERRIDE",
+  "winning_taps": [
+    "pre_head"
+  ],
+  "started": "2026-09-03T18:06:19",
+  "per_run": {
+    "ETTh1_pre_head": {
+      "forecaster_val_mse": 0.7133840074566671,
+      "seconds": 37.5,
+      "env_split": {
+        "n_select": 1967,
+        "n_eval_id": 1966,
+        "n_eval_shift": 1967,
+        "ks_evalID_vs_select": {
+          "stat": 0.1244160385940759,
+          "p": 9.112094717571395e-14
+        },
+        "ks_evalShift_vs_select": {
+          "stat": 0.5048296898830706,
+          "p": 2.0481399292246724e-228
+        },
+        "shift_verified": true
+      },
+      "type_counts": {
+        "A": 7,
+        "B": 7,
+        "C": 13,
+        "D": 13
+      },
+      "type_fractions": {
+        "A": 0.175,
+        "B": 0.175,
+        "C": 0.325,
+        "D": 0.325
+      },
+      "H1_rho": 0.13470919324577862,
+      "H1b_rho": 0.22157598499061917,
+      "enrichment_v2": 0.9523809523755101,
+      "enrichment_v1": 1.9047619047510203,
+      "enrichment_corr": 0.47619047618775506,
+      "smoke_pass": true,
+      "mvdf_v2_vs_v1_overlap": 3
+    }
+  },
+  "data_fingerprints": {
+    "ETTh1": {
+      "dataset": "ETTh1",
+      "rows": 17420,
+      "channels": 7,
+      "train_rows": 8640,
+      "val_rows": 2880,
+      "test_rows": 5900,
+      "edge_hash": "e683635e42804659"
+    }
+  },
+  "finished": "2026-09-03T18:07:10"
+}

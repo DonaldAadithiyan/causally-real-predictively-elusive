@@ -1,0 +1,28 @@
+{
+  "dataset": "ETTm2",
+  "seed": 0,
+  "embargo": 192,
+  "n_fit": 3933,
+  "n_cal": 2167,
+  "n_test_ID": 1382,
+  "n_test_shift": 7771,
+  "best_nonrep": "in_diff_std",
+  "inner_selection_spearman": {
+    "last_obs": 0.19981017276352736,
+    "ema": 0.08639256566106288,
+    "roll_q90": -0.16784904652902372,
+    "in_std": 0.45437275584385317,
+    "in_diff_std": 0.4544671249180418,
+    "in_range": 0.4226482564732108,
+    "in_allch_std": 0.22231732451616457,
+    "fc_rough": 0.31075145139395494,
+    "fc_range": 0.4402362677530297,
+    "knn": 0.2359861014562087,
+    "gbm_union": -0.07305857730983426
+  },
+  "gbm_union_hparams": [
+    2,
+    100
+  ],
+  "q_base": 1.01219370204095
+}

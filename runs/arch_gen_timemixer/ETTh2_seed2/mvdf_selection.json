@@ -1,0 +1,72 @@
+{
+  "MVDF_v2": [
+    1627,
+    691,
+    1280,
+    1808,
+    1740,
+    859,
+    1145,
+    698,
+    1666,
+    1618,
+    103,
+    288
+  ],
+  "correlated": [
+    1618,
+    1627,
+    698,
+    293,
+    707,
+    1068,
+    20,
+    384,
+    1858,
+    691,
+    1740,
+    878
+  ],
+  "MVDF_v1": [
+    1063,
+    1618,
+    1164,
+    15,
+    809,
+    1426,
+    1740,
+    691,
+    1716,
+    293,
+    1698,
+    123
+  ],
+  "n_gate1": 113,
+  "enrichment_v2": {
+    "selected_type_B_fraction": 0.25,
+    "pool_type_B_fraction": 0.11666666666666667,
+    "enrichment_ratio": 2.1428571428387753,
+    "n_selected_in_pool": 12
+  },
+  "enrichment_v1": {
+    "selected_type_B_fraction": 0.0,
+    "pool_type_B_fraction": 0.11666666666666667,
+    "enrichment_ratio": 0.0,
+    "n_selected_in_pool": 12
+  },
+  "enrichment_corr": {
+    "selected_type_B_fraction": 0.25,
+    "pool_type_B_fraction": 0.11666666666666667,
+    "enrichment_ratio": 2.1428571428387753,
+    "n_selected_in_pool": 12
+  },
+  "feature_type_counts": {
+    "A": 14,
+    "B": 14,
+    "C": 46,
+    "D": 46
+  },
+  "forecaster_val_mse": 0.21438616919845577,
+  "sae_fvu": 0.0007553855539299548,
+  "data_fingerprint": "c022db5521d23684"
+}
