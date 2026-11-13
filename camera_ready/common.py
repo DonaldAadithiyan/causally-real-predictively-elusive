@@ -156,7 +156,8 @@ class Run:
         self.L, self.H = int(a["L"]), int(a["H"])
         self.tv = int(a["target_var"])
         self.meta = meta(ds, seed)
-        self.mvdf = np.asarray(self.meta["mvdf"], int)
+        mv = self.meta["stored_mvdf"] if self.meta.get("mvdf_used") == "stored" else self.meta["mvdf"]
+        self.mvdf = np.asarray(mv, int)
         self.correlated = np.asarray(self.meta.get("correlated", []), int)
         self.abs_err = np.abs(self.y - self.yhat).astype(np.float64)
         self.idx_sel = np.where(self.m_select)[0]
