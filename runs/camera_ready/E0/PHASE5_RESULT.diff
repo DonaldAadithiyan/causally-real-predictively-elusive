@@ -1,0 +1,12 @@
+6c6
+< Low reconstruction loss + sparsity does not imply a unique decomposition. This matches features ACROSS independently-trained SAEs by **causal signature** — standardized Euclidean distance in `(P_j, U_j, R_j)` space (pooled-SD units), mutual nearest neighbour — not by decoder-weight correlation (permutation / rotation freedom makes raw coordinate matching a poor criterion). Reported as a curve over match thresholds {0.1, 0.25, 0.5, 1.0} SD; headline table shown at 0.5 SD (the loosest still-meaningful cutoff — a stricter one only lowers the match rate).
+---
+> Low reconstruction loss + sparsity does not imply a unique decomposition. This matches features ACROSS independently-trained SAEs by **causal signature** — standardized Euclidean distance in `(P_j, U_j, R_j)` space (pooled-SD units), mutual nearest neighbour — not by decoder-weight correlation (permutation / rotation freedom makes raw coordinate matching a poor criterion). Reported as a curve over match thresholds {0.1, 0.25, 0.5, 1.0} SD; headline table shown at 0.25 SD.
+10c10
+< ## Headline (threshold 0.5 SD) — run-0 MVDF features matched in run-r
+---
+> ## Headline (threshold 0.25 SD) — run-0 MVDF features matched in run-r
+37c37
+< **Low functional reproducibility** — mean match rate 0.25 at 0.5 SD (shuffle floor 0.25). Individual MVDF feature identity does not survive an SAE reseed by causal signature. H1c's claim must be stated purely at the population level (type-B enrichment is a property of the SAE feature *space*, reproducible in aggregate); no claim about specific features.
+---
+> **Low functional reproducibility** — mean match rate 0.25 at 0.25 SD (shuffle floor 0.25). Individual MVDF feature identity does not survive an SAE reseed by causal signature. H1c's claim must be stated purely at the population level (type-B enrichment is a property of the SAE feature *space*, reproducible in aggregate); no claim about specific features.
