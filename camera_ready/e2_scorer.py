@@ -27,6 +27,7 @@ from eval import metrics
 warnings.filterwarnings("ignore")
 torch.set_num_threads(4)
 GAMMA = 0.03
+BOOTS = {}
 
 
 def run_cell(ds, seed):
@@ -66,7 +67,8 @@ def run_cell(ds, seed):
         if r["mode"] != "naive_matched":
             k = "te" if r["block"] == "ID" else "sh"
             d = widths[(r["mode"], k)] - widths[("naive_matched", k)]
-            mu, lo, hi, _ = boot_mean(d)
+            mu, lo, hi, bb = boot_mean(d)
+            BOOTS[(ds, seed, r["mode"], r["block"])] = bb
             nm = [x for x in res if x["mode"] == "naive_matched" and x["block"] == r["block"]][0]
             r.update(width_minus_naive=mu, wmn_lo=lo, wmn_hi=hi,
                      coverage_minus_naive=r["coverage"] - nm["coverage"],
@@ -91,6 +93,7 @@ def main():
                                               f"[{r['wmn_lo']:+.3f},{r['wmn_hi']:+.3f}] cov {r['coverage']:.3f}"
                                               for r in sh), flush=True)
     pd.DataFrame(rows).to_csv(a.out, index=False)
+    pd.to_pickle(BOOTS, a.out.replace(".csv", "_boot.pkl"))
     print(f"done {time.time()-t0:.0f}s")
 
 

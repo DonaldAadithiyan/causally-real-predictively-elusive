@@ -82,7 +82,12 @@ def provenance(cmd, seeds, datasets, t0, device="cpu"):
 
 
 # ------------------------------------------------------------------ artifacts
+ARR_OVERRIDE = os.environ.get("CR_ARR_DIR")      # E6: TimeMixer arrays + meta live here
+
+
 def arr_path(tag):
+    if ARR_OVERRIDE:
+        return os.path.join(ARR_OVERRIDE, f"{tag}.npz")
     p = os.path.join(CR, "arrays", f"{tag}.npz")
     return p if os.path.exists(p) else os.path.join(R2, "arrays", f"{tag}.npz")
 
@@ -95,6 +100,8 @@ def weights_dir(tag):
 
 def meta(ds, seed):
     tag = f"{ds}_seed{seed}"
+    if ARR_OVERRIDE:
+        return json.load(open(os.path.join(ARR_OVERRIDE, f"{tag}_meta.json")))
     p = os.path.join(CR, "E2", "meta", f"{tag}_meta.json")
     if os.path.exists(p) and not (ds in ETT and seed <= 2):
         return json.load(open(p))

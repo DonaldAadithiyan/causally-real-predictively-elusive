@@ -127,7 +127,9 @@ def mondrian(shat_cal, s_cal, shat_tests, n_bins=10):
     return [np.array([q[k] for k in np.digitize(st, edges)]) for st in shat_tests], len(edges) + 1
 
 
-def run_cell(ds, seed, out, blocks=(96, 192)):
+def run_cell(ds, seed, out, blocks=(96, 192), sets=None):
+    SETS_ = SETS if sets is None else [x for x in SETS if x in sets]
+    EXANTE_ = [x for x in EXANTE if x in SETS_]
     t0 = time.time()
     run = Run(ds, seed)
     cd = os.path.join(out, "cells", run.tag)
@@ -151,7 +153,7 @@ def run_cell(ds, seed, out, blocks=(96, 192)):
                "S": S[rows]}
     boot = {}
     cvsel = {}
-    for name in SETS:
+    for name in SETS_:
         Xall = fs[name][0]
         Xf, Xe, Xs = Xall[P(fit)], Xall[P(ev)], Xall[P(sh)]
         best, cvsc = cv_select(Xf, S[fit], est_seed)
@@ -175,8 +177,8 @@ def run_cell(ds, seed, out, blocks=(96, 192)):
                         boot[(split, name)] = dict(r2=b["_r2b"], rho=b["_rhob"])
                 pred_rows.append(r)
     # C3.3: paired dR2, F6's CV-selected estimator on both F6 and F7
-    e6 = cvsel["F6"]
-    for split, idx in (("ID", ev), ("shift", sh)):
+    e6 = cvsel.get("F6")
+    for split, idx in ((("ID", ev), ("shift", sh)) if "F7" in SETS_ else ()):
         p6 = per_win[f"F6__{e6}"][P(idx)]; p7 = per_win[f"F7__{e6}"][P(idx)]
         for bl in blocks:
             b6 = boot_r2_rho(S[idx], p6, ybar_fit, block=bl)
@@ -215,7 +217,7 @@ def run_cell(ds, seed, out, blocks=(96, 192)):
                              GRR=np.nan, coverage_valid=abs(cov_n - 0.9) <= 0.02,
                              oracle_coverage=float(np.mean(s <= hw_o))))
     gap_choice = {}
-    for name in SETS:
+    for name in SETS_:
         Xall = fs_g[name][0]
         best, cvsc = cv_select(Xall[P(tr)], S[tr], est_seed)
         gap_choice[name] = (best, cvsc[best])
@@ -237,7 +239,7 @@ def run_cell(ds, seed, out, blocks=(96, 192)):
                                  width_reduction=red, width_reduction_lo=rlo,
                                  width_reduction_hi=rhi, cv_mse=cvsc[best]))
     # best ex-ante set for C3.4 = lowest CV MSE among EXANTE (chosen before test)
-    best_ex = min(EXANTE, key=lambda k: gap_choice[k][1])
+    best_ex = min(EXANTE_, key=lambda k: gap_choice[k][1])
     gdf = pd.DataFrame(gap_rows)
     gdf["is_best_exante"] = gdf.feature_set == best_ex
     pd.DataFrame(pred_rows).to_csv(os.path.join(cd, "pred.csv"), index=False)
@@ -260,12 +262,13 @@ def main():
     ap.add_argument("--seeds", nargs="+", type=int, default=[0, 1, 2])
     ap.add_argument("--out", default="runs/camera_ready/E3")
     ap.add_argument("--skip_done", action="store_true")
+    ap.add_argument("--sets", nargs="+", default=None)
     a = ap.parse_args()
     for ds in a.datasets:
         for s in a.seeds:
             if a.skip_done and os.path.exists(os.path.join(a.out, "cells", f"{ds}_seed{s}", "boot.pkl")):
                 continue
-            run_cell(ds, s, a.out)
+            run_cell(ds, s, a.out, sets=a.sets)
 
 
 if __name__ == "__main__":
