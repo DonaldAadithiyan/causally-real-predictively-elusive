@@ -1,0 +1,324 @@
+{
+  "ETTh1": {
+    "block96": {
+      "dataset": "ETTh1",
+      "N": 3,
+      "threshold": 3,
+      "predictive_counts": {
+        "F0": 0,
+        "F1": 0,
+        "F1p": 0,
+        "F2": 0,
+        "F6": 0
+      },
+      "C3_1": {
+        "pass_": false,
+        "sets_passing": [],
+        "lenient_any_set_seeds": 0
+      },
+      "C3_2": {
+        "pass_": false,
+        "F0_not_predictive_seeds": 3
+      },
+      "C3_4": {
+        "pass_": false,
+        "block": "ID",
+        "seeds_ok": 0,
+        "best_set_per_seed": {
+          "0": "F1",
+          "1": "F1",
+          "2": "F6"
+        },
+        "GRR_per_seed": {
+          "0": NaN,
+          "1": NaN,
+          "2": NaN
+        },
+        "coverage_per_seed": {
+          "0": 0.769,
+          "1": 0.721,
+          "2": 0.754
+        },
+        "denominator_positive": {
+          "0": false,
+          "1": false,
+          "2": false
+        }
+      },
+      "C3_5": {
+        "pass_": false,
+        "counts": {
+          "F4": 0,
+          "F5": 0
+        }
+      }
+    },
+    "block192": {
+      "dataset": "ETTh1",
+      "N": 3,
+      "threshold": 3,
+      "predictive_counts": {
+        "F0": 0,
+        "F1": 0,
+        "F1p": 0,
+        "F2": 0,
+        "F6": 0
+      },
+      "C3_1": {
+        "pass_": false,
+        "sets_passing": [],
+        "lenient_any_set_seeds": 0
+      },
+      "C3_2": {
+        "pass_": false,
+        "F0_not_predictive_seeds": 3
+      },
+      "C3_4": {
+        "pass_": false,
+        "block": "ID",
+        "seeds_ok": 0,
+        "best_set_per_seed": {
+          "0": "F1",
+          "1": "F1",
+          "2": "F6"
+        },
+        "GRR_per_seed": {
+          "0": NaN,
+          "1": NaN,
+          "2": NaN
+        },
+        "coverage_per_seed": {
+          "0": 0.769,
+          "1": 0.721,
+          "2": 0.754
+        },
+        "denominator_positive": {
+          "0": false,
+          "1": false,
+          "2": false
+        }
+      },
+      "C3_5": {
+        "pass_": false,
+        "counts": {
+          "F4": 0,
+          "F5": 0
+        }
+      }
+    },
+    "shift_block": {
+      "dataset": "ETTh1",
+      "N": 3,
+      "threshold": 3,
+      "predictive_counts": {
+        "F0": 0,
+        "F1": 0,
+        "F1p": 0,
+        "F2": 0,
+        "F6": 0
+      },
+      "C3_1": {
+        "pass_": false,
+        "sets_passing": [],
+        "lenient_any_set_seeds": 0
+      },
+      "C3_2": {
+        "pass_": false,
+        "F0_not_predictive_seeds": 3
+      },
+      "C3_4": {
+        "pass_": false,
+        "block": "shift",
+        "seeds_ok": 0,
+        "best_set_per_seed": {
+          "0": "F1",
+          "1": "F1",
+          "2": "F6"
+        },
+        "GRR_per_seed": {
+          "0": -2.327,
+          "1": 0.104,
+          "2": -2.307
+        },
+        "coverage_per_seed": {
+          "0": 0.841,
+          "1": 0.768,
+          "2": 0.884
+        },
+        "denominator_positive": {
+          "0": true,
+          "1": true,
+          "2": true
+        }
+      },
+      "C3_5": {
+        "pass_": false,
+        "counts": {
+          "F4": 0,
+          "F5": 0
+        }
+      }
+    }
+  },
+  "ETTh2": {
+    "block96": {
+      "dataset": "ETTh2",
+      "N": 3,
+      "threshold": 3,
+      "predictive_counts": {
+        "F0": 0,
+        "F1": 0,
+        "F1p": 0,
+        "F2": 0,
+        "F6": 0
+      },
+      "C3_1": {
+        "pass_": false,
+        "sets_passing": [],
+        "lenient_any_set_seeds": 0
+      },
+      "C3_2": {
+        "pass_": false,
+        "F0_not_predictive_seeds": 3
+      },
+      "C3_4": {
+        "pass_": false,
+        "block": "ID",
+        "seeds_ok": 0,
+        "best_set_per_seed": {
+          "0": "F1p",
+          "1": "F2",
+          "2": "F1p"
+        },
+        "GRR_per_seed": {
+          "0": NaN,
+          "1": NaN,
+          "2": NaN
+        },
+        "coverage_per_seed": {
+          "0": 0.734,
+          "1": 0.693,
+          "2": 0.728
+        },
+        "denominator_positive": {
+          "0": false,
+          "1": false,
+          "2": false
+        }
+      },
+      "C3_5": {
+        "pass_": false,
+        "counts": {
+          "F4": 0,
+          "F5": 0
+        }
+      }
+    },
+    "block192": {
+      "dataset": "ETTh2",
+      "N": 3,
+      "threshold": 3,
+      "predictive_counts": {
+        "F0": 0,
+        "F1": 0,
+        "F1p": 0,
+        "F2": 0,
+        "F6": 0
+      },
+      "C3_1": {
+        "pass_": false,
+        "sets_passing": [],
+        "lenient_any_set_seeds": 0
+      },
+      "C3_2": {
+        "pass_": false,
+        "F0_not_predictive_seeds": 3
+      },
+      "C3_4": {
+        "pass_": false,
+        "block": "ID",
+        "seeds_ok": 0,
+        "best_set_per_seed": {
+          "0": "F1p",
+          "1": "F2",
+          "2": "F1p"
+        },
+        "GRR_per_seed": {
+          "0": NaN,
+          "1": NaN,
+          "2": NaN
+        },
+        "coverage_per_seed": {
+          "0": 0.734,
+          "1": 0.693,
+          "2": 0.728
+        },
+        "denominator_positive": {
+          "0": false,
+          "1": false,
+          "2": false
+        }
+      },
+      "C3_5": {
+        "pass_": false,
+        "counts": {
+          "F4": 0,
+          "F5": 0
+        }
+      }
+    },
+    "shift_block": {
+      "dataset": "ETTh2",
+      "N": 3,
+      "threshold": 3,
+      "predictive_counts": {
+        "F0": 0,
+        "F1": 0,
+        "F1p": 0,
+        "F2": 0,
+        "F6": 0
+      },
+      "C3_1": {
+        "pass_": false,
+        "sets_passing": [],
+        "lenient_any_set_seeds": 0
+      },
+      "C3_2": {
+        "pass_": false,
+        "F0_not_predictive_seeds": 3
+      },
+      "C3_4": {
+        "pass_": false,
+        "block": "shift",
+        "seeds_ok": 0,
+        "best_set_per_seed": {
+          "0": "F1p",
+          "1": "F2",
+          "2": "F1p"
+        },
+        "GRR_per_seed": {
+          "0": -0.493,
+          "1": -0.533,
+          "2": -0.474
+        },
+        "coverage_per_seed": {
+          "0": 0.975,
+          "1": 0.991,
+          "2": 0.963
+        },
+        "denominator_positive": {
+          "0": true,
+          "1": true,
+          "2": true
+        }
+      },
+      "C3_5": {
+        "pass_": false,
+        "counts": {
+          "F4": 0,
+          "F5": 0
+        }
+      }
+    }
+  }
+}

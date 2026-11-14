@@ -1,0 +1,38 @@
+{
+  "C4_1": false,
+  "C4_2": false,
+  "C4_3": true,
+  "iso_enr_pass": 1,
+  "per_def": {
+    "isotonic": {
+      "jaccard_median": 1.0,
+      "enr_pass": 1,
+      "null_ok": true
+    },
+    "binned": {
+      "jaccard_median": 0.37254901960784315,
+      "enr_pass": 0,
+      "null_ok": true
+    },
+    "spline": {
+      "jaccard_median": 0.6571428571428571,
+      "enr_pass": 2,
+      "null_ok": true
+    },
+    "linear": {
+      "jaccard_median": 0.55,
+      "enr_pass": 2,
+      "null_ok": true
+    },
+    "rank": {
+      "jaccard_median": 0.6,
+      "enr_pass": 6,
+      "null_ok": true
+    },
+    "none": {
+      "jaccard_median": 0.5058823529411764,
+      "enr_pass": 1,
+      "null_ok": true
+    }
+  }
+}
