@@ -1,0 +1,12 @@
+[electricity_seed3] forecaster 611s val_mse 0.0682
+[electricity_seed3] SAE+selection 443s fvu 0.0150
+[electricity_seed3] done 1075s val_mse 0.0682 fvu 0.0150 enr 3.571428571397959
+[electricity_seed4] forecaster 904s val_mse 0.0683
+[electricity_seed4] SAE+selection 357s fvu 0.0153
+[electricity_seed4] done 1285s val_mse 0.0683 fvu 0.0153 enr 3.9999999999519997
+[traffic_seed3] forecaster 406s val_mse 0.2752
+[traffic_seed3] SAE+selection 299s fvu 0.0036
+[traffic_seed3] done 718s val_mse 0.2752 fvu 0.0036 enr 3.3333333332999993
+[traffic_seed4] forecaster 410s val_mse 0.2742
+[traffic_seed4] SAE+selection 304s fvu 0.0037
+[traffic_seed4] done 728s val_mse 0.2742 fvu 0.0037 enr 1.4285714285591835

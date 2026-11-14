@@ -1,0 +1,24 @@
+{
+  "lambdas": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1,
+    1.25
+  ],
+  "natural_range": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "dose": "p126.selection.fast_dose (== sweep_pool)",
+  "bootstrap": {
+    "block": 96,
+    "n": 2000,
+    "seed": 0
+  },
+  "interchange": "donors: top/bottom quintile of active E_select a_j; eval: active E_eval_ID windows"
+}

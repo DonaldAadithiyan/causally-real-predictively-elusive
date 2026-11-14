@@ -1,0 +1,12 @@
+{
+  "definitions": [
+    "isotonic",
+    "binned(10 equal-count)",
+    "spline(make_smoothing_spline, GCV, z-scored)",
+    "linear",
+    "rank",
+    "none"
+  ],
+  "selection": "gate1 monotone+finite, top-12 by R",
+  "enrichment_ci": "bootstrap over features 2000, seed 0"
+}

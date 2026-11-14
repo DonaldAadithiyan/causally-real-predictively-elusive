@@ -1,0 +1,17 @@
+{
+  "datasets": [
+    "electricity",
+    "traffic"
+  ],
+  "seeds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "max_channels": 48,
+  "phase3": "original definitions from arrays",
+  "phase4": "original construction + block CI",
+  "e3": "see runs/camera_ready/E3/config.json"
+}

@@ -1,0 +1,55 @@
+{
+  "tag": "electricity_seed4",
+  "val_mse": 0.06826519988191275,
+  "n_channels": 47,
+  "fingerprint": {
+    "dataset": "electricity",
+    "rows": 35000,
+    "channels": 47,
+    "train_rows": 24500,
+    "val_rows": 3500,
+    "test_rows": 7000,
+    "edge_hash": "cc6af3b5973c14af"
+  },
+  "device": "mps",
+  "n_windows": {
+    "train": 24309,
+    "val": 3309,
+    "test": 6809
+  },
+  "sae_fvu": 0.015283758752048016,
+  "mvdf": [
+    1974,
+    3,
+    1624,
+    1672,
+    414,
+    443,
+    748,
+    977,
+    1513,
+    1062,
+    1321,
+    1026
+  ],
+  "correlated": [
+    25,
+    856,
+    1305,
+    442,
+    296,
+    1993,
+    1624,
+    553,
+    1547,
+    1544,
+    347,
+    589
+  ],
+  "enrichment_typeB": 3.9999999999519997,
+  "n_gate1": 114,
+  "raw_sha256": "353cbeb1d1ec92f0f08851a1c95ef0be4658d120176a0dde478a659bf48b1570",
+  "raw_file": "data/raw/electricity.csv",
+  "wall_clock_s": 1285.3237481117249,
+  "threads": 4
+}

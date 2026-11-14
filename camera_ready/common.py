@@ -331,7 +331,9 @@ def enrichment_stats(selected, ftab, pool, n_boot=N_BOOT, seed=BOOT_SEED):
     from validation.difficulty_specificity import enrichment
     e = enrichment(np.asarray(selected, int), ftab, np.asarray(pool, int))
     B = set(ftab["cells"]["B"])
-    selb = np.array([int(j) in B for j in selected if int(j) in set(int(p) for p in pool)], float)
+    selected = sorted(int(j) for j in selected)        # CI must depend on the set, not its order
+    pool = sorted(int(j) for j in pool)
+    selb = np.array([int(j) in B for j in selected if int(j) in set(pool)], float)
     poolb = np.array([int(j) in B for j in pool], float)
     rng = np.random.default_rng(seed)
     num = selb[rng.integers(0, len(selb), (n_boot, len(selb)))].mean(1)

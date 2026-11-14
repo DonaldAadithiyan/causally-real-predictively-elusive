@@ -1,0 +1,22 @@
+{
+  "target": "S_t, E_select profile",
+  "split": "Phase-3 60/40 of E_eval_ID; shift scored with ID-fit models",
+  "estimators": [
+    "ols",
+    "iso_col",
+    "iso_ols",
+    "gbm(200,d3,lr.05,ss.8)",
+    "mlp pinball 2x64 300ep",
+    "ridge std + RidgeCV logspace(-3,3,13) TSCV5",
+    "rf(500,leaf20)"
+  ],
+  "selection": "5-fold TimeSeriesSplit MSE in fit split",
+  "bootstrap": {
+    "block": 96,
+    "sensitivity": 192,
+    "n": 2000,
+    "seed": 0
+  },
+  "gap": "50/30/20 of E_eval_ID, static split conformal, 10 Mondrian bins of Shat",
+  "alpha": 0.1
+}

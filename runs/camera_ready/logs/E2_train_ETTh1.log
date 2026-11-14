@@ -1,0 +1,24 @@
+[ETTh1_seed0] forecaster 50s val_mse 0.7134
+[ETTh1_seed0] SAE+selection 320s fvu 0.0118
+[ETTh1_seed0] done 373s val_mse 0.7134 fvu 0.0118 enr 2.4999999999874998
+[ETTh1_seed3] forecaster 114s val_mse 0.7089
+[ETTh1_seed3] SAE+selection 319s fvu 0.0119
+[ETTh1_seed3] done 437s val_mse 0.7089 fvu 0.0119 enr 1.4814814814748969
+[ETTh1_seed4] forecaster 93s val_mse 0.7057
+[ETTh1_seed4] SAE+selection 463s fvu 0.0120
+[ETTh1_seed4] done 561s val_mse 0.7057 fvu 0.0120 enr 1.9999999999904
+[ETTh1_seed5] forecaster 242s val_mse 0.7041
+[ETTh1_seed5] SAE+selection 639s fvu 0.0115
+[ETTh1_seed5] done 888s val_mse 0.7041 fvu 0.0115 enr 2.1739130434669187
+[ETTh1_seed6] forecaster 103s val_mse 0.7008
+[ETTh1_seed6] SAE+selection 525s fvu 0.0124
+[ETTh1_seed6] done 634s val_mse 0.7008 fvu 0.0124 enr 1.7857142857066326
+[ETTh1_seed7] forecaster 146s val_mse 0.7066
+[ETTh1_seed7] SAE+selection 559s fvu 0.0124
+[ETTh1_seed7] done 709s val_mse 0.7066 fvu 0.0124 enr 1.9999999999904
+[ETTh1_seed8] forecaster 151s val_mse 0.7055
+[ETTh1_seed8] SAE+selection 395s fvu 0.0121
+[ETTh1_seed8] done 551s val_mse 0.7055 fvu 0.0121 enr 2.0833333333229165
+[ETTh1_seed9] forecaster 120s val_mse 0.7057
+[ETTh1_seed9] SAE+selection 434s fvu 0.0125
+[ETTh1_seed9] done 559s val_mse 0.7057 fvu 0.0125 enr 2.2222222222074075

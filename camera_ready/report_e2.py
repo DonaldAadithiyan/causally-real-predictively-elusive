@@ -41,7 +41,8 @@ def enrichment_table():
             e = enrichment_stats(mv, ftab, pool)
             m = meta(ds, s)
             B = set(ftab["cells"]["B"])
-            boots[(ds, s)] = enr_boot(np.array([j in B for j in mv], float), np.array([j in B for j in pool], float))
+            boots[(ds, s)] = enr_boot(np.array([j in B for j in sorted(mv)], float),
+                                      np.array([j in B for j in sorted(pool)], float))
             rows.append(dict(dataset=ds, seed=s, stored_enrichment=m.get("enrichment_typeB"), **e))
     return pd.DataFrame(rows), boots
 

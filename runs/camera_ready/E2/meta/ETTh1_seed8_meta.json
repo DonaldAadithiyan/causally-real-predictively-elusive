@@ -1,0 +1,55 @@
+{
+  "tag": "ETTh1_seed8",
+  "val_mse": 0.7054822796026806,
+  "n_channels": 7,
+  "fingerprint": {
+    "dataset": "ETTh1",
+    "rows": 17420,
+    "channels": 7,
+    "train_rows": 8640,
+    "val_rows": 2880,
+    "test_rows": 5900,
+    "edge_hash": "e683635e42804659"
+  },
+  "device": "cpu",
+  "n_windows": {
+    "train": 8449,
+    "val": 2689,
+    "test": 5709
+  },
+  "sae_fvu": 0.012081015855073929,
+  "mvdf": [
+    1063,
+    1142,
+    1284,
+    1175,
+    1627,
+    2000,
+    1529,
+    385,
+    583,
+    1431,
+    309,
+    1384
+  ],
+  "correlated": [
+    1084,
+    176,
+    1863,
+    1493,
+    385,
+    204,
+    479,
+    1809,
+    1935,
+    2024,
+    1384,
+    160
+  ],
+  "enrichment_typeB": 2.0833333333229165,
+  "n_gate1": 103,
+  "raw_sha256": "f18de3ad269cef59bb07b5438d79bb3042d3be49bdeecf01c1cd6d29695ee066",
+  "raw_file": "data/raw/ETTh1.csv",
+  "wall_clock_s": 551.365042924881,
+  "threads": 4
+}

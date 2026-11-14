@@ -1,0 +1,5 @@
+dataset,seed,split,estimator,block,R2_F6,R2_F7,dR2,dR2_lo,dR2_hi
+ETTh1,0,ID,iso_col,96,0.0,0.0,0.0,0.0,0.0
+ETTh1,0,ID,iso_col,192,0.0,0.0,0.0,0.0,0.0
+ETTh1,0,shift,iso_col,96,0.0,0.0,0.0,0.0,0.0
+ETTh1,0,shift,iso_col,192,0.0,0.0,0.0,0.0,0.0
