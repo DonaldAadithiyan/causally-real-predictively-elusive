@@ -1,5 +1,9 @@
 name: ci
-on: [push, pull_request]
+# Manual-only: start from the Actions tab ("Run workflow") or `gh workflow run ci.yml`.
+# It does not run on push, so commits never show a failed check when Actions is unavailable
+# for the account. The same checks are recorded from a local fresh clone in docs/VERIFICATION.md.
+on:
+  workflow_dispatch:
 jobs:
   test:
     runs-on: ubuntu-latest

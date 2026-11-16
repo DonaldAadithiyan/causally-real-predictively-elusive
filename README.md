@@ -4,8 +4,9 @@
 Difficulty Representations in Neural Forecasters"** — Donald Aadithiyan, Department of Computer
 Science and Engineering, University of Moratuwa. ICAART 2027 (short paper).
 
-[![ci](https://github.com/DonaldAadithiyan/causally-real-predictively-elusive/actions/workflows/ci.yml/badge.svg)](https://github.com/DonaldAadithiyan/causally-real-predictively-elusive/actions/workflows/ci.yml)
-Licence: MIT (code). Data is not redistributed (see [Data](#data)).
+Release: [`v1.0-camera-ready`](https://github.com/DonaldAadithiyan/causally-real-predictively-elusive/releases/tag/v1.0-camera-ready) ·
+Verified: 121 tests pass from a fresh clone ([`docs/VERIFICATION.md`](docs/VERIFICATION.md)) ·
+Licence: MIT (code); data is not redistributed (see [Data](#data)).
 
 ---
 
@@ -380,7 +381,9 @@ kept for the record and their outputs are committed under `results/v1/` and `res
 | `tests/test_smoke.py` | the end-to-end smoke run passes | `data/raw/ETTh1.csv` |
 
 CI (`.github/workflows/ci.yml`) installs CPU torch, lints for syntax errors and undefined names,
-downloads ETTh1/ETTh2 and runs the full test suite.
+downloads ETTh1/ETTh2 and runs the full test suite. It is **manual-only** (Actions tab → "ci" →
+"Run workflow"), so it never marks a commit as failed when Actions is unavailable. The same
+checks, run from a fresh clone, are recorded in [`docs/VERIFICATION.md`](docs/VERIFICATION.md).
 
 ## What is in `results/`
 
