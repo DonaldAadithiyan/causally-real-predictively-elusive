@@ -1,0 +1,98 @@
+{
+  "link1_Uj_signed_and_tracks_z": {
+    "passed": true,
+    "mvdf_U_j": [
+      0.006787640707833341,
+      0.004951190948486265,
+      0.004061726161411854,
+      0.0022749083382739717,
+      0.005225563049316017,
+      0.0017710345132007316,
+      0.0014452253069195205,
+      0.0005901609148294846,
+      0.0004838398524689783,
+      0.0004086630684985764,
+      0.0018736975533616587,
+      0.0015484946114674581
+    ],
+    "mvdf_mean_abs_corr_hardfrac": 0.32274675746552894,
+    "pool_mean_abs_corr_hardfrac": 0.1809079560129309,
+    "regime_feature_id": 166,
+    "regime_feature_type": "B",
+    "regime_feature_not_typeA": true,
+    "regime_feature_P_j": 1.0950224740115442e-05,
+    "regime_feature_U_j": 0.004951190948486265,
+    "regime_feature_in_MVDF": true
+  },
+  "link2_mvdf_enriches_type_B": {
+    "passed": true,
+    "passed_spec_literal": true,
+    "passed_strict_ge_corr": false,
+    "enrichment_v2": 2.499999999985,
+    "enrichment_corr": 3.4999999999790004,
+    "enrichment_v1": 1.499999999991,
+    "note": "spec (causal-predictive-dissociation-experiments.md 1.3) requires only enrichment_v2 >= 1.0 vs the pool; it does NOT require beating correlated. Here correlated out-enriches MVDF because this DGP entangles difficulty and prediction roles (pool corr(|P_j|,|U_j|) ~0.5-0.6, vs ~0.02-0.42 on real data) and the regime proxy is dense (5-8x pool median activation) \u2014 exactly the regime where plain correlation is strong and R_j's residualization discounts a feature whose two causal roles are intertwined."
+  },
+  "link3_natural_activation_predicts_St": {
+    "passed": true,
+    "marginal_best_r2": 0.2635734399581635,
+    "activation_conditioned_best_r2": 0.29304587477524924,
+    "marginal": {
+      "linear": {
+        "r2": 0.2277811218831064,
+        "rank_corr": 0.5861036958258337,
+        "calib_slope": 1.0842717417227468
+      },
+      "isotonic": {
+        "r2": -0.013912070478621974,
+        "rank_corr": 0.0,
+        "calib_slope": NaN
+      },
+      "gbm": {
+        "r2": 0.2635734399581635,
+        "rank_corr": 0.5905813157390876,
+        "calib_slope": 1.089266489670903
+      },
+      "mlp": {
+        "r2": 0.24173650202200836,
+        "rank_corr": 0.5971285907307247,
+        "calib_slope": 1.0189344803093923
+      }
+    },
+    "activation_conditioned": {
+      "linear": {
+        "r2": 0.25100373827773825,
+        "rank_corr": 0.6232662422310029,
+        "calib_slope": 1.0912504662792641
+      },
+      "isotonic": {
+        "r2": -0.010600162455939977,
+        "rank_corr": 0.0,
+        "calib_slope": NaN
+      },
+      "gbm": {
+        "r2": 0.29304587477524924,
+        "rank_corr": 0.6271982018529788,
+        "calib_slope": 1.0910834057433434
+      },
+      "mlp": {
+        "r2": 0.2719632771002687,
+        "rank_corr": 0.6341794880419508,
+        "calib_slope": 1.0371662142132438
+      }
+    }
+  },
+  "link4_scorer_beats_naive_matched": {
+    "passed": false,
+    "mvdf_minus_naive_matched_ID_mean_diff": -0.00880733822744027,
+    "mvdf_minus_naive_matched_ID_ci": [
+      -0.07804910974500429,
+      0.06165767953611792
+    ],
+    "significant": false,
+    "coverage_equivalent_ID": true,
+    "mvdf_id_coverage": 0.888125,
+    "naive_matched_id_coverage": 0.8909375
+  },
+  "all_links_passed": false
+}
