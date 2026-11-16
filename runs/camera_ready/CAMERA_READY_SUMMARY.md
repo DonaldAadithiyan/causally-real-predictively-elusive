@@ -23,7 +23,7 @@ Spec: `CAMERA_READY_EXPERIMENTS.md` (pasted task). All outputs under `runs/camer
 | **C3.1** ex-ante predictable | **FAIL** (ETTh1, ETTh2, electricity, traffic) | best set per dataset: ETTh1 F6 1/10, ETTh2 F2 6/10, electricity F3/F6 1/5, traffic F1 1/5 (need 8/10, 4/5) |
 | **C3.2** dissociation | **FAIL** (requires C3.1) | F0 (MVDF) not predictive on 30/30 seeds |
 | **C3.3** MVDF adds nothing | **PASS** (all 4) | ΔR² CI ∋ 0 on 10/10, 10/10, 5/5, 4/5 |
-| **C3.4** recoverable opportunity | **FAIL** (all 4) | no valid-coverage cell with GRR ≥ 0.20; every valid GRR is negative (−0.41 to −2.41) |
+| **C3.4** recoverable opportunity | **FAIL** (all 4) | the CV-selected best ex-ante set never reaches GRR ≥ 0.20 at valid coverage; its valid GRRs are all negative. Over *all* sets on the shift block: ETTh valid GRRs −0.20 to −2.72; traffic F3 (not CV-selected) +0.28 to +0.41 on 4/5 seeds against an outlier-inflated constant band (coverage 1.000); see `F/RESULT.md` §5 |
 | **C3.5** representation contains it | **PASS ETTh2**, FAIL ETTh1/elec/traffic | ETTh2: dense hidden state predictive 10/10 (ρ ≈ 0.38), SAE code 7/10; MVDF 0/10 |
 | C3 block-192 sensitivity | one change | electricity C3.1/C3.2 flip to PASS at block 192 (F3 4/5); block 96 is primary |
 | **C4.1** selection robust | **PASS** (at the bar) | median Jaccard: binned 0.50, spline 0.71, rank 0.60 |
@@ -37,6 +37,8 @@ Spec: `CAMERA_READY_EXPERIMENTS.md` (pasted task). All outputs under `runs/camer
 | **C1.3** = C3.x on new data | see C3 rows | |
 | **C2.1** "3/3" claims hold on ≥ 80% of seeds | **FAIL (partly)** | enrichment ≥ 1×, Phase-3 null, oracle gap: hold on 30/30. "naive_matched significantly narrower than scorer on every run": ETTh1 4/10 (dense), 0/10 (mvdf); electricity 0/5, 0/5 |
 | **C2.2** medians stable | **PASS** | 32/32 rows: |Δmedian| ≤ pooled half-width |
+| F1 regime gating (H7-A), 10 seeds | **0/20 pass** | R_Q ETTh1 0.86–1.20, ETTh2 0.97–1.05; no CI excludes 1 from above; the original 1/6 pass does not reproduce (it came from a mismatched-SAE feature list) |
+| F2 pooled enrichment | holds pooled, **not on ETTh1** | 30-run mean 2.52 [2.13, 3.33]. Against the selection null (≈ 1.8× from shuffled U): Fisher p = 5.6e-10 overall; ETTh1 0/10 seeds, Fisher p = 0.62 |
 | Health rule | 0/30 unhealthy | new-seed FVU 0.0052–0.0160; val-MSE ratio ≤ 1.006 |
 | **E6** C1.1 (TimeMixer) | **PASS** | 6/6, every CI < 0 |
 | **E6** C3.1–C3.2 (TimeMixer) | **FAIL** | 0/3 every set; ETTh2 F2 ρ ≈ 0.32 but CI ∋ 0 |
@@ -85,7 +87,7 @@ Delete "never above a shuffled-signature floor"; that floor is identical to the 
 | electricity | 5 | −0.29 [−0.33, −0.29] | 18.1% [17.3, 18.3] | +0.33 / 1/5 | −0.41 (1/5 valid) |
 | traffic | 5 | −0.70 [−1.33, −0.46] | 39.1% [39.0, 39.6] | +0.34 / 0/5 | none (coverage 1.000) |
 
-> "Across all four datasets (30 trained runs), natural MVDF activation fails to predict difficulty (best held-out R² −0.29 to −1.33, every block-bootstrap CI below zero), while an oracle shows 18–39% of interval width is attributable to difficulty heterogeneity. No ex-ante predictor converts this into a narrower conformal band at valid coverage."
+> "Across all four datasets (30 trained runs), natural MVDF activation fails to predict difficulty (best held-out R² −0.29 to −1.33, every block-bootstrap CI below zero), while an oracle shows 18–39% of interval width is attributable to difficulty heterogeneity. No ex-ante predictor chosen by cross-validation converts this into a narrower conformal band at valid coverage."
 
 **E2: seeds (answers R3).** Report per-seed values, median [min, max] and k/N (no SD). Table in `E2/RESULT.md` "For the paper"; all per-seed numbers in `E2/SEED_TABLE.md`.
 > "Across 30 independently retrained pipelines, MVDF is type-B-enriched on every run (median 2.0–3.9×), natural MVDF activation predicts difficulty worse than a constant on every run, and the oracle gap is positive on every run; no headline median moved by more than its pooled CI half-width when going from 3 seeds to 5 or 10. The constant-width band's advantage over the learned scorer is significant on only 4/10 (dense) and 0/10 (MVDF) ETTh1 seeds."
@@ -108,6 +110,8 @@ Delete "never above a shuffled-signature floor"; that floor is identical to the 
 | Table 2 | MVDF ≥ 1.0× 12/12, min 2.00, max 4.62, mean 3.02 (Kaggle, 4 datasets × 3) | local models, 30 runs: ≥ 1.0× on 30/30, min 1.25, max 4.17; bootstrap CI excludes 1 on 9/30 | `E2/AGG_E2_enrichment.csv` |
 | §5.6 | "both differences are significant in every dataset-seed run, 12 of 12 each" | not supported: naive_matched significantly narrower than dense on 4/10 ETTh1, 10/10 ETTh2, 0/5 electricity, 5/5 traffic seeds; than mvdf on 0/10, 10/10, 0/5, 5/5 (block bootstrap, local data). Direction holds everywhere except electricity mvdf (narrower at 0.82 coverage) | `E2/AGG_E2_scorer_vs_naive.csv` |
 | §5.11 | match rate 0.21–0.29 vs base 0.30–0.39; "never above a shuffled-signature floor" | 0.08–0.33 (mean 0.25) vs 0.28–0.43 per comparison at 0.25 SD; delete the floor clause | `E0/RESULT.md` |
+| §5.7 regime gating | "Only one of six seed-runs passed: R_Q ranged from 0.91 to 1.06, five of six intervals contained 1" | none of 20 seed-runs passes; R_Q 0.86–1.20 (ETTh1), 0.97–1.05 (ETTh2); the original pass came from cell-B IDs taken from a different SAE | `F/AGG_F1_regime_gating.csv` |
+| §5.1 enrichment wording | "MVDF reliably finds type-B features" (vs pool base rate) | the selection rule alone gives ≈ 1.8× on shuffled U; beyond that null, enrichment holds pooled (p = 6e-10) and on ETTh2/electricity/traffic but not ETTh1 (p = 0.62) | `F/AGG_F2_pooled.csv` |
 | §3 / §5.4 seed statements | "3 seeds" / "mean ± sd over 3 seeds" | 10 seeds (ETTh), 5 (electricity, traffic); per-seed + median [min, max] + k/N | E2 |
 
 ---
@@ -131,6 +135,14 @@ Delete "never above a shuffled-signature floor"; that floor is identical to the 
    - Regime gating (§5.7) was not re-run.
    - Electricity/traffic were run to 5 seeds, not 10.
 9. **The predicted "small" fraction is not small:** 8.1% of active windows at λ = 1.25 exceed the natural q99 (57% counting inactive windows as zero). E5b answers this directly.
+
+## Follow-up (F)
+Items 1–5 of the follow-up request are answered in `F/RESULT.md`:
+- **1. Regime gating:** 0/20 seed-runs pass.
+- **2. Pooled enrichment:** holds against the selection null overall, but not on ETTh1.
+- **3. ACI:** learned scorers and naive_matched use the same immediate-feedback ACI, so the comparison is like-for-like.
+- **4. Profile locality:** each block is normalised by its own realised errors.
+- **5. Shift gap recovery:** positive only on traffic, against an outlier-inflated constant band.
 
 ## File map
 `E0/` RESULT, DEFINITIONS, Phase-5 diff · `E1/` RESULT, AGG_E1_*, per-dataset folders, PER_WINDOW_E1.parquet · `E2/` RESULT, SEED_TABLE.md, AGG_E2_*, meta/ · `E3/` RESULT, AGG_E3_predictability/gap_recovery/delta, CRITERIA_E3.json, PER_WINDOW_E3.parquet, cells/ · `E4/` RESULT, AGG_E4_rj_robustness.csv · `E5/` RESULT, AGG_E5a/b/c, E5a_hist.png · `E6/` RESULT, AGG_E6_*, arrays/ · code in `camera_ready/` (leakage test: `python -m camera_ready.test_leakage`).

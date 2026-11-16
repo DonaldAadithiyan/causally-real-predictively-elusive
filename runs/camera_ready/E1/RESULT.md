@@ -56,7 +56,7 @@ Pre-declared issues, as observed:
 - **Enrichment direction vs `v2_runs/AGG_h1c.csv`** (electricity 4.00, traffic 4.55): local models give electricity 3.85 [2.00, 4.17] and traffic 3.33 [1.43, 4.17] over 5 seeds. Same direction (> 1 on 10/10); no mismatch.
 
 ## Plain-English summary
-Both reviewer points on dataset scope now have direct answers. On electricity and traffic, as on ETTh, natural MVDF activation predicts difficulty worse than a constant on every seed (best R² −0.29 to −1.33, every CI below zero). Real heterogeneity exists (an oracle would be 18% narrower in-distribution on electricity, 39% on traffic). Cheap ex-ante features do carry a rank signal here (electricity input/forecast statistics ρ ≈ 0.24–0.33; traffic input statistics ρ ≈ 0.34). But only 0–1 of 5 seeds clear the joint R²-and-ρ bar at block 96. On traffic the R² is badly negative because the fit split contains an outlier stretch that sets the level. None of this translates into a narrower conformal band at valid coverage.
+Both reviewer points on dataset scope now have direct answers. On electricity and traffic, as on ETTh, natural MVDF activation predicts difficulty worse than a constant on every seed (best R² −0.29 to −1.33, every CI below zero). Real heterogeneity exists (an oracle would be 18% narrower in-distribution on electricity, 39% on traffic). Cheap ex-ante features do carry a rank signal here (electricity input/forecast statistics ρ ≈ 0.24–0.33; traffic input statistics ρ ≈ 0.34). But only 0–1 of 5 seeds clear the joint R²-and-ρ bar at block 96. On traffic the R² is badly negative because the fit split contains an outlier stretch that sets the level. No CV-selected ex-ante band is narrower than the constant band at valid coverage. The only positive cases (traffic shift, forecast statistics F3, GRR 0.28–0.41 on 4/5 seeds; not CV-selected) are measured against a constant band inflated by the calibration outlier (coverage 1.000); see `F/RESULT.md` §5.
 
 ## Anomalies
 - **Traffic bootstrap:** on 3/5 traffic seeds the Phase-3 point R² lies just outside its own block CI (e.g. s0 −1.333 vs CI [−4.95, −1.354]). The heavy-tailed outlier stretch makes the moving-block bootstrap distribution skewed; the CI is still entirely below 0, so C1.1 is unaffected.
@@ -72,7 +72,7 @@ Both reviewer points on dataset scope now have direct answers. On electricity an
 | electricity | 5 | −0.29 [−0.33, −0.29] | 18.1% [17.3, 18.3] | F6 +0.33 / 1/5 | −0.41 (1/5 valid) |
 | traffic | 5 | −0.70 [−1.33, −0.46] | 39.1% [39.0, 39.6] | F2 +0.34 / 0/5 | none (coverage 1.000) |
 
-> "Across all four datasets (30 trained runs), natural MVDF activation fails to predict difficulty (best held-out R² −0.29 to −1.33, every block-bootstrap CI below zero), while an oracle shows 18–39% of interval width is attributable to difficulty heterogeneity. No ex-ante predictor converts this into a narrower conformal band at valid coverage."
+> "Across all four datasets (30 trained runs), natural MVDF activation fails to predict difficulty (best held-out R² −0.29 to −1.33, every block-bootstrap CI below zero), while an oracle shows 18–39% of interval width is attributable to difficulty heterogeneity. No ex-ante predictor chosen by cross-validation converts this into a narrower conformal band at valid coverage."
 
 ---
 
