@@ -23,12 +23,13 @@ Kaggle setup:
 """
 from __future__ import annotations
 
+from mechconf.paths import REPO_ROOT  # noqa: E402
 import argparse
 import base64
 import json
 import os
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = REPO_ROOT
 
 PKG_FILES = [
     "__init__.py",
@@ -104,12 +105,12 @@ def build():
         "sys.path.insert(0,'mechanistic_conformal'); os.chdir('mechanistic_conformal')\n"
         "\n"
         "# find v2_phase1_seed* dirs anywhere under /kaggle/input, or inside a zip there\n"
-        "os.makedirs('runs', exist_ok=True)\n"
+        "os.makedirs('results', 'v2', exist_ok=True)\n"
         "found=[]\n"
         "for root,dirs,files in os.walk('/kaggle/input'):\n"
         "    for d in dirs:\n"
         "        if d.startswith('v2_phase1_seed'):\n"
-        "            src=os.path.join(root,d); dst=os.path.join('runs',d)\n"
+        "            src=os.path.join(root,d); dst=os.path.join('results', 'v2',d)\n"
         "            if not os.path.exists(dst): shutil.copytree(src,dst); found.append(d)\n"
         "    for f in files:\n"
         "        if f.endswith('.zip'):\n"
@@ -117,14 +118,14 @@ def build():
         "                with zipfile.ZipFile(os.path.join(root,f)) as z:\n"
         "                    names=[n for n in z.namelist() if 'v2_phase1_seed' in n]\n"
         "                    if names:\n"
-        "                        z.extractall('runs/_unzip'); print('extracted', f)\n"
-        "                        for p in glob.glob('runs/_unzip/**/v2_phase1_seed*', recursive=True):\n"
-        "                            b=os.path.basename(p); dst=os.path.join('runs',b)\n"
+        "                        z.extractall('results/v2/_unzip'); print('extracted', f)\n"
+        "                        for p in glob.glob('results/v2/_unzip/**/v2_phase1_seed*', recursive=True):\n"
+        "                            b=os.path.basename(p); dst=os.path.join('results', 'v2',b)\n"
         "                            if os.path.isdir(p) and not os.path.exists(dst):\n"
         "                                shutil.copytree(p,dst); found.append(b)\n"
         "            except zipfile.BadZipFile: pass\n"
-        "print('Phase 1 dirs available:', sorted(set(os.path.basename(p) for p in glob.glob('runs/v2_phase1_seed*'))))\n"
-        "assert glob.glob('runs/v2_phase1_seed*/*/mvdf_v2_selection.json'), \\\n"
+        "print('Phase 1 dirs available:', sorted(set(os.path.basename(p) for p in glob.glob('results/v2/v2_phase1_seed*'))))\n"
+        "assert glob.glob('results/v2/v2_phase1_seed*/*/mvdf_v2_selection.json'), \\\n"
         "    'No Phase 1 selections found. Attach the previous run output (v2_confirm.zip as a dataset).'\n"
         "from data.probe_inputs import probe; probe()\n"
     ))
@@ -152,22 +153,22 @@ def build():
         "import runpy, sys\n"
         "sys.argv=['hd','--datasets']+[str(x) for x in " + dss + "]"
         "+['--seeds']+[str(x) for x in " + sds + "]"
-        "+['--phase1_root_tmpl','runs/v2_phase1_seed{seed}']\n"
-        "try: runpy.run_module('experiments.h6_and_diagnostic', run_name='__main__')\n"
+        "+['--phase1_root_tmpl','results/v2/v2_phase1_seed{seed}']\n"
+        "try: runpy.run_module('experiments.v2.h6_and_diagnostic', run_name='__main__')\n"
         "except SystemExit: pass\n"
     ))
 
     cells.append(md("## 4. Read the results"))
     cells.append(code(
         "import pandas as pd\n"
-        "diag=pd.read_csv('runs/h6_and_diag/AGG_diag.csv')\n"
+        "diag=pd.read_csv('results/v2/h6_and_diag/AGG_diag.csv')\n"
         "print('=== AGG DIAGNOSTIC: bins_populated by condition x agg ===')\n"
         "print(diag.pivot_table(index='condition',columns='agg',values='bins_populated').round(2).to_string())\n"
         "print('\\n=== per-feature activation rate (median) ===')\n"
         "print(diag.groupby('condition')['median_per_feat_active'].mean().round(3).to_string())\n"
         "print('  (MVDF_v2/correlated staying ~2-3 bins under ALL aggs -> H3 structurally unmeasurable)')\n"
         "\n"
-        "h6=pd.read_csv('runs/h6_and_diag/AGG_h6.csv')\n"
+        "h6=pd.read_csv('results/v2/h6_and_diag/AGG_h6.csv')\n"
         "print('\\n=== H6 coverage sanity (split-conformal -> ~0.90 ID) ===')\n"
         "print(h6.groupby('mode')[['id_coverage','shift_coverage']].mean().round(3).to_string())\n"
         "print('\\n=== per-seed shift width by mode ===')\n"
@@ -183,7 +184,7 @@ def build():
         "        em=h6[h6.dataset=='electricity'].pivot_table(index='mode',columns='seed',values='shift_coverage').reindex(sh).round(3)\n"
         "        print('\\n  electricity shift coverage by seed (cf mvdf 0.827/0.630/0.811):'); print(em.to_string())\n"
         "\n"
-        "t=pd.read_csv('runs/h6_and_diag/AGG_h6_tests.csv')\n"
+        "t=pd.read_csv('results/v2/h6_and_diag/AGG_h6_tests.csv')\n"
         "summ=t.groupby(['comparison','env']).agg(mean_diff=('mean_diff','mean'),"
         "p_a_lt_b=('p_a_lt_b','mean'),n_sig=('significant','sum'),n=('significant','size')).round(4)\n"
         "print('\\n=== paired bootstrap by comparison x env (mean over 12 dataset-seed runs) ===')\n"
@@ -205,8 +206,8 @@ def build():
     cells.append(md("## 5. Zip"))
     cells.append(code(
         "import shutil\n"
-        "shutil.make_archive('/kaggle/working/v2_h6_topup','zip','runs/h6_and_diag')\n"
-        "print('runs/h6_and_diag -> /kaggle/working/v2_h6_topup.zip')\n"
+        "shutil.make_archive('/kaggle/working/v2_h6_topup','zip','results/v2/h6_and_diag')\n"
+        "print('results/v2/h6_and_diag -> /kaggle/working/v2_h6_topup.zip')\n"
     ))
 
     return {"cells": cells, "metadata": {"kernelspec": {"display_name": "Python 3",

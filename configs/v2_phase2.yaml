@@ -1,5 +1,5 @@
 # V2 Phase 2 — cross-environment invariance (the measurement Run 5 skipped). PRE-REGISTERED.
-# Depends on runs/v2_phase1/*/mvdf_v2_selection.json (the feature sets) and the SAE
+# Depends on results/v2/v2_phase1/*/mvdf_v2_selection.json (the feature sets) and the SAE
 # trained in Phase 1 at the winning tap.
 #
 # Environment carve-out (committed in configs/environment_splits/README.md BEFORE this runs):

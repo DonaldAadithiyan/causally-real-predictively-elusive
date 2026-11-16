@@ -1,5 +1,5 @@
 # V2 Phase 1 — full mechanistic characterization at the winning layer(s). PRE-REGISTERED.
-# Depends on runs/v2_phase0/layer_sweep_summary.json (winning_layers or NO_GO).
+# Depends on results/v2/v2_phase0/layer_sweep_summary.json (winning_layers or NO_GO).
 #
 # PRE-REGISTERED THRESHOLDS (spec §4.6, do not edit after seeing Phase 1 results):
 #   u_threshold  — |U_j| gate for the MVDF_v2 dose-response criterion. Set relative to

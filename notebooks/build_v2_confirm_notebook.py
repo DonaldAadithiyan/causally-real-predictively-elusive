@@ -20,12 +20,13 @@ Kaggle: GPU + Internet on, attach uom220001c. Run All. ~2-3 hr.
 """
 from __future__ import annotations
 
+from mechconf.paths import REPO_ROOT  # noqa: E402
 import argparse
 import base64
 import json
 import os
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = REPO_ROOT
 
 PKG_FILES = [
     "__init__.py",
@@ -133,10 +134,10 @@ def build():
         "    yaml.safe_dump(c,open('configs/_p1.yaml','w'))\n"
         "    print('='*70,f'\\n PHASE 1  seed {sd}\\n','='*70)\n"
         "    sys.argv=['p1','--config','configs/_p1.yaml','--taps','pre_head']\n"
-        "    try: runpy.run_module('experiments.phase1_core_mechanism', run_name='__main__')\n"
+        "    try: runpy.run_module('experiments.v2.phase1_core_mechanism', run_name='__main__')\n"
         "    except SystemExit: pass\n"
         "import pandas as pd, glob\n"
-        "for f in sorted(glob.glob('runs/v2_phase1_seed*/AGG_h1c.csv')):\n"
+        "for f in sorted(glob.glob('results/v2/v2_phase1_seed*/AGG_h1c.csv')):\n"
         "    print(f); display(pd.read_csv(f))\n"
     ))
 
@@ -158,16 +159,16 @@ def build():
         "    c=yaml.safe_load(open('configs/v2_phase2.yaml')); c['seed']=sd; c['run_name']=f'v2_phase2_seed{sd}'\n"
         "    yaml.safe_dump(c,open('configs/_p2.yaml','w'))\n"
         "    print('='*70,f'\\n PHASE 2  seed {sd}\\n','='*70)\n"
-        "    sys.argv=['p2','--config','configs/_p2.yaml','--phase1_root',f'runs/v2_phase1_seed{sd}','--taps','pre_head']\n"
-        "    try: runpy.run_module('experiments.phase2_invariance', run_name='__main__')\n"
+        "    sys.argv=['p2','--config','configs/_p2.yaml','--phase1_root',f'results/v2/v2_phase1_seed{sd}','--taps','pre_head']\n"
+        "    try: runpy.run_module('experiments.v2.phase2_invariance', run_name='__main__')\n"
         "    except SystemExit: pass\n"
         "\n"
         "import pandas as pd, glob\n"
         "frames=[]\n"
-        "for f in sorted(glob.glob('runs/v2_phase2_seed*/AGG_invariance.csv')):\n"
+        "for f in sorted(glob.glob('results/v2/v2_phase2_seed*/AGG_invariance.csv')):\n"
         "    d=pd.read_csv(f); d['seed']=int(f.split('seed')[1].split('/')[0]); frames.append(d)\n"
         "inv=pd.concat(frames, ignore_index=True)\n"
-        "inv.to_csv('runs/AGG_invariance_multiseed.csv', index=False)\n"
+        "inv.to_csv('results/v2/AGG_invariance_multiseed.csv', index=False)\n"
         "deg_cols=[c for c in inv.columns if c.startswith('degenerate_')]\n"
         "print('=== degenerate-I flags (min shared bins < 3) by condition ===')\n"
         "if deg_cols: print(inv[deg_cols].sum().to_string())\n"
@@ -180,8 +181,8 @@ def build():
         "# aggregation diagnostic — does ANY aggregation give MVDF_v2/correlated a real signal?\n"
         + "sys.argv=['ad','--datasets']+[str(x) for x in " + dss
         + "]+['--seeds']+[str(x) for x in " + sds
-        + "]+['--phase1_root_tmpl','runs/v2_phase1_seed{seed}']\n"
-        + "try: runpy.run_module('experiments.aggregation_diagnostic', run_name='__main__')\n"
+        + "]+['--phase1_root_tmpl','results/v2/v2_phase1_seed{seed}']\n"
+        + "try: runpy.run_module('experiments.v2.aggregation_diagnostic', run_name='__main__')\n"
         "except SystemExit: pass\n"
         "except Exception as e: print('agg diagnostic failed (non-fatal):', e)\n"
     ))
@@ -192,16 +193,16 @@ def build():
         "c=yaml.safe_load(open('configs/v2_phase3_h6.yaml')); c['device']=dev; c['strict_fingerprint']=True\n"
         f"c['datasets']={dss}; c['seeds']={sds}\n"
         "yaml.safe_dump(c,open('configs/v2_phase3_h6.yaml','w'))\n"
-        "sys.argv=['p3','--config','configs/v2_phase3_h6.yaml','--phase1_root_tmpl','runs/v2_phase1_seed{seed}']\n"
-        "try: runpy.run_module('experiments.phase3_scorer_h6', run_name='__main__')\n"
+        "sys.argv=['p3','--config','configs/v2_phase3_h6.yaml','--phase1_root_tmpl','results/v2/v2_phase1_seed{seed}']\n"
+        "try: runpy.run_module('experiments.v2.phase3_scorer_h6', run_name='__main__')\n"
         "except SystemExit: pass\n"
         "import pandas as pd\n"
-        "h6=pd.read_csv('runs/v2_phase3_h6/AGG_h6.csv')\n"
+        "h6=pd.read_csv('results/v2/v2_phase3_h6/AGG_h6.csv')\n"
         "print('=== coverage sanity (split-conformal -> should be ~0.90 ID) ===')\n"
         "print(h6.groupby('mode')[['id_coverage','shift_coverage']].mean().round(3).to_string())\n"
         "print('\\n=== per-seed shift width by mode ===')\n"
         "print(h6.pivot_table(index=['dataset','seed'],columns='mode',values='shift_width').round(3).to_string())\n"
-        "t=pd.read_csv('runs/v2_phase3_h6/AGG_h6_tests.csv')\n"
+        "t=pd.read_csv('results/v2/v2_phase3_h6/AGG_h6_tests.csv')\n"
         "print('\\n=== paired bootstrap by comparison x env (mean over 9 dataset-seed runs) ===')\n"
         "summ=t.groupby(['comparison','env']).agg(mean_diff=('mean_diff','mean'),"
         "p_a_lt_b=('p_a_lt_b','mean'),n_sig=('significant','sum'),n=('significant','size')).round(4)\n"
@@ -218,7 +219,7 @@ def build():
 
     cells.append(md("## 6. Zip"))
     cells.append(code(
-        "import shutil; shutil.make_archive('/kaggle/working/v2_confirm','zip','runs')\n"
+        "import shutil; shutil.make_archive('/kaggle/working/v2_confirm','zip','results', 'v2')\n"
         "print('runs -> /kaggle/working/v2_confirm.zip')\n"
     ))
 

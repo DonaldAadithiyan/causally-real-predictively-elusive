@@ -37,21 +37,21 @@ SEEDS = ["0", "1", "2"]
 
 # name -> (module, extra args). All use `python -m experiments.<mod>`.
 JOBS = {
-    "phase3": ("experiments.phase3_real_predictability",
+    "phase3": ("experiments.v2.phase3_real_predictability",
                ["--datasets", *DATASETS, "--seeds", *SEEDS]),
-    "oracle": ("experiments.phase4_oracle_ceiling",
+    "oracle": ("experiments.v2.phase4_oracle_ceiling",
                ["--datasets", *DATASETS, "--seeds", *SEEDS]),
-    "baseline": ("experiments.baseline_comparison",
+    "baseline": ("experiments.v2.baseline_comparison",
                  ["--datasets", *DATASETS, "--seeds", *SEEDS]),
-    "archgen": ("experiments.arch_gen_timemixer",
+    "archgen": ("experiments.v2.arch_gen_timemixer",
                 ["--datasets", *DATASETS, "--seeds", *SEEDS]),
-    "phase5": ("experiments.phase5_sae_reproducibility",
+    "phase5": ("experiments.v2.phase5_sae_reproducibility",
                ["--datasets", *DATASETS]),
     # optional: Task G is already complete for all 4 datasets in v2_h6_topup/.
     # Only run this if you deliberately want a local-retrain regeneration.
-    "taskg":  ("experiments.phase3_scorer_h6",
+    "taskg":  ("experiments.v2.phase3_scorer_h6",
                ["--datasets", *DATASETS, "--seeds", *SEEDS,
-                "--phase1_root_tmpl", "v2_confirm/v2_phase1_seed{seed}"]),
+                "--phase1_root_tmpl", "results/v2/v2_confirm/v2_phase1_seed{seed}"]),
 }
 ORDER = ["phase3", "oracle", "baseline", "archgen", "phase5"]  # taskg excluded by default
 

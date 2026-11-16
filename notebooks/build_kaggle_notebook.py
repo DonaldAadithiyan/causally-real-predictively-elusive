@@ -7,7 +7,7 @@ Usage:
 The notebook:
   1. writes every package file into /kaggle/working/mechanistic_conformal/
   2. pip-installs deps not already on the Kaggle image
-  3. runs experiments.mve_real for ETTh1 + ETTh2 (device auto -> cuda)
+  3. runs experiments.v1_mve.mve_real for ETTh1 + ETTh2 (device auto -> cuda)
   4. displays the RQ1 / H2 / H3 tables and the plots inline
   5. zips runs/ for download
 
@@ -17,6 +17,7 @@ ETT CSVs as a Kaggle Dataset and set data/raw/ paths.
 """
 from __future__ import annotations
 
+from mechconf.paths import REPO_ROOT  # noqa: E402
 import argparse
 import json
 import os
@@ -38,7 +39,7 @@ PKG_FILES = [
     "configs/mve_etth1.yaml",
 ]
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = REPO_ROOT
 
 
 def md(src):
@@ -166,7 +167,7 @@ def build(full_suite: bool, datasets=None, seeds=None):
         "        print('=' * 70, f'\\n {ds}  seed {sd}\\n', '=' * 70)\n"
         "        sys.argv = ['mve_real', '--config', cpath]\n"
         "        try:\n"
-        "            runpy.run_module('experiments.mve_real', run_name='__main__')\n"
+        "            runpy.run_module('experiments.v1_mve.mve_real', run_name='__main__')\n"
         "        except SystemExit:\n"
         "            pass\n"
         "        except Exception as e:\n"
@@ -180,13 +181,13 @@ def build(full_suite: bool, datasets=None, seeds=None):
         "from IPython.display import display, Image\n"
         "\n"
         "rows = []\n"
-        "for rd in sorted(glob.glob('runs/mve_*')):\n"
+        "for rd in sorted(glob.glob('results/v2/mve_*')):\n"
         "    try:\n"
         "        log = json.load(open(f'{rd}/run_log.json'))\n"
         "        rq1 = json.load(open(f'{rd}/rq1_diagnostic.json'))\n"
         "    except FileNotFoundError:\n"
         "        continue\n"
-        "    m = re.match(r'runs/mve_(.+?)(?:_seed(\\d+))?$', rd)\n"
+        "    m = re.match(r'results/v2/mve_(.+?)(?:_seed(\\d+))?$', rd)\n"
         "    ds, seed = m.group(1), int(m.group(2) or 0)\n"
         "    h3 = log.get('H3_delta_shift_correlated_minus_mvdf', {})\n"
         "    hd = log.get('hidden_difficulty_signal', {})\n"
@@ -203,8 +204,8 @@ def build(full_suite: bool, datasets=None, seeds=None):
         "\n"
         "agg = raw.groupby('dataset').agg(['mean','std']).round(4)\n"
         "print('=== aggregated across seeds (mean / std) ==='); display(agg)\n"
-        "raw.to_csv('runs/AGG_per_run.csv', index=False)\n"
-        "agg.to_csv('runs/AGG_by_dataset.csv')\n"
+        "raw.to_csv('results/v2/AGG_per_run.csv', index=False)\n"
+        "agg.to_csv('results/v2/AGG_by_dataset.csv')\n"
         "\n"
         "# H3 read: positive d_coverage AND negative d_width => MVDF both covers better and\n"
         "# stays tighter under shift (outcome A). Flag datasets where the sign is stable.\n"
@@ -215,7 +216,7 @@ def build(full_suite: bool, datasets=None, seeds=None):
         "          f'd_width {wid.mean():+.4f}+-{wid.std():.4f}  '\n"
         "          f'{\"[stable sign]\" if stable_cov else \"[sign flips across seeds]\"}')\n"
         "\n"
-        "for rd in sorted(glob.glob('runs/mve_*')):\n"
+        "for rd in sorted(glob.glob('results/v2/mve_*')):\n"
         "    p = f'{rd}/coverage_width_over_time.png'\n"
         "    if os.path.exists(p):\n"
         "        print(rd); display(Image(p))\n"
@@ -224,7 +225,7 @@ def build(full_suite: bool, datasets=None, seeds=None):
     cells.append(md("## 5. Zip for download"))
     cells.append(code(
         "import shutil\n"
-        "shutil.make_archive('/kaggle/working/mve_runs', 'zip', 'runs')\n"
+        "shutil.make_archive('/kaggle/working/mve_runs', 'zip', 'results', 'v2')\n"
         "print('runs -> /kaggle/working/mve_runs.zip')\n"
     ))
 

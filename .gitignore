@@ -8,3 +8,10 @@ data/raw/
 __pycache__/
 *.pyc
 .DS_Store
+
+# large artifacts: published as release assets (artifacts/MANIFEST.sha256), not in git
+results/camera_ready/_no_kaggle_bundle
+data/
+*.egg-info/
+.pytest_cache/
+smoke_out/

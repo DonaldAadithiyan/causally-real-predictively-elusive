@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mechconf"
+version = "1.0.0"
+description = "Causal SAE features in neural forecasters vs natural predictability vs conformal usefulness (ICAART 2027 #126)"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Donald Aadithiyan", email = "donaldaadithiyanwork@gmail.com" }]
+dependencies = [
+  "numpy==2.4.4",
+  "pandas==3.0.2",
+  "scipy==1.17.1",
+  "torch==2.6.0",
+  "scikit-learn==1.5.2",
+  "PyYAML==6.0.2",
+  "matplotlib==3.10.3",
+  "pyarrow==21.0.0",
+  "statsmodels==0.14.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest==8.3.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

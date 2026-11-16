@@ -15,12 +15,13 @@ Kaggle: GPU + Internet on, attach the uom220001c multivariate-TS bundle. Run All
 """
 from __future__ import annotations
 
+from mechconf.paths import REPO_ROOT  # noqa: E402
 import argparse
 import base64
 import json
 import os
 
-ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+ROOT = REPO_ROOT
 
 PKG_FILES = [
     "__init__.py",
@@ -114,9 +115,9 @@ def build(datasets, fast: bool):
         "for cf in ['configs/v2_phase0.yaml','configs/v2_phase1.yaml','configs/v2_phase2.yaml']:\n"
         "    c=yaml.safe_load(open(cf)); c['device']=dev; yaml.safe_dump(c,open(cf,'w'))\n"
         f"sys.argv=['p0','--config','configs/v2_phase0.yaml','--datasets',*{dss},{fastflag}]\n"
-        "try: runpy.run_module('experiments.phase0_layer_sweep', run_name='__main__')\n"
+        "try: runpy.run_module('experiments.v2.phase0_layer_sweep', run_name='__main__')\n"
         "except SystemExit: pass\n"
-        "p0=json.load(open('runs/v2_phase0/layer_sweep_summary.json'))\n"
+        "p0=json.load(open('results/v2/v2_phase0/layer_sweep_summary.json'))\n"
         "print('\\nPHASE 0:', p0['result'], '| winning:', p0['winning_layers'])\n"
     ))
 
@@ -124,21 +125,21 @@ def build(datasets, fast: bool):
     cells.append(code(
         "import runpy, sys\n"
         f"sys.argv=['p1','--config','configs/v2_phase1.yaml','--datasets',*{dss},{fastflag}]\n"
-        "try: runpy.run_module('experiments.phase1_core_mechanism', run_name='__main__')\n"
+        "try: runpy.run_module('experiments.v2.phase1_core_mechanism', run_name='__main__')\n"
         "except SystemExit: pass\n"
         "import pandas as pd\n"
         "print('\\n=== H1c enrichment (type-B) across runs ===')\n"
-        "display(pd.read_csv('runs/v2_phase1/AGG_h1c.csv'))\n"
+        "display(pd.read_csv('results/v2/v2_phase1/AGG_h1c.csv'))\n"
     ))
 
     cells.append(md("## 5. Phase 2 — cross-environment invariance (flagship)"))
     cells.append(code(
         "import runpy, sys\n"
         f"sys.argv=['p2','--config','configs/v2_phase2.yaml','--datasets',*{dss},{fastflag}]\n"
-        "try: runpy.run_module('experiments.phase2_invariance', run_name='__main__')\n"
+        "try: runpy.run_module('experiments.v2.phase2_invariance', run_name='__main__')\n"
         "except SystemExit: pass\n"
         "import pandas as pd\n"
-        "agg=pd.read_csv('runs/v2_phase2/AGG_invariance.csv')\n"
+        "agg=pd.read_csv('results/v2/v2_phase2/AGG_invariance.csv')\n"
         "print('=== AGG_invariance.csv ==='); display(agg)\n"
         "cols=[c for c in agg.columns if c.startswith('I_') and c not in ('I_MVDFv2_lt_correlated','I_MVDFv2_lt_MVDFv1')]\n"
         "print('\\nMean I by condition (lower = more invariant):')\n"
@@ -151,7 +152,7 @@ def build(datasets, fast: bool):
 
     cells.append(md("## 6. Zip"))
     cells.append(code(
-        "import shutil; shutil.make_archive('/kaggle/working/v2_runs','zip','runs')\n"
+        "import shutil; shutil.make_archive('/kaggle/working/v2_runs','zip','results', 'v2')\n"
         "print('runs -> /kaggle/working/v2_runs.zip')\n"
     ))
 
