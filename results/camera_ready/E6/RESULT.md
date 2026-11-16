@@ -63,7 +63,7 @@ Oracle gap on TimeMixer (Phase 4 construction): ID 25.8–26.6% (ETTh1), 29.6–
 - F6 / F1 on ETTh2 return exactly 0: CV selects the existing isotonic rule, which is increasing-only and collapses to the fit mean when the most-correlated column is negatively correlated. CV choosing a constant means no estimator beat the mean in time-series CV inside the fit split.
 
 ## Plain-English summary
-The forecaster-architecture check holds for the main null: on TimeMixer, the natural activations of the causally selected MVDF features predict difficulty no better than a constant (best held-out R² −0.49 to −1.17, every CI below 0), and an oracle could still narrow intervals by 24–30%. Cheap forecast-time information does not clear the pre-registered bar on TimeMixer either; on ETTh2 the input-window statistics show a consistent but not significant rank signal (ρ ≈ 0.32).
+The forecaster-architecture check holds for the main null: on TimeMixer, the natural activations of the causally selected MVDF features predict difficulty no better than a constant (best held-out R² −0.49 to −1.16, every CI below 0), and an oracle could still narrow intervals by 24–30%. Cheap forecast-time information does not clear the pre-registered bar on TimeMixer either; on ETTh2 the input-window statistics show a consistent but not significant rank signal (ρ ≈ 0.32).
 
 ## Anomalies
 - None in reproduction. The `REPRO_phase34.csv` written by `phase34` compares against the iTransformer reference and was deleted as not applicable; the TimeMixer comparison is in `REPRO_phase3_vs_archgen.csv`.
@@ -73,6 +73,6 @@ The forecaster-architecture check holds for the main null: on TimeMixer, the nat
 | TimeMixer | MVDF best R² (marg.) | MVDF best R² (active) | oracle gap ID | ex-ante predictive seeds |
 |---|---|---|---|---|
 | ETTh1 (3 seeds) | −0.52 to −0.49, all CI < 0 | −0.71 to −0.53, all CI < 0 | 25.8–26.6% | 0/3 |
-| ETTh2 (3 seeds) | −1.17 to −1.04, all CI < 0 | −1.19 to −1.06, all CI < 0 | 29.6–30.0% | 0/3 |
+| ETTh2 (3 seeds) | −1.16 to −1.04, all CI < 0 | −1.19 to −1.06, all CI < 0 | 29.6–30.0% | 0/3 |
 
-> "On TimeMixer, natural MVDF activation again fails to predict difficulty (best held-out R² −0.49 to −1.17 across six runs, every block-bootstrap CI below zero), while the oracle gap (24–30%) is the same size as for iTransformer."
+> "On TimeMixer, natural MVDF activation again fails to predict difficulty (best held-out R² −0.49 to −1.16 across six runs, every block-bootstrap CI below zero), while the oracle gap (24–30%) is the same size as for iTransformer."

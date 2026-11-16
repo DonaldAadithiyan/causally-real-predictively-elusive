@@ -32,7 +32,7 @@ Spec: `CAMERA_READY_EXPERIMENTS.md` (pasted task). All outputs under `runs/camer
 | **C5a** dose-response clean | **PASS** | MVDF median linear-fit R² 0.999; monotone (guaranteed by gate 1) |
 | **C5b** natural range | **FAIL** (boundary) | Jaccard 0.85 ✓; ETTh2 s5 enrichment 2.50 with CI lower bound = 1.000 exactly |
 | **C5c** interchange | **FAIL** (ETTh1 7/10; ETTh2 9/10) | sign agreement 81% of MVDF features on ETTh |
-| **C1.1** L1 null generalizes | **PASS** (electricity, traffic; also TimeMixer) | best R² −0.29 to −1.33, every CI < 0 (10/10); TimeMixer −0.49 to −1.17 (6/6) |
+| **C1.1** L1 null generalizes | **PASS** (electricity, traffic; also TimeMixer) | best R² −0.29 to −1.33, every CI < 0 (10/10); TimeMixer −0.49 to −1.16 (6/6) |
 | **C1.2** heterogeneity generalizes | **PASS** | oracle gap ID 18.1% (elec), 39.1% (traffic); every CI > 0 |
 | **C1.3** = C3.x on new data | see C3 rows | |
 | **C2.1** "3/3" claims hold on ≥ 80% of seeds | **FAIL (partly)** | enrichment ≥ 1×, Phase-3 null, oracle gap: hold on 30/30. "naive_matched significantly narrower than scorer on every run": ETTh1 4/10 (dense), 0/10 (mvdf); electricity 0/5, 0/5 |
@@ -90,10 +90,10 @@ Delete "never above a shuffled-signature floor"; that floor is identical to the 
 > "Across all four datasets (30 trained runs), natural MVDF activation fails to predict difficulty (best held-out R² −0.29 to −1.33, every block-bootstrap CI below zero), while an oracle shows 18–39% of interval width is attributable to difficulty heterogeneity. No ex-ante predictor chosen by cross-validation converts this into a narrower conformal band at valid coverage."
 
 **E2: seeds (answers R3).** Report per-seed values, median [min, max] and k/N (no SD). Table in `E2/RESULT.md` "For the paper"; all per-seed numbers in `E2/SEED_TABLE.md`.
-> "Across 30 independently retrained pipelines, MVDF is type-B-enriched on every run (median 2.0–3.9×), natural MVDF activation predicts difficulty worse than a constant on every run, and the oracle gap is positive on every run; no headline median moved by more than its pooled CI half-width when going from 3 seeds to 5 or 10. The constant-width band's advantage over the learned scorer is significant on only 4/10 (dense) and 0/10 (MVDF) ETTh1 seeds."
+> "Across 30 independently retrained pipelines, MVDF is type-B-enriched on every run (median 2.0–3.8×), natural MVDF activation predicts difficulty worse than a constant on every run, and the oracle gap is positive on every run; no headline median moved by more than its pooled CI half-width when going from 3 seeds to 5 or 10. The constant-width band's advantage over the learned scorer is significant on only 4/10 (dense) and 0/10 (MVDF) ETTh1 seeds."
 
 **E6: TimeMixer (answers R2 architecture).**
-> "On TimeMixer, natural MVDF activation again fails to predict difficulty (best held-out R² −0.49 to −1.17 across six runs, every CI below zero), and the oracle gap (24–30%) matches iTransformer."
+> "On TimeMixer, natural MVDF activation again fails to predict difficulty (best held-out R² −0.49 to −1.16 across six runs, every CI below zero), and the oracle gap (24–30%) matches iTransformer."
 
 ---
 
@@ -106,7 +106,7 @@ Delete "never above a shuffled-signature floor"; that floor is identical to the 
 | Table 4 | ETTh1 marg −0.72 to −0.58, active −0.70 to −0.48; ETTh2 marg −0.92 to −0.89, active −0.89 to −0.80 | ETTh1 −0.72 to −0.52, active −0.96 to −0.47; ETTh2 −0.94 to −0.77, active −0.96 to −0.69 (10 seeds); add electricity −0.33 to −0.29, traffic −1.33 to −0.46 | `E2/AGG_E2_phase3.csv` |
 | Table 4 caption | "Negative = worse than predicting the training mean" | R² as implemented uses the **evaluation-set** mean; fix the caption, or report the fit-mean R² from E3 | `E0/DEFINITIONS.md` §6.1 |
 | Table 9, iTransformer column | enrichment 2.0–4.6×; Δw −0.14 to −0.43; R² −0.58 to −0.92; "6/6" | enrichment 1.25–3.68× (ETTh, 20 seeds, local data); Δw (naive − dense, shift) −0.11 to −0.18 (ETTh1), −0.33 to −0.45 (ETTh2); R² −0.52 to −0.94; 20/20 | E2 |
-| Table 9, TimeMixer column | R² −0.49 to −1.16 | −0.49 to −1.17 (rounding; reproduced exactly) | `E6/RESULT.md` |
+| Table 9, TimeMixer column | R² −0.49 to −1.16 | **unchanged** −0.49 to −1.16 (reproduced exactly; −1.1648 rounds to −1.16. An earlier version of this list wrongly said −1.17 after double rounding) | `E6/RESULT.md` |
 | Table 2 | MVDF ≥ 1.0× 12/12, min 2.00, max 4.62, mean 3.02 (Kaggle, 4 datasets × 3) | local models, 30 runs: ≥ 1.0× on 30/30, min 1.25, max 4.17; bootstrap CI excludes 1 on 9/30 | `E2/AGG_E2_enrichment.csv` |
 | §5.6 | "both differences are significant in every dataset-seed run, 12 of 12 each" | not supported: naive_matched significantly narrower than dense on 4/10 ETTh1, 10/10 ETTh2, 0/5 electricity, 5/5 traffic seeds; than mvdf on 0/10, 10/10, 0/5, 5/5 (block bootstrap, local data). Direction holds everywhere except electricity mvdf (narrower at 0.82 coverage) | `E2/AGG_E2_scorer_vs_naive.csv` |
 | §5.11 | match rate 0.21–0.29 vs base 0.30–0.39; "never above a shuffled-signature floor" | 0.08–0.33 (mean 0.25) vs 0.28–0.43 per comparison at 0.25 SD; delete the floor clause | `E0/RESULT.md` |

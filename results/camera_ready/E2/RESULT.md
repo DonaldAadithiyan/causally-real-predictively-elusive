@@ -229,7 +229,7 @@ Coverage (mvdf, ID): ETTh1 s0 0.779/0.830, s1 0.772/0.832, s2 0.787/0.827, s3 0.
 | naive_matched sig. narrower than dense (shift) | 4/10 | 10/10 | 0/5 | 5/5 |
 | naive_matched sig. narrower than mvdf (shift) | 0/10 | 10/10 | 0/5 (coverage-confounded) | 5/5 |
 
-> "Across 30 independently retrained pipelines (10 seeds each on ETTh1/ETTh2, 5 each on electricity/traffic), MVDF is type-B-enriched on every run (median 2.0–3.9×), natural MVDF activation predicts difficulty worse than a constant on every run, and the oracle gap is positive on every run; no headline median moved by more than its pooled CI half-width when going from 3 seeds to 5 or 10. The constant-width band is never significantly wider than the learned scorer, but its advantage is significant on only 4/10 (dense) and 0/10 (MVDF) ETTh1 seeds."
+> "Across 30 independently retrained pipelines (10 seeds each on ETTh1/ETTh2, 5 each on electricity/traffic), MVDF is type-B-enriched on every run (median 2.0–3.8×), natural MVDF activation predicts difficulty worse than a constant on every run, and the oracle gap is positive on every run; no headline median moved by more than its pooled CI half-width when going from 3 seeds to 5 or 10. The constant-width band is never significantly wider than the learned scorer, but its advantage is significant on only 4/10 (dense) and 0/10 (MVDF) ETTh1 seeds."
 
 ## Per-seed tables
 

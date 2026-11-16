@@ -1,0 +1,153 @@
+# Every number printed in the camera-ready paper, copied verbatim from the LaTeX source, and the
+# function in paper/paper_numbers.py that recomputes it from results/. The test normalises both
+# sides (drops $ \ { } and spaces; treats --, en dash and minus alike) and asserts equality.
+# `known_mismatch` marks entries where the recomputed value differs from the printed one; the test
+# expects the mismatch (strict xfail) so CI stays green while the discrepancy stays visible, and
+# fails if it is fixed in one place but not the other.
+
+abstract_intro:
+  - {id: l2_share, where: "Abstract; §1 contribution 1; §5.1", printed: "17--47\\%", fn: l2_share_range}
+  - {id: runs_total, where: "Abstract; §1; §6", printed: "36", fn: n_runs_r2_negative}
+  - {id: runs_itransformer, where: "Abstract; §6", printed: "30", fn: n_itransformer_runs}
+  - {id: oracle_bound, where: "Abstract; §1 contribution 3; §6", printed: "18--39\\%", fn: oracle_bound_range}
+
+method_setup:
+  - {id: layer_sweep_taps, where: "§3.1", printed: "seven", fn: layer_sweep_n_taps, expect_numeric: "7"}
+  - {id: layer_sweep_corr, where: "§3.1", printed: "0.08--0.21", fn: layer_sweep_range,
+     note: "PCA-based max |corr| per tap (max_abs_corr_pc). The raw max |corr| would be 0.09-0.22."}
+  - {id: profile_rank, where: "§3.1 Difficulty score", printed: "0.95--0.997", fn: profile_rank_agreement}
+  - {id: ks_shift, where: "§4 Data and splits", printed: "$p<0.05$", fn: ks_all_below_005,
+     note: "From the v2_confirm (Kaggle-copy) runs; the test is on the raw target series."}
+  - {id: etth_id_coverage, where: "§4 Caveats", printed: "0.86", fn: etth_id_max_coverage}
+  - {id: traffic_id_coverage, where: "§4 Caveats", printed: "1.000", fn: traffic_id_coverage}
+
+results_5_1_L2:
+  - {id: t2_all_etth1, where: "Table 2", printed: "19 [13,23]", fn: l2_share, args: [ETTh1, all]}
+  - {id: t2_all_etth2, where: "Table 2", printed: "22 [15,28]", fn: l2_share, args: [ETTh2, all]}
+  - {id: t2_all_elec, where: "Table 2", printed: "47 [34,53]", fn: l2_share, args: [electricity, all]}
+  - {id: t2_all_traffic, where: "Table 2", printed: "17 [15,22]", fn: l2_share, args: [traffic, all]}
+  - {id: t2_mvdf_etth1, where: "Table 2", printed: "17 [8,50]", fn: l2_share, args: [ETTh1, mvdf]}
+  - {id: t2_mvdf_etth2, where: "Table 2", printed: "25 [8,50]", fn: l2_share, args: [ETTh2, mvdf]}
+  - {id: t2_mvdf_elec, where: "Table 2", printed: "58 [17,67]", fn: l2_share, args: [electricity, mvdf]}
+  - {id: t2_mvdf_traffic, where: "Table 2", printed: "8 [0,17]", fn: l2_share, args: [traffic, mvdf]}
+  - {id: t2_enr_etth1, where: "Table 2", printed: "2.04$\\times$", fn: enrichment_median, args: [ETTh1]}
+  - {id: t2_enr_etth2, where: "Table 2", printed: "2.28$\\times$", fn: enrichment_median, args: [ETTh2]}
+  - {id: t2_enr_elec, where: "Table 2", printed: "3.85$\\times$", fn: enrichment_median, args: [electricity]}
+  - {id: t2_enr_traffic, where: "Table 2", printed: "3.33$\\times$", fn: enrichment_median, args: [traffic]}
+  - {id: t2_null_etth1, where: "Table 2", printed: "0/10", fn: above_selection_null, args: [ETTh1]}
+  - {id: t2_null_etth2, where: "Table 2", printed: "2/10", fn: above_selection_null, args: [ETTh2]}
+  - {id: t2_null_elec, where: "Table 2", printed: "4/5", fn: above_selection_null, args: [electricity]}
+  - {id: t2_null_traffic, where: "Table 2", printed: "3/5", fn: above_selection_null, args: [traffic]}
+  - {id: selection_null_mean, where: "Table 2 caption; §5.1", printed: "1.8$\\times$", fn: selection_null_mean}
+  - {id: dose_fit_r2, where: "§5.1", printed: "0.999", fn: e5a_fit_r2}
+  - {id: mvdf_heldout, where: "§5.1", printed: "15/30", fn: mvdf_heldout_wins}
+  - {id: mvdf_insample, where: "§5.1", printed: "30/30", fn: mvdf_insample_wins}
+  - {id: enrichment_all_runs, where: "§5.1", printed: "all 30", fn: enrichment_ge1_runs}
+  - {id: enrichment_range, where: "§5.1", printed: "$2.0$--$3.9\\times$", fn: enrichment_median_range,
+     known_mismatch: "per-dataset medians are 2.04-3.85 (Table 2); 3.846 rounds to 3.8 at one decimal. The camera-ready summary's sentence wrongly said 3.9 (double rounding 3.846 -> 3.85 -> 3.9); corrected there. main.tex should print 2.0--3.8 (or 2.04--3.85 to match Table 2)."}
+  - {id: fisher_pooled, where: "§5.1", printed: "$p = 6\\times10^{-10}$", fn: fisher_selection_null, args: ["all 30"]}
+  - {id: fisher_etth1, where: "§5.1", printed: "$p = 0.62$", fn: fisher_selection_null, args: [ETTh1]}
+
+results_5_2_L1:
+  - {id: p3_etth1, where: "§5.2", printed: "$-0.60$ $[-0.72,-0.52]$", fn: p3_summary, args: [ETTh1]}
+  - {id: p3_etth2, where: "§5.2", printed: "$-0.89$ $[-0.94,-0.77]$", fn: p3_summary, args: [ETTh2]}
+  - {id: p3_elec, where: "§5.2", printed: "$-0.29$ $[-0.33,-0.29]$", fn: p3_summary, args: [electricity]}
+  - {id: p3_traffic, where: "§5.2", printed: "$-0.70$ $[-1.33,-0.46]$", fn: p3_summary, args: [traffic]}
+  - {id: p3_all_ci, where: "§5.2 'Every one of the 30 runs ... bootstrap interval below zero'", printed: "30 of 30", fn: p3_all_ci_below_zero}
+  - {id: p3_active_etth1, where: "§5.2", printed: "$-0.96$ to $-0.47$", fn: p3_active_range, args: [ETTh1]}
+  - {id: p3_active_etth2, where: "§5.2", printed: "$-0.96$ to $-0.69$", fn: p3_active_range, args: [ETTh2]}
+  - {id: p3_active_elec, where: "§5.2 'negative on every electricity ... run'", printed: "5/5", fn: p3_active_all_negative, args: [electricity]}
+  - {id: p3_active_traffic, where: "§5.2 'negative on every ... traffic run'", printed: "5/5", fn: p3_active_all_negative, args: [traffic]}
+  - {id: rj_spearman, where: "§5.2", printed: "$-0.10$ to $+0.13$", fn: rj_spearman_range}
+  - {id: hidden_etth2, where: "§5.2", printed: "10/10", fn: exante_predictive, args: [ETTh2, F4]}
+  - {id: hidden_etth2_rho, where: "§5.2", printed: "0.38", fn: exante_rho, args: [ETTh2, F4]}
+  - {id: sae_code_etth2, where: "§5.2", printed: "7/10", fn: exante_predictive, args: [ETTh2, F5]}
+  - {id: mvdf_etth2, where: "§5.2", printed: "0/10", fn: exante_predictive, args: [ETTh2, F0]}
+  - {id: elec_rho, where: "§5.2 'ex-ante sets reach rho ~ 0.33'", printed: "0.33", fn: exante_rho, args: [electricity, F6]}
+  - {id: elec_max_pred, where: "§5.2 'at most 1/5'", printed: "1/5", fn: exante_max_predictive, args: [electricity]}
+  - {id: traffic_max_pred, where: "§5.2 'at most 1/5'", printed: "1/5", fn: exante_max_predictive, args: [traffic]}
+  - {id: mvdf_adds_nothing, where: "§5.2", printed: "29 of 30", fn: mvdf_adds_nothing}
+  - {id: t3_mvdf_etth1, where: "Table 3", printed: "$-0.01$ (0/10)", fn: exante_cell, args: [ETTh1, F0]}
+  - {id: t3_mvdf_etth2, where: "Table 3", printed: "$+0.00$ (0/10)", fn: exante_cell, args: [ETTh2, F0]}
+  - {id: t3_best_etth1, where: "Table 3 (best ex-ante = F6)", printed: "$-0.02$ (1/10)", fn: exante_cell, args: [ETTh1, F6]}
+  - {id: t3_best_etth2, where: "Table 3 (best ex-ante = F2)", printed: "$+0.32$ (6/10)", fn: exante_cell, args: [ETTh2, F2]}
+  - {id: t3_dense_etth1, where: "Table 3", printed: "$-0.01$ (0/10)", fn: exante_cell, args: [ETTh1, F4]}
+  - {id: t3_dense_etth2, where: "Table 3", printed: "$+0.38$ (10/10)", fn: exante_cell, args: [ETTh2, F4]}
+  - {id: t3_sae_etth1, where: "Table 3", printed: "$-0.02$ (0/10)", fn: exante_cell, args: [ETTh1, F5]}
+  - {id: t3_sae_etth2, where: "Table 3", printed: "$+0.26$ (7/10)", fn: exante_cell, args: [ETTh2, F5]}
+
+results_5_3_synthetic:
+  - {id: syn_link1, where: "§5.3", printed: "3/3", fn: synthetic_link, args: [1]}
+  - {id: syn_link2, where: "§5.3", printed: "3/3", fn: synthetic_link, args: [2]}
+  - {id: syn_link3, where: "§5.3", printed: "3/3", fn: synthetic_link, args: [3]}
+  - {id: syn_link4, where: "§5.3; §6", printed: "1/3", fn: synthetic_link, args: [4]}
+  - {id: syn_r2, where: "§5.3", printed: "0.26--0.48", fn: synthetic_r2_range}
+
+results_5_4_downstream:
+  - {id: oracle_etth1, where: "§5.4", printed: "25.2\\% [23.6, 25.9]", fn: oracle_summary, args: [ETTh1]}
+  - {id: oracle_etth2, where: "§5.4", printed: "30.0\\% [28.2, 30.6]", fn: oracle_summary, args: [ETTh2]}
+  - {id: oracle_elec, where: "§5.4", printed: "18.1\\% [17.3, 18.3]", fn: oracle_summary, args: [electricity]}
+  - {id: oracle_traffic, where: "§5.4", printed: "39.1\\% [39.0, 39.6]", fn: oracle_summary, args: [traffic]}
+  - {id: oracle_ci, where: "§5.4 'every run's interval excludes zero'", printed: "30/30", fn: oracle_all_ci_positive}
+  - {id: oracle_shift, where: "§5.4", printed: "24.0--37.3\\%", fn: oracle_shift_median_range}
+  - {id: grr_etth, where: "§5.4 ex-ante bands", printed: "$-0.20$ to $-2.72$", fn: shift_grr_etth_valid}
+  - {id: elec_static_cov, where: "§5.4 ex-ante bands", printed: "0.35--0.64", fn: shift_electricity_static_coverage}
+  - {id: traffic_f3, where: "§5.4 ex-ante bands", printed: "0.28--0.41 of the gap on 4/5", fn: shift_traffic_f3_grr}
+  - {id: scorer_combos, where: "§5.4 continuous scoring", printed: "120", fn: scorer_combinations}
+  - {id: scorer_valid_narrower, where: "§5.4 'none of the 120'", printed: "0", fn: scorer_narrower_valid}
+  - {id: t4_dense_etth1, where: "Table 4", printed: "$+0.14$ (4/10)", fn: scorer_cell, args: [ETTh1, dense]}
+  - {id: t4_dense_etth2, where: "Table 4", printed: "$+0.38$ (10/10)", fn: scorer_cell, args: [ETTh2, dense]}
+  - {id: t4_dense_elec, where: "Table 4", printed: "$+0.10$ (0/5)", fn: scorer_cell, args: [electricity, dense]}
+  - {id: t4_dense_traffic, where: "Table 4", printed: "$+3.49$ (5/5)", fn: scorer_cell, args: [traffic, dense]}
+  - {id: t4_mvdf_etth1, where: "Table 4", printed: "$+0.06$ (0/10)", fn: scorer_cell, args: [ETTh1, mvdf]}
+  - {id: t4_mvdf_etth2, where: "Table 4", printed: "$+0.15$ (10/10)", fn: scorer_cell, args: [ETTh2, mvdf]}
+  - {id: t4_mvdf_elec, where: "Table 4", printed: "$-0.41$ (0/5)", fn: scorer_cell, args: [electricity, mvdf]}
+  - {id: t4_mvdf_traffic, where: "Table 4", printed: "$+2.56$ (5/5)", fn: scorer_cell, args: [traffic, mvdf]}
+  - {id: t4_naive_cov, where: "Table 4 caption", printed: "0.89--0.92", fn: naive_shift_coverage_range}
+  - {id: t4_undercover, where: "Table 4 caption", printed: "0.62--0.85", fn: undercover_range}
+  - {id: earlier_widths, where: "§5.4 earlier 12 runs", printed: "3.89, 3.94, 4.36 vs.\\ 3.35", fn: earlier_shift_widths}
+  - {id: naive_no_scorer, where: "§5.4 earlier 12 runs", printed: "within 0.02", fn: naive_no_scorer_gap}
+  - {id: regime_pass, where: "§5.4 regime gating", printed: "None of 20", fn: regime_passes, expect_numeric: "0of20"}
+  - {id: regime_etth1, where: "§5.4", printed: "0.86--1.20", fn: regime_rq_range, args: [ETTh1]}
+  - {id: regime_etth2, where: "§5.4", printed: "0.97--1.05", fn: regime_rq_range, args: [ETTh2]}
+  - {id: regime_sizes, where: "§5.4", printed: "200--633", fn: regime_sizes}
+  - {id: loc_time_only, where: "§5.4 localization 'about one third'", printed: "0.34--0.39", fn: localization_time_only,
+     note: "paper prints 'about one third'; recorded here as the underlying range"}
+  - {id: loc_mvdf, where: "§5.4 localization", printed: "0.94 (2/6)", fn: localization, args: [mvdf]}
+  - {id: loc_corr, where: "§5.4 localization", printed: "0.81 (2/6)", fn: localization, args: [correlated]}
+  - {id: loc_corr_below_bar, where: "§5.4 localization ('below the pre-set 0.80 bar')", printed: "0.81 (2/6)", fn: localization, args: [correlated, below080],
+     known_mismatch: "3 of 6 correlated cells have ratio < 0.80 vs dense; 2 of 6 pass the full pre-registered rule (< 0.80 vs dense AND PCA, CI excluding 1). The sentence says 'below the 0.80 bar', which fits 3/6; '2/6' fits 'passing'."}
+  - {id: loc_random, where: "§5.4 localization", printed: "0.73 (4/6)", fn: localization, args: [random_k]}
+  - {id: pid_mean, where: "§5.4 standard methods", printed: "$-0.005$", fn: pid_mean_shift_diff}
+  - {id: pid_dir, where: "§5.4 standard methods", printed: "narrower on ETTh1 3/3, wider ETTh2 3/3", fn: pid_direction}
+  - {id: cqr_etth1_id, where: "§5.4 standard methods", printed: "0.71--0.77", fn: cqr_coverage, args: [ETTh1, id]}
+  - {id: cqr_etth2_shift, where: "§5.4 standard methods", printed: "0.98--0.99", fn: cqr_coverage, args: [ETTh2, shift]}
+
+results_5_5_robustness:
+  - {id: rj_jaccard, where: "§5.5 specificity score", printed: "0.50--0.71", fn: e4_jaccard_range}
+  - {id: rj_null, where: "§5.5 'negative on all 20 ETTh runs under every definition'", printed: "all 20 ETTh runs", fn: e4_null_all_definitions}
+  - {id: rj_spline, where: "§5.5", printed: "7/20", fn: e4_enrichment_ci, args: [spline]}
+  - {id: rj_rank, where: "§5.5", printed: "17/20", fn: e4_enrichment_ci, args: [rank]}
+  - {id: rj_iso, where: "§5.5", printed: "5/20", fn: e4_enrichment_ci, args: [isotonic]}
+  - {id: rj_binned, where: "§5.5", printed: "0/20", fn: e4_enrichment_ci, args: [binned]}
+  - {id: exceed_q99, where: "§5.5 natural range", printed: "8\\%", fn: e5_exceed_q99}
+  - {id: natural_jaccard, where: "§5.5 natural range", printed: "0.85", fn: e5b_jaccard}
+  - {id: interchange, where: "§5.5 natural range", printed: "81\\%", fn: e5c_sign}
+  - {id: tm_fvu, where: "§5.5 second architecture", printed: "0.0008--0.0027", fn: tm_fvu_range}
+  - {id: tm_enrichment, where: "§5.5 second architecture", printed: "$1.2$--$2.5\\times$, 6/6", fn: tm_enrichment_range}
+  - {id: tm_scorer, where: "§5.5 second architecture", printed: "6/6", fn: tm_scorer_wider}
+  - {id: tm_r2, where: "§5.5 second architecture", printed: "$-0.49$ to $-1.17$", fn: tm_r2_range,
+     known_mismatch: "min is -1.1648, which rounds to -1.16. The camera-ready summary's change list wrongly said -1.17 (double rounding: -1.1648 -> -1.165 -> -1.17); corrected in CAMERA_READY_SUMMARY.md. main.tex should print -1.16."}
+  - {id: tm_oracle, where: "§5.5 second architecture", printed: "24--30\\%", fn: tm_oracle_range}
+  - {id: tm_exante, where: "§5.5 'no ex-ante set is predictive on any run'", printed: "0", fn: tm_exante_predictive}
+  - {id: sae_match, where: "§5.5 SAE reproducibility", printed: "8--33\\% of MVDF features (mean 25\\%)", fn: sae_match_range}
+  - {id: sae_base, where: "§5.5 SAE reproducibility", printed: "28--43\\%", fn: sae_base_range}
+  - {id: necessity, where: "§5.5 necessity", printed: "$-0.0004$ to $-0.0021$ on 5 of 6", fn: necessity_range}
+
+discussion:
+  - {id: static_scorer, where: "§6 Limitations", printed: "$-0.09$ to $+0.004$", fn: static_scorer_range}
+
+# Config values printed in the paper (d_model 256, 3 layers, L = H = 96, m = 2048, k = 64,
+# lambda grid, pool 120, 2%, 12 features, alpha 0.10, splits 8640/2880/5900 and 70/10/20,
+# 60/40, 50/30/20, block 96, seeds) are asserted against the code constants in
+# tests/test_paper_numbers.py::test_config_constants.
