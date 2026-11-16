@@ -67,7 +67,7 @@ def draw(r2, oid, osh, out):
     ax[1].legend(frameon=False, loc="upper left", fontsize=6.5, handletextpad=0.2, borderaxespad=0.1)
     ax[0].set_ylim(-0.6, 3.6)
     os.makedirs(os.path.dirname(out) or ".", exist_ok=True)
-    fig.savefig(out, bbox_inches="tight", pad_inches=0.02)
+    fig.savefig(out, bbox_inches="tight", pad_inches=0.02, metadata={"CreationDate": None})  # byte-reproducible
     fig.savefig(out.replace(".pdf", ".png"), dpi=200, bbox_inches="tight", pad_inches=0.02)
     plt.close(fig)
     return out
