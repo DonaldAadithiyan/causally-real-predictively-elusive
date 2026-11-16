@@ -7,26 +7,27 @@ adds each PREREG contains no results for that experiment.
 ## Commit hashes: working repository → public repository
 
 The working repository was put under version control on 2026-11-14, immediately before the
-camera-ready experiments (baseline snapshot). Before publication, its history was rewritten once,
-with `git filter-branch`, to replace absolute home-directory paths in logs and reports by `<repo>`
-/ `<home>`. That rewrite changed every commit hash; file contents are otherwise identical. The
+camera-ready experiments (baseline snapshot). Before publication its history was rewritten twice with `git filter-branch`: (1) to replace
+absolute home-directory paths in logs and reports by `<repo>` / `<home>`, and (2) to remove
+tool-attribution trailers from commit messages. Both rewrites changed every commit hash; commit
+times, file contents (apart from the scrubbed paths) and the order of commits are unchanged. The
 mapping for the pre-registration commits:
 
 | experiment | PREREG file (public layout) | working-repo hash | public-repo hash | committed (UTC+05:30) |
 |---|---|---|---|---|
-| baseline snapshot (pre-camera-ready state) | — | `fb7e43f` | `b380172` | 2026-11-14 04:49:45 |
-| E2 more seeds | `results/camera_ready/E2/PREREG.md` | `aaec82f` | `978abdd` | 2026-11-14 04:52:43 |
-| E3 ex-ante baselines + E1 electricity/traffic | `results/camera_ready/E3/PREREG.md`, `E1/PREREG.md` | `cabf8c9` | `a4482de` | 2026-11-14 04:56:04 |
-| E4 R_j robustness + E5 dose-response / natural range | `results/camera_ready/E4/PREREG.md`, `E5/PREREG.md` | `62f7e35` | `afd43f7` | 2026-11-14 05:08:04 |
-| E6 TimeMixer | `results/camera_ready/E6/PREREG.md` | `763d853` | `4de2ad9` | 2026-11-14 05:15:34 |
-| F follow-up (regime gating, pooled enrichment, …) | `results/camera_ready/F/PREREG.md` | `f5dbe9a` | `da625e4` | 2026-11-16 14:00:10 |
-| G final round (stopped; see `G/STATUS.md`) | `results/camera_ready/G/PREREG.md` | `7fc583f` | `84bd609` | 2026-11-16 14:09:35 |
+| baseline snapshot (pre-camera-ready state) | — | `fb7e43f` | `6fb1864` | 2026-11-14 04:49:45 |
+| E2 more seeds | `results/camera_ready/E2/PREREG.md` | `aaec82f` | `3242fca` | 2026-11-14 04:52:43 |
+| E3 ex-ante baselines + E1 electricity/traffic | `results/camera_ready/E3/PREREG.md`, `E1/PREREG.md` | `cabf8c9` | `927a883` | 2026-11-14 04:56:04 |
+| E4 R_j robustness + E5 dose-response / natural range | `results/camera_ready/E4/PREREG.md`, `E5/PREREG.md` | `62f7e35` | `93b3200` | 2026-11-14 05:08:04 |
+| E6 TimeMixer | `results/camera_ready/E6/PREREG.md` | `763d853` | `cebc944` | 2026-11-14 05:15:34 |
+| F follow-up (regime gating, pooled enrichment, …) | `results/camera_ready/F/PREREG.md` | `f5dbe9a` | `bc9e856` | 2026-11-16 14:00:10 |
+| G final round (stopped; see `G/STATUS.md`) | `results/camera_ready/G/PREREG.md` | `7fc583f` | `1293235` | 2026-11-16 14:09:35 |
 
 Full old → new mapping of all 17 pre-publication commits:
-`fb7e43f→b380172, 89315c7→ab59ecb, aaec82f→978abdd, cabf8c9→a4482de, 03d5a5b→80337d9,
-62f7e35→afd43f7, c2b9f33→53e38d9, 763d853→4de2ad9, 8c8c140→f3d1fcc, 4a75d1f→5a4e1e9,
-93fbb0c→7407913, 845e3a6→e6eefc8, f5dbe9a→da625e4, 67a588b→ec8e88b, 7fc583f→84bd609,
-eaa368a→2e43f05, 2a3a6c7→b87412e`.
+`fb7e43f→6fb1864, 89315c7→0ba71d0, aaec82f→3242fca, cabf8c9→927a883, 03d5a5b→c2420e7,
+62f7e35→93b3200, c2b9f33→70b3e5b, 763d853→cebc944, 8c8c140→96109e6, 4a75d1f→423b221,
+93fbb0c→9bfe65c, 845e3a6→2da9099, f5dbe9a→bc9e856, 67a588b→ad632c8, 7fc583f→1293235,
+eaa368a→4e03d42, 2a3a6c7→e944bfe`.
 
 ## Criteria that FAILED (reported as such, not re-thresholded)
 

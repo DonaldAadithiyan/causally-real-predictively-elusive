@@ -2,7 +2,7 @@
 
 > Copy of `results/camera_ready/E0/DEFINITIONS.md` with every `file:line` reference remapped to the
 > public-repository layout (`src/mechconf/…`, `experiments/v2/…`). Line numbers were remapped by aligning
-> each file with its pre-restructure version (git `b87412e`), so they point at the same code.
+> each file with its pre-restructure version (git `e944bfe`), so they point at the same code.
 
 
 No new runs. Every formula below is read from the code at commit `fb7e43f` (baseline snapshot).
