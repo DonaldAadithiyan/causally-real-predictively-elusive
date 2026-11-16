@@ -5,7 +5,7 @@ experiments on the two remaining datasets, under the *identical* protocol, split
 and seeds already documented for ETTh1/ETTh2.
 
 **Why this is now possible:** the raw electricity/traffic data — believed lost — was
-found in `~/Downloads/results (3)/mechanistic_conformal/data/raw/`. It is the
+found in a local copy of the Kaggle output bundle (`mechanistic_conformal/data/raw/`). It is the
 adapter-materialised cache from the original Kaggle run and reproduces the Section
 5.1/5.2 fingerprints **bit-for-bit** (`electricity` edge-hash `cc6af3b5973c14af`,
 `traffic` `a93d2ec2b5815355`). So it is the byte-exact source, not the mismatched
